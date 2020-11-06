@@ -40,7 +40,9 @@ TestResult.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
-
+.idea
+/.idea
+/idea
 *_i.c
 *_p.c
 *_i.h
