@@ -4,13 +4,20 @@ import Nav from 'react-bootstrap/cjs/Nav';
 import {Link} from 'react-router-dom';
 import {HeaderBody} from './style';
 
+import PsLogo from "./PsLogo";
+
+
+import Container from 'react-bootstrap/Container';
+
 const Header = () => {
 
     return (
+
         <HeaderBody>
-            <Navbar>
+            <Container>
+            <Navbar className={"d-flex justify-content-between pl-0 pr-0"} style={{width: "100%"}}>
                 <Navbar.Brand>
-                    Playstation 5
+                    <PsLogo></PsLogo>
                 </Navbar.Brand>
                 <Nav>
                     <Nav.Item>
@@ -24,7 +31,9 @@ const Header = () => {
                     </Nav.Item>
                 </Nav>
             </Navbar>
+            </Container>
         </HeaderBody>
+
     )
 }
 
