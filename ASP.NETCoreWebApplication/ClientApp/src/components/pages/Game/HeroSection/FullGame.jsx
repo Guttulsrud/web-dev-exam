@@ -24,6 +24,12 @@ import ScreenThumb from "./ScreenThumb";
 const FullGame = () => {
     return (
         <React.Fragment>
+            <motion.div
+                initial={{ x: 0, opacity: 0}}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 2, delay: 0 }}
+            >
+
             <HeroWrapper backgroundImage={"forbidden-west.jpg"}>
                 <Container>
                 <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
@@ -31,23 +37,36 @@ const FullGame = () => {
                     <motion.div
                                 initial={{ x: -300, opacity: 0}}
                                 animate={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 2, delay: 0 }}
+                                transition={{ duration: 2, delay: 1.5 }}
                     >
 
                 <TitleText>Horizon <br></br><span style={{color: "#0070D1"}}>Forbidden West</span></TitleText>
+
+                        <motion.div
+                            initial={{ x: 0, opacity: 0}}
+                            animate={{ x: 0, opacity: 1 }}
+                            transition={{ duration: 2, delay: 4 }}
+                        >
                 <TitleDesc>In an era where Machines roam the land and mankind is no longer the dominant species,
                     a young hunter named Aloy embarks on a journey to discover her destiny.</TitleDesc>
                     <TitleCat>Adventure</TitleCat>
+                        </motion.div>
                     </motion.div>
 
                     <motion.div
                         initial={{ x: 300, opacity: 0}}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 2, delay: 1.5 }}
+                        transition={{ duration: 2, delay: 3 }}
                     >
                 <div>
 
+                    <motion.div
+                        initial={{ x: 0, opacity: 0}}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 2, delay: 4.5 }}
+                    >
                 <Caption>Screenshots</Caption>
+                    </motion.div>
                 <ThumbWrapper>
 
                     <ScreenThumb image={"forbidden-west.jpg"}/>
@@ -88,7 +107,7 @@ const FullGame = () => {
                     </Row>
                 </Container>
             </SectionWrapper>
-
+            </motion.div>
         </React.Fragment>
     )
 }
