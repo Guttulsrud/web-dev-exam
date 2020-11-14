@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { motion } from "framer-motion"
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -26,11 +27,26 @@ const FullGame = () => {
             <HeroWrapper backgroundImage={"forbidden-west.jpg"}>
                 <Container>
                 <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
+
+                    <motion.div
+                                initial={{ x: -300, opacity: 0}}
+                                animate={{ x: 0, opacity: 1 }}
+                                transition={{ duration: 2, delay: 0 }}
+                    >
+
                 <TitleText>Horizon <br></br><span style={{color: "#0070D1"}}>Forbidden West</span></TitleText>
                 <TitleDesc>In an era where Machines roam the land and mankind is no longer the dominant species,
                     a young hunter named Aloy embarks on a journey to discover her destiny.</TitleDesc>
                     <TitleCat>Adventure</TitleCat>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ x: 300, opacity: 0}}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 2, delay: 1.5 }}
+                    >
                 <div>
+
                 <Caption>Screenshots</Caption>
                 <ThumbWrapper>
 
@@ -39,6 +55,7 @@ const FullGame = () => {
                     <ScreenThumb image={"forbidden-west.jpg"}/>
                 </ThumbWrapper>
                 </div>
+                    </motion.div>
 
                 </Container>
             </HeroWrapper>
