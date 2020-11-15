@@ -39,7 +39,7 @@ const FullGame3 = () => {
 
                     <div style={{position: "relative", top: "100px"}}>
                         <TitleText zIndex={"9"} fontSize={"15"} color={"#000"} lineHeight={"12"}>Horizon</TitleText>
-                        <TitleText zIndex={"1000000"} fontSize={"12"} lineHeight={"3"} color={"#0070D1"}>Zero Dawn</TitleText>
+                        <TitleText zIndex={"1000000"} fontSize={"14"} lineHeight={"3"} color={"#0070D1"}>Zero Dawn</TitleText>
 
                         <TitleCat>Action Adventure</TitleCat>
                     </div>
