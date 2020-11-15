@@ -17,7 +17,7 @@ import {
     SectionWrapper,
     Card,
     CardTitle,
-    RadialGradient
+    RadialGradient, SignLogoSmall
 } from './style';
 import ScreenThumb from "./ScreenThumb";
 
@@ -27,7 +27,7 @@ const FullGame = () => {
             <motion.div
                 initial={{ x: 0, opacity: 0}}
                 animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 2, delay: 0 }}
+                transition={{ duration: .7, delay: 0 }}
             >
 
             <HeroWrapper backgroundImage={"forbidden-west.jpg"}>
@@ -35,9 +35,9 @@ const FullGame = () => {
                 <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
 
                     <motion.div
-                                initial={{ x: -300, opacity: 0}}
+                                initial={{ x: -200, opacity: 0}}
                                 animate={{ x: 0, opacity: 1 }}
-                                transition={{ duration: 2, delay: 1.5 }}
+                                transition={{ duration: 1.5, delay: .2 }}
                     >
 
                 <TitleText>Horizon <br></br><span style={{color: "#0070D1"}}>Forbidden West</span></TitleText>
@@ -45,7 +45,7 @@ const FullGame = () => {
                         <motion.div
                             initial={{ x: 0, opacity: 0}}
                             animate={{ x: 0, opacity: 1 }}
-                            transition={{ duration: 2, delay: 4 }}
+                            transition={{ duration: 1.5, delay: 1.5 }}
                         >
                 <TitleDesc>In an era where Machines roam the land and mankind is no longer the dominant species,
                     a young hunter named Aloy embarks on a journey to discover her destiny.</TitleDesc>
@@ -54,16 +54,16 @@ const FullGame = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ x: 300, opacity: 0}}
+                        initial={{ x: 100, opacity: 0}}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 2, delay: 3 }}
+                        transition={{ duration: 1, delay: 1.2 }}
                     >
                 <div>
 
                     <motion.div
                         initial={{ x: 0, opacity: 0}}
                         animate={{ x: 0, opacity: 1 }}
-                        transition={{ duration: 2, delay: 4.5 }}
+                        transition={{ duration: 2, delay: 1.5}}
                     >
                 <Caption>Screenshots</Caption>
                     </motion.div>
@@ -76,6 +76,13 @@ const FullGame = () => {
                 </div>
                     </motion.div>
 
+                    <motion.div
+                        initial={{ x: 0, opacity: 0}}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1.5, delay: 1.5 }}
+                    >
+                    <SignLogoSmall></SignLogoSmall>
+                    </motion.div>
                 </Container>
             </HeroWrapper>
 
@@ -85,7 +92,7 @@ const FullGame = () => {
                     <TitleSection>All Games</TitleSection>
                     <Row>
                         <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
-                            <Card backgroundImage={"demons.jpg"}>
+                            <Card backgroundImage={"demons1.jpg"}>
                                 <CardTitle className={"text-white"}>Demons Souls</CardTitle>
                             </Card>
                         </Col>
@@ -105,6 +112,7 @@ const FullGame = () => {
                             </Card>
                         </Col>
                     </Row>
+
                 </Container>
             </SectionWrapper>
             </motion.div>
