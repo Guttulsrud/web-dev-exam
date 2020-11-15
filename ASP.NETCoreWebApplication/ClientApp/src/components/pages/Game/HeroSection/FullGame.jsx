@@ -92,7 +92,7 @@ const FullGame = () => {
                     <TitleSection>All Games</TitleSection>
                     <Row>
                         <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
-                            <Card backgroundImage={"demons1.jpg"}>
+                            <Card backgroundImage={"demons.jpg"}>
                                 <CardTitle className={"text-white"}>Demons Souls</CardTitle>
                             </Card>
                         </Col>
