@@ -119,7 +119,7 @@ export const Caption = styled.h3`
     font-weight: 500;
     text-align: right;
     margin-right: 15px;
-    opacity: 0.7
+    opacity: 0.4;
 `
 
 export const ThumbCaption = styled.h4`
