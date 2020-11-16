@@ -172,6 +172,8 @@ export const Card = styled.div`
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
   border-radius: 15px;
   transition: .2s linear;
+  position: relative;
+  z-index: 10000;
    &:hover {
      transform: scale(1.05);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.60);

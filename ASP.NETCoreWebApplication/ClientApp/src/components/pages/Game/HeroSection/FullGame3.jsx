@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -22,11 +22,20 @@ import {
     ParallaxImage
 } from './style3';
 import ScreenThumb from "./ScreenThumb";
-import ParallaxCard from "react-parallax-card";
-import {motion} from "framer-motion";
+
+
 
 const FullGame3 = () => {
-    let parallax;
+    const [offset, setOffset] = useState(0)
+    useEffect(() => {
+        function handleScroll() {
+            setOffset(window.pageYOffset)
+        }
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
 
     return (
 
@@ -35,21 +44,22 @@ const FullGame3 = () => {
             <HeroWrapper>
 
                 <RadialGradient></RadialGradient>
-                <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
+                <SignLogo backgroundImage={"signlogo.png"} style={{transform: `translateY(${offset * 0.2}px)`}}></SignLogo>
 
-                <ParallaxImage backgroundImage={"aloy.png"}></ParallaxImage>
+                <ParallaxImage backgroundImage={"aloy.png"} style={{transform: `translateY(${offset * 0.4}px)`}}></ParallaxImage>
                 <Container>
 
                     <div style={{position: "relative", top: "100px"}}>
-                        <TitleText zIndex={"9"} fontSize={"15"} color={"#000"} lineHeight={"12"}>Horizon</TitleText>
-                        <TitleText zIndex={"1000000"} fontSize={"14"} lineHeight={"3"} color={"#0070D1"}>Zero Dawn</TitleText>
 
-                        <TitleCat>Action Adventure</TitleCat>
+                        <TitleText zIndex={"9"} fontSize={"15"} color={"#000"} lineHeight={"12"}>Horizon</TitleText>
+                        <TitleText zIndex={"1000000"} fontSize={"14"} lineHeight={"3"} color={"#0070D1"} style={{transform: `translateY(${offset * 0.2}px)`}}>Zero Dawn</TitleText>
+
+                        <TitleCat style={{transform: `translateY(${offset * 0.2}px)`}}>Action Adventure</TitleCat>
                     </div>
 
                     <div style={{marginTop: "250px"}}>
 
-                        <Caption>Screenshots</Caption>
+                        <Caption style={{transform: `translateY(${offset * 0.05}px)`}}>Screenshots</Caption>
 
                         <ThumbWrapper>
                             <ScreenThumb image={"screenshots/horizon/1.jpg"}/>
@@ -69,7 +79,7 @@ const FullGame3 = () => {
 
                 <Container>
 
-                    <TitleSection>All Games</TitleSection>
+                    <TitleSection style={{transform: `translateY(${offset * 0.09}px)`}}>All Games</TitleSection>
                     <Row>
                         <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
                             <Card backgroundImage={"demons.jpg"}>
