@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 
 import {
     HeroWrapper,
@@ -26,15 +26,18 @@ import ParallaxCard from "react-parallax-card";
 import {motion} from "framer-motion";
 
 const FullGame3 = () => {
+    let parallax;
+
     return (
+
         <React.Fragment>
 
             <HeroWrapper>
+
                 <RadialGradient></RadialGradient>
                 <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
 
                 <ParallaxImage backgroundImage={"aloy.png"}></ParallaxImage>
-
                 <Container>
 
                     <div style={{position: "relative", top: "100px"}}>
@@ -49,9 +52,9 @@ const FullGame3 = () => {
                         <Caption>Screenshots</Caption>
 
                         <ThumbWrapper>
-                            <ScreenThumb image={"forbidden-west.jpg"}/>
-                            <ScreenThumb image={"forbidden-west.jpg"}/>
-                            <ScreenThumb image={"forbidden-west.jpg"}/>
+                            <ScreenThumb image={"screenshots/horizon/1.jpg"}/>
+                            <ScreenThumb image={"screenshots/horizon/2.jpg"}/>
+                            <ScreenThumb image={"screenshots/horizon/3.jpg"}/>
                         </ThumbWrapper>
                     </div>
 
@@ -59,9 +62,11 @@ const FullGame3 = () => {
 
                 <SignLogoSmall></SignLogoSmall>
 
+
             </HeroWrapper>
 
             <SectionWrapper>
+
                 <Container>
 
                     <TitleSection>All Games</TitleSection>

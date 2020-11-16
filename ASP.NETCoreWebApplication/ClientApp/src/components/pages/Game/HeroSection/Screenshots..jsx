@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 
 import { Thumbnail } from './style2';
 
+
 const Screenshots = ( props ) => {
     const getScreenshots = () => {
         return props.screenshots.map((screenshot, i) => {

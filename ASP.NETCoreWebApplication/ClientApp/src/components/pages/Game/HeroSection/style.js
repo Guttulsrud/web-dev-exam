@@ -35,7 +35,7 @@ export const Thumb = styled.div`
     position: relative;
     height: 135px;
     border-radius: 15px;
-    
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
     &:hover {
      transform: scale(1.03);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);

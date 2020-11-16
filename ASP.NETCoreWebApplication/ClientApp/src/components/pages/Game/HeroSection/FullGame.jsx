@@ -69,9 +69,9 @@ const FullGame = () => {
                     </motion.div>
                 <ThumbWrapper>
 
-                    <ScreenThumb image={"forbidden-west.jpg"}/>
-                    <ScreenThumb image={"forbidden-west.jpg"}/>
-                    <ScreenThumb image={"forbidden-west.jpg"}/>
+                    <ScreenThumb image={"screenshots/horizon/1.jpg"}/>
+                    <ScreenThumb image={"screenshots/horizon/2.jpg"}/>
+                    <ScreenThumb image={"screenshots/horizon/3.jpg"}/>
                 </ThumbWrapper>
                 </div>
                     </motion.div>

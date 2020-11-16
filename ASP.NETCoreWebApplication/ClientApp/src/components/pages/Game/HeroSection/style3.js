@@ -49,22 +49,21 @@ export const SectionWrapper = styled.div`
 `
 
 export const Thumb = styled.div`
-    background-image: linear-gradient(to top, #000000b9 5%, #00000000 95%), url(${props => props.backgroundImage});
-    background-size: 100% 100%;
-    padding: 0;
-    margin: 15px;
-    transition: .2s linear;
-    width: 240px;
-    position: relative;
-    height: 135px;
+    background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(screenshots/${props => props.backgroundImage});
     border-radius: 15px;
-    
-    &:hover {
+    height: 200px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+    background-color: #ff00cc;
+    background-size: cover;
+    background-position: center;
+    transition: .2s linear;
+        &:hover {
      transform: scale(1.03);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-      
-  /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
-    }
+     }
 `
 
 export const TitleText = styled.h1`
