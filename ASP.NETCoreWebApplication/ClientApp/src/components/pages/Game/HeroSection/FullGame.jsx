@@ -115,6 +115,36 @@ const FullGame = () => {
 
                 </Container>
             </SectionWrapper>
+
+                <SectionWrapper>
+                    <Container>
+
+                        <TitleSection>All Games</TitleSection>
+                        <Row>
+                            <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
+                                <Card backgroundImage={"demons.jpg"}>
+                                    <CardTitle className={"text-white"}>Demons Souls</CardTitle>
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
+                                <Card backgroundImage={"forbidden-west.jpg"}>
+                                    <CardTitle className={"text-white"}>Horizon Forbidden West</CardTitle>
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
+                                <Card backgroundImage={"cyber.jpg"}>
+                                    <CardTitle className={"text-white"}>Cyberpunk 2077</CardTitle>
+                                </Card>
+                            </Col>
+                            <Col sm={12} md={6} lg={3} style={{ marginBottom: "30px"}}>
+                                <Card backgroundImage={"ratchet.jpg"}>
+                                    <CardTitle className={"text-white"}>Ratchet & Clank</CardTitle>
+                                </Card>
+                            </Col>
+                        </Row>
+
+                    </Container>
+                </SectionWrapper>
             </motion.div>
         </React.Fragment>
     )
