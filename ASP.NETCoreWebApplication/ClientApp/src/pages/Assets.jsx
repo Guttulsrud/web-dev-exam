@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 
 import GameList from '../components/common/GameList/GameList';
-import {GameListWrapper} from '../components/common/GameList/style';
+import {Section} from '../components/base/Section';
+import {SectionTitle} from '../components/base/SectionTitle';
 import Container from 'react-bootstrap/Container';
+import ArrowButton from "../components/common/ArrowButton";
 
 
 export const Assets = () => {
@@ -86,11 +88,22 @@ export const Assets = () => {
 
     return (
         <React.Fragment>
-            <GameListWrapper>
+            <Section>
                 <Container>
-                    <GameList games={data}/>
+                    <SectionTitle>Buttons</SectionTitle>
+
+                    <ArrowButton rotate="up"/>
+                    <ArrowButton rotate="down"/>
+                    <ArrowButton rotate="right"/>
+                    <ArrowButton rotate="left"/>
                 </Container>
-            </GameListWrapper>
+            </Section>
+            <Section>
+                    <Container>
+                        <SectionTitle>All Games</SectionTitle>
+                        <GameList games={data}/>
+                    </Container>
+            </Section>
         </React.Fragment>
     );
 };
