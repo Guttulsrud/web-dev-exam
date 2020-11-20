@@ -9,6 +9,7 @@ const GameCard = ({image, title}) => {
             <TitleText className={"text-white"}>{title}</TitleText>
             {isHovered && <h1>kek</h1>}
         </CardWrapper>
+
     )
 }
 
