@@ -22,6 +22,9 @@ const Header = () => {
                     <Nav.Item>
                         <Nav.Link tag={Link}>About Playstation</Nav.Link>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link tag={Link} href={'/users'}>Users</Nav.Link>
+                    </Nav.Item>
                 </Nav>
             </Navbar>
         </HeaderBody>

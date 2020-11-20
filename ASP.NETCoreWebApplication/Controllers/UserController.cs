@@ -22,12 +22,14 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return _usersService.Get();
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public ActionResult<User> Post(User user)
         {
             _usersService.Create(user);
             return user;
         }
+
+
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
