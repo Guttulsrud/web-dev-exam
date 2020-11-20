@@ -7,14 +7,9 @@ import {Game3} from './pages/Game3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 import Layout from './components/Layout';
-
-
-
+import Login from './pages/Login';
 
 export default () => {
-
-
-
     return (
         <Layout>
             <BrowserRouter>
@@ -22,6 +17,7 @@ export default () => {
                 <Route path="/game" component={Game}/>
                 <Route path="/game2" component={Game2}/>
                 <Route path="/game3" component={Game3}/>
+                <Route path="/login" component={Login}/>
             </BrowserRouter>
         </Layout>
     );

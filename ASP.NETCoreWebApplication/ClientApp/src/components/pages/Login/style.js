@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const LoginWrapper = styled.section`
+    display: flex;
     min-height: 100vh;
-    background-image: url("playstation-background.jpg");
+    background-image: url("sony-background.jpg");
+    background-size: cover;
 `

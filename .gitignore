@@ -19,7 +19,7 @@ x64/
 x86/
 build/
 bld/
-bin/
+ASP.NETCoreWebApplication/bin/
 Bin/
 obj/
 Obj/
