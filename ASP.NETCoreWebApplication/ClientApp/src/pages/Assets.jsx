@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import GameList from '../components/common/GameList/GameList';
 import {Section} from '../components/base/Section';
 import {SectionTitle} from '../components/base/SectionTitle';
+import {Button} from '../components/base/Button';
 import Container from 'react-bootstrap/Container';
 import ArrowButton from "../components/common/ArrowButton";
 
@@ -91,6 +92,12 @@ export const Assets = () => {
             <Section>
                 <Container>
                     <SectionTitle>Buttons</SectionTitle>
+
+                    <Button>View more</Button>
+                    <Button outline>View more</Button>
+
+                    <br/>
+                    <br/>
 
                     <ArrowButton rotate="up"/>
                     <ArrowButton rotate="down"/>
