@@ -8,8 +8,8 @@ export const RoundBtn = styled.div`
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    border: ${props => (props.outline ? "2px solid #0070D1" : "none")};
-    background-color: ${props => (props.outline ? "none" : "#0070D1")};
+    border: ${props => (props.outline ? "2px solid #0070D1" : props.disabled ? "2px solid #C4C4C4" : "none")};
+    background-color: ${props => (props.outline ? "none" :  props.disabled ? "none" : "#0070D1")};
 `
 
 export const Rotation = styled.div`

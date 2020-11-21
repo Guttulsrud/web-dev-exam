@@ -6,6 +6,7 @@ import {SectionTitle} from '../components/base/SectionTitle';
 import {Button} from '../components/base/Button';
 import Container from 'react-bootstrap/Container';
 import ArrowButton from "../components/common/ArrowButton";
+import GameThumbList from "../components/common/GameThumbList/GameThumbList";
 
 
 export const Assets = () => {
@@ -95,6 +96,7 @@ export const Assets = () => {
 
                     <Button>View more</Button>
                     <Button outline>View more</Button>
+                    <Button disabled>View more</Button>
 
                     <br/>
                     <br/>
@@ -111,12 +113,24 @@ export const Assets = () => {
                     <ArrowButton rotate="right" outline/>
                     <ArrowButton rotate="left" outline/>
 
+                    <br/>
+
+                    <ArrowButton rotate="left" disabled/>
+
                 </Container>
             </Section>
+
+            <Section>
+                <Container>
+                    <SectionTitle>Thumbnails</SectionTitle>
+                    <GameThumbList data={data}/>
+                </Container>
+            </Section>
+
             <Section>
                     <Container>
                         <SectionTitle>All Games</SectionTitle>
-                        <GameList games={data}/>
+                        <GameList data={data}/>
                     </Container>
             </Section>
         </React.Fragment>

@@ -5,7 +5,7 @@ import GameCard from "../GameCard/GameCard";
 const GameList = (props) => {
 
     const getData = () => {
-        return props.games.map((game, i) => {
+        return props.data.map((game, i) => {
             return <GameCard key={i} {...game}/>
         });
     }
