@@ -94,28 +94,28 @@ export const Assets = () => {
                 <Container>
                     <SectionTitle>Buttons</SectionTitle>
 
+                    <div style={{display: "flex", justifyContent: "space-between"}}>
+
+
                     <Button>View more</Button>
                     <Button outline>View more</Button>
                     <Button disabled>View more</Button>
 
-                    <br/>
-                    <br/>
 
                     <ArrowButton rotate="up"/>
                     <ArrowButton rotate="down"/>
                     <ArrowButton rotate="right"/>
                     <ArrowButton rotate="left"/>
 
-                    <br/>
-
                     <ArrowButton rotate="up" outline/>
                     <ArrowButton rotate="down" outline/>
                     <ArrowButton rotate="right" outline/>
                     <ArrowButton rotate="left" outline/>
 
-                    <br/>
-
                     <ArrowButton rotate="left" disabled/>
+
+
+                    </div>
 
                 </Container>
             </Section>

@@ -8,4 +8,8 @@ export const Button = styled.div`
     background-color: ${props => (props.outline ? "none" : props.disabled ? "none" : "#0070D1")};
     color: ${props => (props.outline ? "#0070D1" : props.disabled ? "#c4c4c4" : "#FFFFFF")};
     font-weight: 500;
+    font-size: 1rem;
+    min-width: 180px;
+    text-align: center;
+    cursor: ${props => (props.disabled ? "arrow" : "pointer")}
 `

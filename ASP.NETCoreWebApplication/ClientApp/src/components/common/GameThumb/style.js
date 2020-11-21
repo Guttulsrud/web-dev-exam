@@ -7,7 +7,7 @@ export const Thumb = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 220px;
+  height: 210px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
   border-radius: 15px;
   transition: .2s linear;
