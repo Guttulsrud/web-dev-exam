@@ -5,8 +5,8 @@ import ArrowIcon from "./ArrowIcon";
 
 const ArrowButton = (props) => {
     return (
-            <RoundBtn>
-                <ArrowIcon rotate={props.rotate}/>
+            <RoundBtn outline={props.outline}>
+                <ArrowIcon rotate={props.rotate} outline={props.outline}/>
             </RoundBtn>
     )
 }

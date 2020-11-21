@@ -1,13 +1,15 @@
 import styled, {css} from "styled-components"
 
+
 export const RoundBtn = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 38px;
     height: 38px;
-    background-color: #0070D1;
-    border-radius: 50%;   
+    border-radius: 50%;
+    border: ${props => (props.outline ? "2px solid #0070D1" : "none")};
+    background-color: ${props => (props.outline ? "none" : "#0070D1")};
 `
 
 export const Rotation = styled.div`

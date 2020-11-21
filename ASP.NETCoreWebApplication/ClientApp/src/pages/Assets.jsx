@@ -96,6 +96,14 @@ export const Assets = () => {
                     <ArrowButton rotate="down"/>
                     <ArrowButton rotate="right"/>
                     <ArrowButton rotate="left"/>
+
+                    <br/>
+
+                    <ArrowButton rotate="up" outline/>
+                    <ArrowButton rotate="down" outline/>
+                    <ArrowButton rotate="right" outline/>
+                    <ArrowButton rotate="left" outline/>
+
                 </Container>
             </Section>
             <Section>
