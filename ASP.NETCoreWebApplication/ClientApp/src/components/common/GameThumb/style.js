@@ -18,6 +18,9 @@ export const ThumbButton = styled.div`
      &:hover {
      opacity: 1;
      transition: transform 1s ease;
+     background-color: #FFFFFF;
+     width: 62px;
+     height: 62px;
     }
 `
 export const Thumb = styled.div`
@@ -88,6 +91,8 @@ export const ThumbWrapper = styled.div`
     color: #fff;
     transition: .3s ease;
     transform: scale(1.05);
+
+    border: none;
   }
    
   
