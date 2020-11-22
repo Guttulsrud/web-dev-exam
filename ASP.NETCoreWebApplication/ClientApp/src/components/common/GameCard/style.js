@@ -59,6 +59,7 @@ export const CardImage = styled.div`
 
 
 export const CardBack = styled.div`
+visibility: hidden;
 position: absolute;
      height: 400px;
        width: 100%;
@@ -70,6 +71,7 @@ background: linear-gradient(0deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
      transform: rotate(0deg);
       transition: ease .2s;
       overflow: hidden;
+
       
 `
 export const SignLogo = styled.div`
@@ -109,6 +111,7 @@ z-index: 200000;
         &:hover + ${CardBack} {
       position: absolute;
       opacity: 1;
+      visibility: visible;
         border-radius: 15px;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
       
