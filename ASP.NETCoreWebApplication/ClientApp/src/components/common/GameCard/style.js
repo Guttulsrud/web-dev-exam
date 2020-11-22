@@ -56,6 +56,8 @@ export const CardImage = styled.div`
   transform: scale(1.3);
   transition: .2s ease;
 `
+
+
 export const CardBack = styled.div`
 position: absolute;
      height: 400px;
@@ -68,6 +70,25 @@ background: linear-gradient(0deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
      transform: rotate(0deg);
       transition: ease .2s;
       overflow: hidden;
+      
+`
+export const SignLogo = styled.div`
+position: absolute;
+bottom: 10px;
+left: 10px;
+background-image: url("signlogo.png");
+background-size: cover;
+background-position: center;
+width: 18px;
+height: 18px;
+      
+`
+
+export const LogoWrapper = styled.div`
+position: absolute;
+top: 25px;
+right: -20px;
+transform: rotate(90deg);
       
 `
 
@@ -91,7 +112,7 @@ z-index: 200000;
         border-radius: 15px;
         box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
       
-      transform: rotate(5deg) scale(1.1);
+      transform: rotate(10deg) scale(1.1);
 
 
        transition: ease .2s;

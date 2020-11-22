@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
-import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay} from './style';
+import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper} from './style';
+import Ps5Logo from "./Ps5Logo";
 
 
 const GameCard = ({id,title,category,backgroundImage}) => {
@@ -15,6 +16,7 @@ const GameCard = ({id,title,category,backgroundImage}) => {
                 <CardImage backgroundImage={backgroundImage}/>
                 <Overlay>
                     <CardContainer>
+
                         <CardTitle>{title}</CardTitle>
                         <Hover>
                             <CardCategory>{category}</CardCategory>
@@ -23,7 +25,7 @@ const GameCard = ({id,title,category,backgroundImage}) => {
                 </Overlay>
             </Card>
 
-            <CardBack></CardBack>
+            <CardBack><SignLogo/>     <LogoWrapper><Ps5Logo/></LogoWrapper></CardBack>
         </CardWrapper>
         </Col>
 
