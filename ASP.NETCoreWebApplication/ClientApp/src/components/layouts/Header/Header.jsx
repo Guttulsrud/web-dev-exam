@@ -8,28 +8,35 @@ import PsLogo from "./PsLogo";
 
 
 import Container from 'react-bootstrap/Container';
+import SearchIcon from "./SearchIcon";
 
 const Header = () => {
 
     return (
 
-        <HeaderBody>
+        <HeaderBody style={{zIndex: "100000"}}>
             <Container>
             <Navbar className={"d-flex justify-content-between pl-0 pr-0"} style={{width: "100%"}}>
-                <Navbar.Brand>
-                    <PsLogo></PsLogo>
+                <Navbar.Brand as={Link} to={"/"}>
+                    <PsLogo color={"#0070D1"}></PsLogo>
                 </Navbar.Brand>
-                <Nav>
+                <Nav className={"d-flex justify-content-around pl-0 pr-0"} style={{width: "100%", fontSize: "1.1rem", fontWeight: "500"}}>
                     <Nav.Item>
-                        <Nav.Link tag={Link}>Home</Nav.Link>
+                        <Nav.Link as={Link}>Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link tag={Link}>Games</Nav.Link>
+                        <Nav.Link as={Link}>Games</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link tag={Link}>About Playstation</Nav.Link>
+                        <Nav.Link as={Link}>Link</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link as={Link} to="/assets">Assets</Nav.Link>
                     </Nav.Item>
                 </Nav>
+                <Navbar.Brand>
+                    <SearchIcon color={"#0070D1"}/>
+                </Navbar.Brand>
             </Navbar>
             </Container>
         </HeaderBody>

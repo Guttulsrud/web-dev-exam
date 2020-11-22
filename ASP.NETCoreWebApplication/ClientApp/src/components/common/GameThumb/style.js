@@ -18,7 +18,8 @@ export const ThumbButton = styled.div`
      &:hover {
      opacity: 1;
      transition: transform 1s ease;
-     background-color: #FFFFFF;
+     background: linear-gradient(0deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
+     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
      width: 62px;
      height: 62px;
     }
