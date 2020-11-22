@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const CardWrapper = styled.h3`
+ position: relative;
+`
+
+
 export const CardCategory = styled.h3`
   position: relative;
   display: inline;
@@ -27,10 +32,21 @@ export const Hover = styled.div`
   transition: .2s ease;
 
 `
+export const Overlay = styled.div`
+  position: absolute;
+    transition: ease 1s;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+
+  height: 400px;
+  width: 100%;
+  bottom: 0px;
+  border-radius: 15px;
+  
+`
 
 export const CardImage = styled.div`
   position: relative;  
-  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
+  background-image: url(${props => props.backgroundImage});
   background-color: #0070D1;
   background-size: cover;
   background-position: center;
@@ -40,9 +56,23 @@ export const CardImage = styled.div`
   transform: scale(1.3);
   transition: .2s ease;
 `
+export const CardBack = styled.div`
+position: absolute;
+     height: 400px;
+       width: 100%;
+    border-radius: 15px;
+    background: rgb(0,112,209);
+background: linear-gradient(0deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
+    top: 0;
+    left: 0px;
+     transform: rotate(0deg);
+      transition: ease .2s;
+      overflow: hidden;
+      
+`
 
 export const Card = styled.div`
-
+z-index: 200000;
  position: relative;
    width: 100%;
   height: 400px;
@@ -55,9 +85,30 @@ export const Card = styled.div`
      transform: scale(1.05);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.30);
      }
+        &:hover + ${CardBack} {
+      position: absolute;
+      opacity: 1;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+      
+      transform: rotate(5deg) scale(1.1);
+
+
+       transition: ease .2s;
+        
+   
+    
+        
+   }
+     &:hover ${CardWrapper} {
+   z-index: 2000000000;
+  }
    &:hover ${CardImage} {
    transform: scale(1.1);
     transition: ease .3s;
+  }
+    &:hover ${Overlay} {
+    transition: ease 1s;
   }
    &:hover ${CardContainer} {
    opacity: 1;
@@ -69,9 +120,8 @@ export const Card = styled.div`
     &:hover ${Hover} {
    opacity: 1;
    transition: .2s ease;
-
-   
    }
+
    
 `
 
