@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Home} from './pages/Home';
 import {Game} from './pages/Game';
 import {Game2} from './pages/Game2';
@@ -19,15 +19,18 @@ export default () => {
 
 
     return (
+        <BrowserRouter>
         <Layout>
-            <BrowserRouter>
-                <Route exact path="/" component={Home}/>
-                <Route path="/game" component={Game}/>
-                <Route path="/game2" component={Game2}/>
-                <Route path="/game3" component={Game3}/>
-                <Route path="/assets" component={Assets}/>
 
-            </BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/game" component={Game}/>
+                    <Route path="/game2" component={Game2}/>
+                    <Route path="/game3" component={Game3}/>
+                    <Route path="/assets" component={Assets}/>
+                </Switch>
+
         </Layout>
+        </BrowserRouter>
     );
 }

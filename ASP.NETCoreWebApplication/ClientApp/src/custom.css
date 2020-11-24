@@ -111,6 +111,10 @@ a {
   color: #0366d6;
 }
 
+.active {
+  color: #1b6ec2;;
+}
+
 code {
   color: #E01A76;
 }

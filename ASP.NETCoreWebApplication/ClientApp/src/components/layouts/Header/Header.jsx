@@ -22,13 +22,13 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav className={"d-flex justify-content-around pl-0 pr-0"} style={{width: "100%", fontSize: "1.1rem", fontWeight: "500"}}>
                     <Nav.Item>
-                        <Nav.Link as={Link}>Home</Nav.Link>
+                        <Nav.Link as={Link} to="#">Home</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link}>Games</Nav.Link>
+                        <Nav.Link as={Link} to="#">Games</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link}>Link</Nav.Link>
+                        <Nav.Link as={Link} to="#">Link</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link as={Link} to="/assets">Assets</Nav.Link>
