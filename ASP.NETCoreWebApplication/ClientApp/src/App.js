@@ -9,15 +9,10 @@ import {Assets} from './pages/Assets';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 import Layout from './components/Layout';
-
-
-
+import Login from './pages/Login';
 
 
 export default () => {
-
-
-
     return (
         <BrowserRouter>
         <Layout>
@@ -28,8 +23,8 @@ export default () => {
                     <Route path="/game2" component={Game2}/>
                     <Route path="/game3" component={Game3}/>
                     <Route path="/assets" component={Assets}/>
+                    <Route path="/login" component={Login}/>
                 </Switch>
-
         </Layout>
         </BrowserRouter>
     );

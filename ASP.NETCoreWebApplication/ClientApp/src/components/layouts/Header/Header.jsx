@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/cjs/Navbar';
 import Nav from 'react-bootstrap/cjs/Nav';
-import {NavLink, Link} from 'react-router-dom';
+import {NavLink,Link, useLocation} from 'react-router-dom';
 import {HeaderBody} from './style';
 
 import PsLogo from "./PsLogo";
@@ -10,8 +10,11 @@ import PsLogo from "./PsLogo";
 import Container from 'react-bootstrap/Container';
 import SearchIcon from "./SearchIcon";
 
-const Header = () => {
 
+const Header = () => {
+    const location = useLocation()
+    console.log(location.pathname)
+    let whiteText = location.pathname === "/login"
     return (
 
         <HeaderBody style={{zIndex: "100000"}}>
