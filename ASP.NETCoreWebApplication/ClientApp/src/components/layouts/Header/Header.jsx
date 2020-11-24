@@ -37,7 +37,7 @@ const Header = () => {
                         <NavLink to="/assets" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Assets</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link tag={Link} href={'/users'}>Users</Nav.Link>
+                        <NavLink to="/users" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Users</NavLink>
                     </Nav.Item>
                 </Nav>
                 <Navbar.Brand>
