@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import GameList from '../components/common/GameList/GameList';
 import {Section} from '../components/base/Section';

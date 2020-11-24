@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Thumb, ThumbCaption, TitleText} from './style';
+import {Thumb, ThumbCaption} from './style';
 
 const ScreenThumb = ({image, title}) => {
     const [isHovered, setHovered] = useState(false)

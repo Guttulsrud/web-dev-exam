@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {CardWrapper} from "../../pages/Home/HeaderSection/style";
 
 const ZoomIcon = (props) => {
 

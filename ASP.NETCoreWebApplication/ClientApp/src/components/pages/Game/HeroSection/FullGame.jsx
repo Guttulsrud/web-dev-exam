@@ -17,7 +17,7 @@ import {
     SectionWrapper,
     Card,
     CardTitle,
-    RadialGradient, SignLogoSmall
+    SignLogoSmall
 } from './style';
 import ScreenThumb from "./ScreenThumb";
 

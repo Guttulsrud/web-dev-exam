@@ -1,8 +1,5 @@
-import React, {useState} from 'react';
-import {gameData} from "../data";
-
+import React from 'react';
 import HeroSection from '../components/pages/Game/HeroSection/HeroSection';
-import {useParams} from "react-router-dom";
 
 export const Game2 = () => {
 
@@ -23,7 +20,6 @@ export const Game2 = () => {
             ],
         }
 
-    let { gameId } = useParams();
 
     return (
         <React.Fragment>

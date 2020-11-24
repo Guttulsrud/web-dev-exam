@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import FullGame3 from '../components/pages/Game/HeroSection/FullGame3';
 
