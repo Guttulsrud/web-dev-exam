@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
 
-import { useSpring, animated } from 'react-spring'
+import { useSpring, animated } from 'react-spring';
 import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper} from './style';
 import Ps5Logo from "./Ps5Logo";
 

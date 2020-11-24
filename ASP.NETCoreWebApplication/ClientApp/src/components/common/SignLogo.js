@@ -15,6 +15,7 @@ export const SignLogo = styled.div`
   justify-content: center;
   position: absolute;
   ${props => (props.right ? "right" : "left")}: -200px;
+  ${props => (props.bottom ? "bottom" : "top")}: 0px;
   z-index: 1;
 `
 

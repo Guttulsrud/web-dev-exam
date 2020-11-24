@@ -9,5 +9,4 @@ export const Section = styled.div`
     margin-top: ${props => props.marginTop}px;
     z-index: 10;
     background: ${props => (props.blue ? "linear-gradient(20deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%)" : "none")};
-    overflow: hidden;
 `

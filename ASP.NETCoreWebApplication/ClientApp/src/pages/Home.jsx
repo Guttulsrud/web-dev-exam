@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
-import LinkSection from '../components/pages/Home/LinkSection/LinkSection';
+import React, {useEffect, useState} from 'react';
+
 import FeaturedSection from '../components/pages/Home/FeaturedSection/Index';
 import GamesSection from "../components/pages/Home/GamesSection/Index";
 import InfoSection from "../components/pages/Home/InfoSection";
 import ScreenShotSection from "../components/pages/Home/ScreenshotSection";
 import {RadialGradient} from "../components/common/RadialGradient";
+import {SignLogo} from "../components/common/SignLogo";
+
 
 export const Home = () => {
 
@@ -94,13 +96,30 @@ export const Home = () => {
 
     };
         */
+
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        function handleScroll() {
+            setOffset(window.pageYOffset)
+        }
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, []);
+
+
     return (
         <React.Fragment>
+            <div style={{position: "relative", top: "50px"}}>
             <FeaturedSection data={data}/>
             <GamesSection title={"All Games"} data={data}/>
             <InfoSection/>
             <ScreenShotSection title={"Screenshots"} data={data}/>
             <RadialGradient/>
+            </div>
+            <SignLogo style={{transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
         </React.Fragment>
     );
 };
