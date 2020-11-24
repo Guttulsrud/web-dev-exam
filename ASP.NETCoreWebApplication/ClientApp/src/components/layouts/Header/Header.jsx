@@ -36,6 +36,9 @@ const Header = () => {
                     <Nav.Item>
                         <NavLink to="/assets" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Assets</NavLink>
                     </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link tag={Link} href={'/users'}>Users</Nav.Link>
+                    </Nav.Item>
                 </Nav>
                 <Navbar.Brand>
                     <SearchIcon color={"#0070D1"}/>

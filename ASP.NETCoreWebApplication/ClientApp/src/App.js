@@ -5,7 +5,7 @@ import {Game} from './pages/Game';
 import {Game2} from './pages/Game2';
 import {Game3} from './pages/Game3';
 import {Assets} from './pages/Assets';
-
+import {Users} from './pages/Users';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 import Layout from './components/Layout';
@@ -24,6 +24,7 @@ export default () => {
                     <Route path="/game3" component={Game3}/>
                     <Route path="/assets" component={Assets}/>
                     <Route path="/login" component={Login}/>
+                    <Route exact path="/users" component={Users}/>
                 </Switch>
         </Layout>
         </BrowserRouter>
