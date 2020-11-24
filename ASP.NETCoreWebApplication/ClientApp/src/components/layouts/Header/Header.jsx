@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/cjs/Navbar';
 import Nav from 'react-bootstrap/cjs/Nav';
-import {Link} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import {HeaderBody} from './style';
 
 import PsLogo from "./PsLogo";
@@ -20,18 +20,18 @@ const Header = () => {
                 <Navbar.Brand as={Link} to={"/"}>
                     <PsLogo color={"#0070D1"}></PsLogo>
                 </Navbar.Brand>
-                <Nav className={"d-flex justify-content-around pl-0 pr-0"} style={{width: "100%", fontSize: "1.1rem", fontWeight: "500"}}>
+                <Nav className={"d-flex justify-content-around pl-0 pr-0 header-links"} style={{width: "100%", fontSize: "1.1rem", fontWeight: "500"}}>
                     <Nav.Item>
-                        <Nav.Link as={Link} to="#">Home</Nav.Link>
+                        <NavLink to="/home" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to="#">Games</Nav.Link>
+                        <NavLink to="/game" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Games</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to="#">Link</Nav.Link>
+                        <NavLink to="/game3" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Link</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link as={Link} to="/assets">Assets</Nav.Link>
+                        <NavLink to="/assets" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Assets</NavLink>
                     </Nav.Item>
                 </Nav>
                 <Navbar.Brand>

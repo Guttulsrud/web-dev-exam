@@ -107,13 +107,20 @@
 body {
   font-family: "SST Medium", Arial;
 }
+
+.header-links a{
+  color: #C4C4C4;
+  text-decoration: none;
+}
+
+.activeRoute {
+  color: #ff00cc;
+}
+
 a {
   color: #0366d6;
 }
 
-.active {
-  color: #1b6ec2;;
-}
 
 code {
   color: #E01A76;
