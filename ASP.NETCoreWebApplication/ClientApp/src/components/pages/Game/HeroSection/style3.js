@@ -194,8 +194,7 @@ export const CardTitle = styled.h3`
 
 
 export const RadialGradient = styled.div`
-  background: radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 1) 0%, rgba(196, 196, 196, 0) 100%);
-
+    background: radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 1) 0%, rgba(196, 196, 196, 0) 100%);
     width: 1500px;
     height: 1500px;
     position: absolute;

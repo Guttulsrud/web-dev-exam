@@ -4,6 +4,7 @@ import GameList from '../components/common/GameList/GameList';
 import {Section} from '../components/base/Section';
 import {SectionTitle} from '../components/base/SectionTitle';
 import {Button} from '../components/base/Button';
+import {RadialGradient} from '../components/common/RadialGradient'
 import Container from 'react-bootstrap/Container';
 import ArrowButton from "../components/common/ArrowButton";
 import GameThumbList from "../components/common/GameThumbList/GameThumbList";
@@ -90,6 +91,7 @@ export const Assets = () => {
 
     return (
         <React.Fragment>
+
             <Section>
                 <Container>
                     <SectionTitle>Buttons</SectionTitle>
@@ -133,6 +135,7 @@ export const Assets = () => {
                         <GameList data={data}/>
                     </Container>
             </Section>
+            <RadialGradient/>
         </React.Fragment>
     );
 };
