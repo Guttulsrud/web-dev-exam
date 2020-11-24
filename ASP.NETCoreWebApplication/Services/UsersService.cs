@@ -1,3 +1,4 @@
+using System;
 using MongoDB.Driver;
 using ASP.NETCoreWebApplication.Models;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace ASP.NETCoreWebApplication.Services {
             _users.DeleteOne( user => user.Id == id );
         }
 
-        public void Update( User userIn ){
+        public void Update(User userIn )
+        {
             _users.ReplaceOne( user => user.Id == userIn.Id, userIn );
         }
     }
