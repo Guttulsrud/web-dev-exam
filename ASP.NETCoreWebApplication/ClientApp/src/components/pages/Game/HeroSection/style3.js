@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import {Col} from 'react-bootstrap';
 
 export const HeroWrapper = styled.section`
   background-color: #fff;
@@ -25,12 +24,9 @@ export const ParallaxImage = styled.div`
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  
   bottom: -100px;
   position: absolute;
   z-index: 10;
-
-
 `
 
 
@@ -39,7 +35,6 @@ export const ThumbWrapper = styled.div`
     justify-content: flex-end;
     position: relative;
     z-index: 1000;
-    
 `
 
 export const SectionWrapper = styled.div`
@@ -61,9 +56,9 @@ export const Thumb = styled.div`
     background-position: center;
     transition: .2s linear;
         &:hover {
-     transform: scale(1.03);
-     box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-     }
+        transform: scale(1.03);
+        box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
+        }
 `
 
 export const TitleText = styled.h1`
@@ -88,18 +83,6 @@ export const TitleSection = styled.h1`
     padding-bottom: 30px;
 `
 
-export const TitleDesc = styled.h2`
-    padding-top: 30px;
-    color: #000;
-    padding-bottom: 30px;
-    font-size: 1.2rem;
-    font-weight: 300;
-    max-width: 600px;
-    position: relative;
-    top: 50px;
-    z-index: 1000;
-`
-
 export const TitleCat = styled.h2`
     padding: 10px;
     color: #0070D1;
@@ -122,15 +105,6 @@ export const Caption = styled.h3`
     opacity: 0.4;
 `
 
-export const ThumbCaption = styled.h4`
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 300;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-`
-
 export const SignLogo = styled.section`
   background-image: url(${props => props.backgroundImage});
   transform: rotate(20deg);
@@ -150,7 +124,7 @@ export const SignLogo = styled.section`
 `
 
 export const SignLogoSmall = styled.section`
-  background-image: url(signlogo.png);
+  background-image: url("signlogo.png");
   background-size: cover;
   background-position: center;
   height: 40px;
@@ -158,9 +132,7 @@ export const SignLogoSmall = styled.section`
   margin: 0 auto;
   margin-top: 50px;
   opacity: 0.5;
-
 `
-
 
 export const Card = styled.div`
   background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
@@ -190,7 +162,6 @@ export const CardTitle = styled.h3`
     width: 210px;
     margin-left: 20px;
 `
-
 
 
 export const RadialGradient = styled.div`

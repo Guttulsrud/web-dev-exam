@@ -1,16 +1,15 @@
 import styled from "styled-components"
-import {Col} from 'react-bootstrap';
 
 export const HeroWrapper = styled.section`
-  background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  transition: background-image .5s linear;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
+    background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    transition: background-image .5s linear;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 `
 
 export const ThumbWrapper = styled.div`
@@ -36,12 +35,11 @@ export const Thumb = styled.div`
     height: 135px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
-    &:hover {
-     transform: scale(1.03);
-     box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-      
-  /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
-    }
+        &:hover {
+         transform: scale(1.03);
+         box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
+        /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
+        }
 `
 
 export const TitleText = styled.h1`
@@ -127,7 +125,6 @@ export const SignLogoSmall = styled.section`
   margin: 0 auto;
   margin-top: 50px;
   opacity: 0.5;
-
 `
 
 export const Card = styled.div`

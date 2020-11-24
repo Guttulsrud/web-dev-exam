@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Col from 'react-bootstrap/Col';
 import {Thumb, ThumbCaption, TitleText} from './style';
 
 const ScreenThumb = ({image, title}) => {

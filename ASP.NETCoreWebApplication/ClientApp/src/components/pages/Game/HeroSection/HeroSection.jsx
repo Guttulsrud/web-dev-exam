@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 
 
 
-import { HeroWrapper, TitleText, TitleDesc, GameLogo, SignLogo } from './style2';
+import { HeroWrapper, TitleDesc, GameLogo, SignLogo } from './style2';
 import Screenshots from "./Screenshots.";
 import {motion} from "framer-motion";
 

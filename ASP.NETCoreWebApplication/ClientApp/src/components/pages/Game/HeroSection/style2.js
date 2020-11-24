@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import {Col} from 'react-bootstrap';
 
 export const HeroWrapper = styled.section`
   background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
@@ -32,8 +31,9 @@ export const Thumbnail = styled.div`
     background-position: center;
     transition: .2s linear;
         &:hover {
-     transform: scale(1.03);
-     box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
+        transform: scale(1.03);
+        box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
+        }
 `
 export const GameLogo = styled.div`
     background-image: url(${props => props.gameLogo});
@@ -65,8 +65,7 @@ export const Thumb = styled.div`
     &:hover {
      transform: scale(1.03);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-      
-  /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
+     /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
     }
 `
 
@@ -100,7 +99,6 @@ export const TitleDesc = styled.h2`
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-
     margin-bottom: 30px;
 `
 
@@ -122,15 +120,6 @@ export const Caption = styled.h3`
     margin-right: 15px;
 `
 
-export const ThumbCaption = styled.h4`
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 300;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-`
-
 export const SignLogo = styled.section`
   background-image: url(signlogo.png);
   background-size: cover;
@@ -140,7 +129,6 @@ export const SignLogo = styled.section`
   margin: 0 auto;
   margin-top: 50px;
   opacity: 0.5;
-
 `
 
 export const Card = styled.div`
@@ -156,26 +144,4 @@ export const Card = styled.div`
    &:hover {
      transform: scale(1.05);
      box-shadow: 0 5px 12px 2px rgba(0,0,0,0.60);
-    
     `
-export const CardTitle = styled.h3`
-    color: #fff;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    font-weight: 600;
-    position: absolute;
-    z-index: 1000;
-    bottom: 50px;
-    width: 210px;
-    margin-left: 20px;
-`
-
-export const RadialGradient = styled.div`
-    background: radial-gradient(50% 50% at 50% 50%, rgba(196, 196, 196, 1) 0%, rgba(196, 196, 196, 0) 100%);
-    width: 1500px;
-    height: 1500px;
-    position: absolute;
-    left: -500px;
-    bottom: -250px;
-`
-

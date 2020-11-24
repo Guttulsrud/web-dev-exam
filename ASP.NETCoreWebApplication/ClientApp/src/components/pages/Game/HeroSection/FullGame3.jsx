@@ -9,7 +9,6 @@ import {
     HeroWrapper,
     ThumbWrapper,
     TitleText,
-    TitleDesc,
     TitleCat,
     TitleSection,
     Caption,
