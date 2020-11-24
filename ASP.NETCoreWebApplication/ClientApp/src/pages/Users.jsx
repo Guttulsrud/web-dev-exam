@@ -12,27 +12,39 @@ export const Users = () => {
     const [name, setName] = useState([]);
     const [privileges, setPrivileges] = useState([]);
     const [show, setShow] = useState(false);
+    const [edit, setEdit] = useState(false);
+    const [id, setId] = useState(false);
     const axios = require('axios');
 
-    let loading = false;
   
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
 
-        axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => {
+        console.log(users)
+        if(edit) {
             
-            //SetLoading = false.
-            handleClose();
-        })
-        
+            axios.put(`https://localhost:5001/user/edit/${id}`, {name, privileges}).then(() => {
+                //SetLoading = false.
+                handleClose();
+            })
+        } else {
+            axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => {
+                //SetLoading = false.
+                handleClose();
+            })
+        }
     };
 
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const handleEdit = () => {
-        console.log("njee")
+    const handleEdit = (user) => {
+        setId(user.id);
+        setName(user.name);
+        setPrivileges(user.privileges);
+        setShow(true);
+        setEdit(true);
     }
 
     useEffect(() => {
@@ -46,35 +58,32 @@ export const Users = () => {
 
     const list = () => {
         return users.map((user, key) => (
-            <tr className="text-left" key={key}>
+            <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
                 <td>{user.privileges}</td>
-                <td>
-                    <Badge variant="primary" className="mr-1" onClick={handleEdit}>Edit</Badge>
-                    <Badge variant="secondary">Delete</Badge>
-                </td>
             </tr>
         ));
     };
 
 
+    
     return (
         <React.Fragment>
             {
                 <Container  className="mt-5 pt-5">
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
-                            <Modal.Title>Add new user</Modal.Title>
+                            <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
                             <Form className="text-left">
                                 <Form.Group>
-                                    <Form.Control type="text" placeholder="Enter name"
+                                    <Form.Control type="text" placeholder={edit ? name : "Enter name"}
                                                   onChange={(e) => setName(e.target.value)}/>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Example select</Form.Label>
-                                    <Form.Control as="select" onChange={(e) => setPrivileges(e.target.value)}>
+                                    <Form.Control as="select" placeholder={edit ? privileges : "Read access"} onChange={(e) => setPrivileges(e.target.value)}>
                                         <option>Read access</option>
                                         <option>Write access</option>
                                         <option>All</option>
@@ -98,7 +107,6 @@ export const Users = () => {
                         <tr>
                             <th className="text-left">Name</th>
                             <th className="text-left">Privileges</th>
-                            <th className="text-left">Edit</th>
                         </tr>
                         </thead>
                         <tbody>

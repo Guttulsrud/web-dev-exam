@@ -45,7 +45,7 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return NoContent();
         }
 
-        [HttpPut]
+        [HttpPut("edit/{id:length(24)}")]
         public IActionResult Put(User userIn)
         {
             var user = _usersService.Get(userIn.Id);
