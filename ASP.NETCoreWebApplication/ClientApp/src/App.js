@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
+import Swipe from './pages/Swipe';
 
 
 export default () => {
@@ -25,6 +26,7 @@ export default () => {
                     <Route path="/assets" component={Assets}/>
                     <Route path="/login" component={Login}/>
                     <Route exact path="/users" component={Users}/>
+                    <Route exact path="/swiper" component={Swipe}/>
                 </Switch>
         </Layout>
         </BrowserRouter>

@@ -4,6 +4,7 @@ import {faHome} from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 import HeaderSection from '../components/pages/Home/HeaderSection/HeaderSection';
 import LinkSection from '../components/pages/Home/LinkSection/LinkSection';
+import PsLoading from '../components/Loading';
 
 export const Home = () => {
     const [data, setData] = useState([]);
@@ -27,6 +28,7 @@ export const Home = () => {
     return (
         <React.Fragment>
             <HeaderSection/>
+            <PsLoading/>
             <LinkSection/>
         </React.Fragment>
     );
