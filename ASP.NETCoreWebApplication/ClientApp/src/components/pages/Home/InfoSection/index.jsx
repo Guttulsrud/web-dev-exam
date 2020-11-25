@@ -20,10 +20,10 @@ const InfoSection = (props) => {
 
     return (
         <Section blue height={"500"}>
-            <SignLogo right style={{transform: `rotate(20deg) translateY(${offset * 0.2}px)`}}/>
+
             <Container>
 
-                    <SectionTitle white right>Test</SectionTitle>
+                    <SectionTitle white right>Play Has No Limits</SectionTitle>
 
             </Container>
         </Section>

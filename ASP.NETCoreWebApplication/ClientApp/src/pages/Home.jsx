@@ -112,7 +112,7 @@ export const Home = () => {
 
     return (
         <React.Fragment>
-            <div style={{position: "relative", top: "50px"}}>
+            <div style={{position: "relative"}}>
             <FeaturedSection data={data}/>
             <GamesSection title={"All Games"} data={data}/>
             <InfoSection/>

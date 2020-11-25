@@ -108,13 +108,47 @@ body {
   font-family: "SST Medium", Arial;
 }
 
+.featured-image img{
+  background-color: #ff00cc;
+  height: 400px;
+
+
+}
+a.carousel-control:hover, a.carousel-control.right:hover {
+  background-image: linear-gradient(to right, rgba(250, 0, 0, 0) 0px, rgba(255, 0, 0, 0.5) 100%);
+}
+a.carousel-control.left:hover{
+  background-image: linear-gradient(to left, rgba(250, 0, 0, 0) 0px, rgba(255, 0, 0, 0.5) 100%);
+}
+.carousel-item {
+  background-color: #ff00cc;
+
+}
+
+.feature-overlay {
+  position: relative;
+  z-index: 999990000;
+  top: 0;
+  background-color: #ff00cc;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  height: 600px;
+
+}
+
 .header-links a{
   color: #C4C4C4;
   text-decoration: none;
+  line-height: 0;
+  border-radius: 8px;
+  padding: 5px 20px;
 }
 
 .activeRoute {
   color: #ff00cc;
+  border: 2px solid #0070D1;
+  line-height: 0;
+  border-radius: 8px;
+  padding: 5px 20px;
 }
 
 a {
