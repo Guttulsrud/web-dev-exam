@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+import PsLogo from '../../layouts/Header/PsLogo';
+import Input from '../../common/Input';
 import Button from 'react-bootstrap/Button';
 
 const LoginSection = () => {
@@ -8,29 +10,24 @@ const LoginSection = () => {
     const [password, setPassword] = useState('');
 
     const handleOnSubmit = (e) => {
-        e.preventDefault()
-        console.log(username)
-        console.log(password)
+        e.preventDefault();
+        console.log(username);
+        console.log(password);
     };
 
     return (
         <Card className={'m-auto p-5'}>
-            <h3>
-               Sign in
-            </h3>
-            <Card.Body className={"p-0"}>
+            <div className={"mx-auto mb-2"}>
+            <PsLogo color={username !== "" && password !== "" ? "#0072ce" : undefined}/>
+            </div>
+
+            <Card.Body className={'px-5'}>
                 <Form onSubmit={(e) => handleOnSubmit(e)}>
-                    <Form.Label className={"mt-2"}>
-                        Username
-                    </Form.Label>
-                    <Form.Control placeholder={'Username'} type={'text'} value={username}
+                    <Input label={"Username"} type={'text'} value={username}
                                   onChange={(e) => setUsername(e.target.value)}/>
-                    <Form.Label className={"mt-4"}>
-                        Password
-                    </Form.Label>
-                    <Form.Control placeholder={'Password'} type={'password'} value={password}
-                                  onChange={(e) => setPassword(e.target.value)}/>
-                    <Button type={'submit'} className={"mt-4 w-100"}>
+                    <Input label={"Password"} type={'password'} value={password}
+                                  onChange={(e) => setPassword(e.target.value)} className={"mt-4"}/>
+                    <Button type={'submit'} className={'mt-4 w-100'} disabled={username === "" || password === ""}>
                         Log in
                     </Button>
                 </Form>

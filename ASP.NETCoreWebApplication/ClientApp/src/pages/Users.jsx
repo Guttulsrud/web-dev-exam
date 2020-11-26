@@ -68,8 +68,6 @@ export const Users = () => {
 
     
     return (
-        <React.Fragment>
-            {
                 <Container  className="mt-5 pt-5">
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
@@ -114,8 +112,5 @@ export const Users = () => {
                         </tbody>
                     </Table>
                 </Container>
-
-            }
-        </React.Fragment>
     );
 };
