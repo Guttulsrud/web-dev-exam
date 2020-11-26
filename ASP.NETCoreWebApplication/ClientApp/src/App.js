@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Swipe from './pages/Swipe';
 import AnimatedRoutes from './components/layouts/Routes/AnimatedRoutes';
 import RouteTransition from './components/layouts/Routes/RouteTransition';
+import NotFound from './pages/NotFound';
 
 
 export default () => {
@@ -22,7 +23,7 @@ export default () => {
         <BrowserRouter>
         <Layout>
             <AnimatedRoutes exitBeforeEnter initial={false}>
-                <RouteTransition  path={"/"} children={<Home/>} />
+                <RouteTransition  exact path={"/"} children={<Home/>} />
                 <RouteTransition  path={"/accessories"} children={<Accessories/>} />
                 <RouteTransition  path={"/games"} children={<Games/>} />
                 <RouteTransition  path={"/game"} children={<Game/>} />
@@ -32,6 +33,7 @@ export default () => {
                 <RouteTransition  path={"/login"} children={<Login/>} />
                 <RouteTransition  path={"/users"} children={<Users/>} />
                 <RouteTransition exact path={"/swiper"} children={ <Swipe/>} />
+                <RouteTransition  children={ <NotFound/>} />
             </AnimatedRoutes>
 
             {/*
