@@ -23,6 +23,14 @@ export const CarouselOverlay = styled.div`
   }
 `
 
+export const CarouselTitle = styled.h1`
+    font-size: 8rem;
+    line-height: 7rem;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 0px 0px 10px rgba(150, 150, 150, 0.4);
+`
+
 export const CardBack = styled.div`
     position: relative;
     top: 0;
