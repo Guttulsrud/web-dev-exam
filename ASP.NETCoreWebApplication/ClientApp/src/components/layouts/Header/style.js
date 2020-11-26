@@ -5,4 +5,5 @@ export const HeaderBody = styled.header`
     position: absolute;
     z-index: 10;
     width: 100%;
+    
 `

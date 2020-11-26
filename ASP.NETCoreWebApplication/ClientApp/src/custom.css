@@ -173,7 +173,7 @@ body {
 
 .activeRoute {
   color: #ff00cc;
-  border: 2px solid #0070D1;
+  box-shadow: 0px 0px 0px 2px #0070D1;
   line-height: 0;
   border-radius: 8px;
   padding: 5px 20px;
