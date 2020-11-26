@@ -9,17 +9,7 @@ import {SignLogo} from "../components/common/SignLogo";
 import {RadialGradient} from "../components/common/RadialGradient";
 
 export const Games = (props) => {
-    const [offset, setOffset] = useState(0);
 
-    useEffect(() => {
-        function handleScroll() {
-            setOffset(window.pageYOffset)
-        }
-        window.addEventListener("scroll", handleScroll)
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, []);
     return (
         <React.Fragment>
             <Section style={{paddingTop: "60px"}}>
@@ -27,8 +17,6 @@ export const Games = (props) => {
                     <SectionTitle>Games</SectionTitle>
                     <GameList data={data}></GameList>
                 </Container>
-                <RadialGradient/>
-                <SignLogo style={{transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
             </Section>
 
         </React.Fragment>

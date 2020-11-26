@@ -97,17 +97,7 @@ export const Home = () => {
     };
         */
 
-    const [offset, setOffset] = useState(0);
 
-    useEffect(() => {
-        function handleScroll() {
-            setOffset(window.pageYOffset)
-        }
-        window.addEventListener("scroll", handleScroll)
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, []);
 
 
     return (
@@ -117,9 +107,7 @@ export const Home = () => {
             <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
             <ScreenShotSection title={"Screenshots"} data={data}/>
-            <RadialGradient/>
             </div>
-            <SignLogo style={{transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
         </React.Fragment>
     );
 };
