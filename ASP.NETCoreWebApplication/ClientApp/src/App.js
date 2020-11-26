@@ -11,13 +11,25 @@ import './custom.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Swipe from './pages/Swipe';
+import AnimatedRoutes from './components/layouts/Routes/AnimatedRoutes';
+import RouteTransition from './components/layouts/Routes/RouteTransition';
 
 
 export default () => {
     return (
         <BrowserRouter>
         <Layout>
-
+            <AnimatedRoutes exitBeforeEnter initial={false}>
+                <RouteTransition  path={"/home"} children={<Home/>} />
+                <RouteTransition  path={"/game"} children={<Game/>} />
+                <RouteTransition  path={"/game2"} children={<Game2/>} />
+                <RouteTransition  path={"/game3"} children={ <Game3/>}/>
+                <RouteTransition  path={"/assets"} children={<Assets/>} />
+                <RouteTransition  path={"/login"} children={<Login/>} />
+                <RouteTransition  path={"/users"} children={<Users/>} />
+                <RouteTransition exact path={"/swiper"} children={ <Swipe/>} />
+            </AnimatedRoutes>
+{/*
                 <Switch>
                     <Route exact path="/home" component={Home}/>
                     <Route path="/game" component={Game}/>
@@ -27,7 +39,7 @@ export default () => {
                     <Route path="/login" component={Login}/>
                     <Route exact path="/users" component={Users}/>
                     <Route exact path="/swiper" component={Swipe}/>
-                </Switch>
+                </Switch>*/}
         </Layout>
         </BrowserRouter>
     );
