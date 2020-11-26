@@ -108,15 +108,14 @@ body {
   font-family: "SST Medium", Arial;
 }
 
-.featured-image img{
-  background-color: #ff00cc;
-  height: 400px;
 
-
-}
 
 .carousel-indicators .active{
   background: #ffffff;
+}
+
+.carousel-inner {
+  overflow: visible;
 }
 
 
@@ -129,7 +128,7 @@ body {
   width: 18px;
   border-radius: 50%;
   opacity: 1;
-  margin-bottom: 20px;
+
 
 }
 
@@ -144,7 +143,7 @@ body {
   top: 0;
 
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
-  height: 600px;
+
 
 }
 

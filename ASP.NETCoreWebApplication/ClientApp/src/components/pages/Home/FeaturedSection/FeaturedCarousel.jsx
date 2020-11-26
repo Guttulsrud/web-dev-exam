@@ -11,7 +11,7 @@ const FeaturedCarousel = (props) => {
     }
 
     return (
-        <Carousel>
+        <Carousel style={{height: "700px"}}>
             {getData()}
         </Carousel>
     )
