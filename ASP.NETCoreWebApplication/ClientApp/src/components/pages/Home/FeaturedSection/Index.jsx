@@ -8,7 +8,7 @@ import FeaturedCarousel from "./FeaturedCarousel";
 const HeaderSection = (props) => {
 
     return (
-            <Section style={{backgroundColor: "#ff00cc"}}>
+            <Section>
                 <FeaturedCarousel data={props.data}/>
             </Section>
     )

@@ -1,24 +1,29 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import {CarouselOverlay} from "./style";
+import {CarouselOverlay, CardBack, CarouselImage, CarouselTitle} from "./style";
+import {Container} from "react-bootstrap";
+
 
 const FeaturedItem = ({title, description, backgroundImage}) => {
 
     return (
-        <div style={{height: "100vh", position: "relative"}}>
+        <div style={{position: "relative"}}>
+            <Container style={{position: "relative"}}>
+                <div className={"d-flex align-content-center align-items-center"}>
+                        <Carousel.Caption style={{position: "absolute", left: "0", zIndex: "20000", top: "230px", height: "100%"}}>
+                            <h3 style={{fontSize: "8rem", lineHeight: "7rem", textAlign: "left", fontWeight: "bold", textShadow: "0px 0px 10px 0px rgba(0,0,0,0.50)"}}></h3>
+                            <CarouselTitle>
+                                {title}
+                            </CarouselTitle>
+                            <p>{description}</p>
+                        </Carousel.Caption>
 
-
-
-            <CarouselOverlay backgroundImage={backgroundImage}/>
-
-            <Carousel.Caption style={{position: "absolute", top: "100px", height: "100%"}}>
-
-                <h3 style={{fontSize: "8rem", lineHeight: "7rem", textAlign: "left", fontWeight: "bold"}}>{title}</h3>
-                <p style={{textAlign: "left"}}>{description}</p>
-
-
-            </Carousel.Caption>
-    x
+                        <CarouselImage>
+                            <CardBack/>
+                            <CarouselOverlay backgroundImage={backgroundImage}/>
+                        </CarouselImage>
+                </div>
+            </Container>
         </div>
 
     )
