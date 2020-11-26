@@ -18,7 +18,7 @@ export default () => {
         <Layout>
 
                 <Switch>
-                    <Route exact path="/home" component={Home}/>
+                    <Route exact path="/" component={Home}/>
                     <Route path="/game" component={Game}/>
                     <Route path="/game2" component={Game2}/>
                     <Route path="/game3" component={Game3}/>

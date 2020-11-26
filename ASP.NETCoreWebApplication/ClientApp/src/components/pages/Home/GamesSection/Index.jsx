@@ -5,11 +5,11 @@ import {SectionTitle} from "../../../base/SectionTitle";
 import {Button} from "../../../base/Button";
 import GameList from "../../../common/GameList/GameList";
 
+
 const GamesSection = (props) => {
     return (
         <Section>
             <Container>
-
                     <SectionTitle>{props.title}</SectionTitle>
                     <GameList data={props.data}/>
                     <div className={"d-flex justify-content-center"}>

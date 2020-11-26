@@ -25,23 +25,20 @@ const Header = () => {
                 </Navbar.Brand>
                 <Nav className={"d-flex justify-content-around pl-0 pr-0 header-links"} style={{width: "100%", fontSize: "1.1rem", fontWeight: "500"}}>
                     <Nav.Item>
-                        <NavLink to="/home" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Home</NavLink>
+                        <NavLink to="/games" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Explore Games</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <NavLink to="/game" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Games</NavLink>
+                        <NavLink to="/psplus" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>PS Plus</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <NavLink to="/game3" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Link</NavLink>
+                        <NavLink to="/accessories" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Accessories</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <NavLink to="/assets" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Assets</NavLink>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <NavLink to="/users" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Users</NavLink>
+                        <NavLink to="/playstation" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Playstation 5</NavLink>
                     </Nav.Item>
                 </Nav>
                 <Navbar.Brand>
-                    <SearchIcon color={"#0070D1"}/>
+                    <SearchIcon color={"#c4c4c4"}/>
                 </Navbar.Brand>
             </Navbar>
             </Container>

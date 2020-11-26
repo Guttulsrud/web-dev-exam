@@ -5,15 +5,15 @@ import {CarouselOverlay} from "./style";
 const FeaturedItem = ({title, description, backgroundImage}) => {
 
     return (
-        <div style={{height: "800px", position: "relative"}}>
+        <div style={{height: "100vh", position: "relative"}}>
 
 
 
             <CarouselOverlay backgroundImage={backgroundImage}/>
 
-            <Carousel.Caption>
+            <Carousel.Caption style={{position: "absolute", top: "100px", height: "100%"}}>
 
-                <h3>{title}</h3>
+                <h3 style={{fontSize: "8rem", lineHeight: "7rem", textAlign: "left", fontWeight: "bold"}}>{title}</h3>
                 <p>{description}</p>
 
 

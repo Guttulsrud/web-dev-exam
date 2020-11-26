@@ -114,7 +114,7 @@ export const Home = () => {
         <React.Fragment>
             <div style={{position: "relative"}}>
             <FeaturedSection data={data}/>
-            <GamesSection title={"All Games"} data={data}/>
+            <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
             <ScreenShotSection title={"Screenshots"} data={data}/>
             <RadialGradient/>
