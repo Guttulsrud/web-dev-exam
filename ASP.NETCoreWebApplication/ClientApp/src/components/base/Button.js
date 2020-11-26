@@ -11,5 +11,6 @@ export const Button = styled.div`
     font-size: 1rem;
     min-width: 180px;
     text-align: center;
-    cursor: ${props => (props.disabled ? "arrow" : "pointer")}
+    cursor: ${props => (props.disabled ? "arrow" : "pointer")};
+    transition: 0.2s linear;
 `
