@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ASP.NETCoreWebApplication.Models;
 using ASP.NETCoreWebApplication.Services;
@@ -7,31 +9,52 @@ using ASP.NETCoreWebApplication.Services;
 namespace ASP.NETCoreWebApplication.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class GameController : ControllerBase {
-        private readonly GamesService _usersService;
+    public class UserController : ControllerBase {
+        private readonly UsersService _usersService;
 
-        public GameController(GamesService usersService)
+        public UserController(UsersService usersService)
         {
             _usersService = usersService;
         }
 
 
         [HttpGet]
-        public ActionResult<List<Game>> Get()
+        public ActionResult<List<User>> Get()
         {
             return _usersService.Get();
         }
 
         [HttpPost("create")]
-        public ActionResult<Game> Post(Game user)
+        public ActionResult<User> Post(User user)
         {
             _usersService.Create(user);
             return user;
         }
 
+        [HttpPut("edit")]
+        public IActionResult Put(User userIn)
+        {
+            
+            var user = _usersService.Get(userIn.Id);
 
+            if (user == null)
+            {
+                return NotFound();
+            }
+            
+            _usersService.Update(userIn);
+            return NoContent();
+        }
+  
+        
+        
+        
 
-        [HttpDelete("{id:length(24)}")]
+        
+        
+        [HttpDelete("delete/{id:length(24)}")]
+        [Route("[action]")]
+
         public IActionResult Delete(string id)
         {
             var user = _usersService.Get(id);
@@ -45,18 +68,6 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return NoContent();
         }
 
-        [HttpPut("edit/{id:length(24)}")]
-        public IActionResult Put(Game userIn)
-        {
-            var user = _usersService.Get(userIn.Id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            _usersService.Update(user);
-            return NoContent();
-        }
+      
     }
 }
