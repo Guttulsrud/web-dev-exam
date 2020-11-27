@@ -15,15 +15,12 @@ export const Users = () => {
     const [edit, setEdit] = useState(false);
     const [id, setId] = useState(false);
     const axios = require('axios');
-
-  
-
+    
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
 
         console.log(users)
         if(edit) {
-            
             axios.put(`https://localhost:5001/user/edit/${id}`, {name, privileges}).then(() => {
                 //SetLoading = false.
                 handleClose();
@@ -49,8 +46,7 @@ export const Users = () => {
 
     useEffect(() => {
 
-        const url = 'https://localhost:5001/user'
-        axios.get(url).then(res => {
+        axios.get('https://localhost:5001/user').then(res => {
             setUsers(res.data);
         });
     }, [])
