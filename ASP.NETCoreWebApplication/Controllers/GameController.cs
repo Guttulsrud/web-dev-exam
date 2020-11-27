@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ASP.NETCoreWebApplication.Models;
 using ASP.NETCoreWebApplication.Services;
@@ -19,15 +20,18 @@ namespace ASP.NETCoreWebApplication.Controllers {
         [HttpGet]
         public ActionResult<List<Game>> Get()
         {
+
             return _gamesService.Get();
         }
 
         [HttpPost("create")]
         public ActionResult<Game> Post(Game game)
         {
+            Debug.WriteLine("game");
             _gamesService.Create(game);
             return game;
         }
+        
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)

@@ -1,3 +1,4 @@
+using System;
 using MongoDB.Driver;
 using ASP.NETCoreWebApplication.Models;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace ASP.NETCoreWebApplication.Services {
         }
 
         public void Remove(string id){
-            _games.DeleteOne( game => game.Id == id );
+            _games.DeleteMany( game => game.Id == id );
         }
 
         public void Update( Game gameIn ){

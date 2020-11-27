@@ -37,7 +37,7 @@ export const Games = (props) => {
         isFeatured: true,
 
     } ] );
-
+    const axios = require('axios')
     useEffect( () => {
         const url = "https://localhost:5001/games";
 
@@ -53,7 +53,7 @@ export const Games = (props) => {
             <Section style={{paddingTop: "60px"}}>
                 <Container>
                     <SectionTitle>Games</SectionTitle>
-                    <GameList data={games}></GameList>
+                    <GameList data={games}/>
                 </Container>
             </Section>
 
