@@ -24,7 +24,7 @@ const Header = () => {
     let whiteText = location.pathname === "/login"
     return (
         <React.Fragment>
-        <HeaderTop><CogIcon as={Link} to={"/users"}/><Logo/></HeaderTop>
+
         <HeaderBody style={{zIndex: "100000"}}>
 
             <Container>

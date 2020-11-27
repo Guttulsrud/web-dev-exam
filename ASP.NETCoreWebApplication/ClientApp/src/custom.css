@@ -180,6 +180,8 @@ body {
   transition: .2s ease;
 }
 
+
+
 a {
   color: #0366d6;
 }
@@ -193,4 +195,62 @@ code {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+/*** DASHBOARD ***/
+
+.sidebar-wrapper{
+  min-height: 100vh !important;
+  width: 100%;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-wrapper ul {
+  padding-left: 20px;
+  padding-right:20px;
+  list-style-type: none;
+
+}
+
+.sidebar-wrapper li {
+
+
+
+}
+
+.sidebar-wrapper li a{
+
+  color: #ffffff;
+
+}
+
+.page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+.sidebar-link {
+  border-radius: 15px;
+  padding: 10px;
+
+}
+
+.sidebar-links ul {
+
+}
+
+.sidebar-links li {
+
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.activeRouteSidebar {
+  padding: 10px;
+  background-color: rgba(255,255,255,0.2);
+  width: 100%;
 }
