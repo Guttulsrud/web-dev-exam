@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using ASP.NETCoreWebApplication.Models;
 using ASP.NETCoreWebApplication.Services;
@@ -29,9 +31,30 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return user;
         }
 
+        [HttpPut("edit")]
+        public IActionResult Put(User userIn)
+        {
+            
+            var user = _usersService.Get(userIn.Id);
 
+            if (user == null)
+            {
+                return NotFound();
+            }
+            
+            _usersService.Update(userIn);
+            return NoContent();
+        }
+  
+        
+        
+        
 
-        [HttpDelete("{id:length(24)}")]
+        
+        
+        [HttpDelete("delete/{id:length(24)}")]
+        [Route("[action]")]
+
         public IActionResult Delete(string id)
         {
             var user = _usersService.Get(id);
@@ -45,18 +68,6 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return NoContent();
         }
 
-        [HttpPut("edit/{id:length(24)}")]
-        public IActionResult Put(User userIn)
-        {
-            var user = _usersService.Get(userIn.Id);
-
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            _usersService.Update(user);
-            return NoContent();
-        }
+      
     }
 }

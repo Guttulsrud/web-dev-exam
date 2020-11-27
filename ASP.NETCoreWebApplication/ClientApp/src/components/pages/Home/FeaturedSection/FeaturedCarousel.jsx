@@ -6,7 +6,7 @@ const FeaturedCarousel = (props) => {
 
     const getData = () => {
         return props.data.map((item, i) => {
-            return <Carousel.Item><FeaturedItem key={i} {...item}/></Carousel.Item>
+            return <Carousel.Item key={i}><FeaturedItem {...item}/></Carousel.Item>
         });
     }
 

@@ -3,7 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import PsLogo from '../../layouts/Header/PsLogo';
 import Input from '../../common/Input';
-import Button from 'react-bootstrap/Button';
+import {Button} from '../../base/Button';
+
 
 const LoginSection = () => {
     const [username, setUsername] = useState('');

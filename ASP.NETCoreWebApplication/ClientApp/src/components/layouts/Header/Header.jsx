@@ -1,23 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Navbar from 'react-bootstrap/cjs/Navbar';
 import Nav from 'react-bootstrap/cjs/Nav';
 import {NavLink,Link, useLocation} from 'react-router-dom';
-import {HeaderBody} from './style';
+import {HeaderBody, HeaderTop, Logo, CogIcon} from './style';
 
 import PsLogo from "./PsLogo";
 
 
 import Container from 'react-bootstrap/Container';
 import SearchIcon from "./SearchIcon";
+import Search from "../../common/Search";
 
 
 const Header = () => {
+
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+
+
     const location = useLocation()
     console.log(location.pathname)
     let whiteText = location.pathname === "/login"
     return (
-
+        <React.Fragment>
+        <HeaderTop><CogIcon as={Link} to={"/users"}/><Logo/></HeaderTop>
         <HeaderBody style={{zIndex: "100000"}}>
+
             <Container>
             <Navbar className={"d-flex justify-content-between pl-0 pr-0"} style={{width: "100%"}}>
                 <Navbar.Brand as={Link} to={"/"}>
@@ -37,12 +46,14 @@ const Header = () => {
                         <NavLink to="/playstation" activeClassName="activeRoute" activeStyle={{color: '#0070D1'}}>Playstation 5</NavLink>
                     </Nav.Item>
                 </Nav>
-                <Navbar.Brand>
-                    <SearchIcon color={"#c4c4c4"}/>
+                <Navbar.Brand style={{cursor: "pointer"}} onClick={handleShow}>
+                    <SearchIcon color={ show ? "#0070D1" : "#c4c4c4"}/>
                 </Navbar.Brand>
             </Navbar>
             </Container>
         </HeaderBody>
+            <Search show={show} handleClose={() => handleClose()}/>
+        </React.Fragment>
 
     )
 }
