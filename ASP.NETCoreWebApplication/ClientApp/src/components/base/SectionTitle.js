@@ -9,6 +9,6 @@ export const SectionTitle = styled.h1`
     font-size: 6rem;
     font-weight: bold;
     z-index: 1000;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 30px;
 `
