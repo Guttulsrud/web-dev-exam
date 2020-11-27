@@ -23,12 +23,34 @@ namespace ASP.NETCoreWebApplication.Controllers {
         {
             return _usersService.Get();
         }
+        
+        [HttpGet("{id:length(24)}")]
+        [Route("[action]")]
+        public User GetOne(string id)
+        {
+            return _usersService.Get(id);
+        }
+        
+        
 
         [HttpPost("create")]
         public ActionResult<User> Post(User user)
         {
             _usersService.Create(user);
             return user;
+        }
+        
+        [HttpPost("login")]
+        public bool Login(User userIn)
+        {
+            var user = _usersService.GetUserByUsername(userIn.Username);
+            
+            if (user == null)
+            {
+                return false;
+            }
+            
+            return user.Password == userIn.Password;
         }
 
         [HttpPut("edit")]
@@ -47,9 +69,6 @@ namespace ASP.NETCoreWebApplication.Controllers {
         }
   
         
-        
-        
-
         
         
         [HttpDelete("delete/{id:length(24)}")]
