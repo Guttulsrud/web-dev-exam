@@ -31,6 +31,7 @@ export const Users = () => {
     const handleAdd = () => {
         setShow(true);
         setEdit(false);
+        setName("");
     }
     
     useEffect(() => {
@@ -38,7 +39,7 @@ export const Users = () => {
         axios.get(url).then(res => {
             setUsers(res.data);
         });
-    }, [])
+    }, [users])
 
 
     const handleSubmit = async () => {
@@ -62,10 +63,11 @@ export const Users = () => {
     };
 
 
+    
     return (
         <React.Fragment>
             {
-                <Container className="mt-5 pt-5">
+                <Container  className="mt-5 pt-5">
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
@@ -73,13 +75,12 @@ export const Users = () => {
                         <Modal.Body>
                             <Form className="text-left">
                                 <Form.Group>
-                                    <Form.Control type="text" placeholder={edit ? name : "Enter name"}
+                                    <Form.Control type="text" placeholder={edit ? name : "Enter name"} value={name}
                                                   onChange={(e) => setName(e.target.value)}/>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Example select</Form.Label>
-                                    <Form.Control as="select" placeholder={edit ? privileges : "Read access"}
-                                                  onChange={(e) => setPrivileges(e.target.value)}>
+                                    <Form.Control as="select" placeholder={edit ? privileges : "Read access"} onChange={(e) => setPrivileges(e.target.value)}>
                                         <option>Read access</option>
                                         <option>Write access</option>
                                         <option>All</option>
@@ -88,9 +89,6 @@ export const Users = () => {
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button variant="danger" onClick={handleDelete}>
-                                Delete
-                            </Button>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>

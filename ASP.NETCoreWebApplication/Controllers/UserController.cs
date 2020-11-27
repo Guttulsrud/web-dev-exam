@@ -27,7 +27,6 @@ namespace ASP.NETCoreWebApplication.Controllers {
         [HttpPost("create")]
         public ActionResult<User> Post(User user)
         {
-            
             _usersService.Create(user);
             return user;
         }
