@@ -68,10 +68,7 @@ export const Users = () => {
 
     
     return (
-                <Container  className="mt-5 pt-5">
-
-                    <Link to={"/"}>Back</Link>
-
+                <Container>
 
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
