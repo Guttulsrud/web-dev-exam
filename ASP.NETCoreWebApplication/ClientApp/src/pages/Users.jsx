@@ -8,35 +8,17 @@ import Form from "react-bootstrap/Form";
 import Badge from "react-bootstrap/Badge";
 
 export const Users = () => {
-    const [users, setUsers] = useState([]);
-    const [name, setName] = useState([]);
-    const [privileges, setPrivileges] = useState([]);
-    const [show, setShow] = useState(false);
-    const [edit, setEdit] = useState(false);
-    const [id, setId] = useState(false);
     const axios = require('axios');
 
-  
-
-    const handleSubmit = async () => {
-        //SetLoading = true => Få på no kul loading animation
-
-        console.log(users)
-        if(edit) {
-            
-            axios.put(`https://localhost:5001/user/edit/${id}`, {name, privileges}).then(() => {
-                //SetLoading = false.
-                handleClose();
-            })
-        } else {
-            axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => {
-                //SetLoading = false.
-                handleClose();
-            })
-        }
-    };
-
-
+    const [users, setUsers] = useState([]);
+    const [name, setName] = useState([]);
+    const [id, setId] = useState(false);
+    const [privileges, setPrivileges] = useState('Read access');
+    
+    const [show, setShow] = useState(false);
+    const [edit, setEdit] = useState(false);
+    const [loading, setLoading] = useState(false);
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const handleEdit = (user) => {
@@ -46,14 +28,31 @@ export const Users = () => {
         setShow(true);
         setEdit(true);
     }
-
+    const handleAdd = () => {
+        setShow(true);
+        setEdit(false);
+        setName("");
+    }
+    
     useEffect(() => {
-
         const url = 'https://localhost:5001/user'
         axios.get(url).then(res => {
             setUsers(res.data);
         });
-    }, [])
+    }, [users])
+
+
+    const handleSubmit = async () => {
+        //SetLoading = true => Få på no kul loading animation
+    
+        
+        console.log(privileges)
+        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(() => handleClose())
+            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => handleClose())
+
+    }
+
+    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(() => handleClose());
 
 
     const list = () => {
@@ -76,29 +75,34 @@ export const Users = () => {
                         <Modal.Body>
                             <Form className="text-left">
                                 <Form.Group>
-                                    <Form.Control type="text" placeholder={edit ? name : "Enter name"}
+                                    <Form.Control type="text" placeholder={edit ? name : "Enter name"} value={name}
                                                   onChange={(e) => setName(e.target.value)}/>
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Example select</Form.Label>
-                                    <Form.Control as="select" placeholder={edit ? privileges : "Read access"} onChange={(e) => setPrivileges(e.target.value)}>
-                                        <option>Read access</option>
-                                        <option>Write access</option>
-                                        <option>All</option>
+                                    <Form.Control as="select"
+                                                  placeholder={edit ? privileges : "Read access"} 
+                                                  onChange={(e) => setPrivileges(e.target.value)}
+                                                  value={privileges}>
+                                        <option value='Read access'>Read access</option>
+                                        <option value='Write access'>Write access</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>
+                            <Button variant="danger" onClick={handleDelete}>
+                                Delete
+                            </Button>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>
                             <Button variant="primary" onClick={handleSubmit}>
-                                Save Changes
+                                Submit
                             </Button>
                         </Modal.Footer>
                     </Modal>
-                    <Button className="mt-4" onClick={handleShow}>Add user</Button>
+                    <Button className="mt-4" onClick={handleAdd}>Add user</Button>
 
                     <Table striped bordered hover>
                         <thead>
