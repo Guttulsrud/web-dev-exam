@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import Badge from "react-bootstrap/Badge";
+import Link from "react-router-dom/Link";
 
 export const Users = () => {
     const axios = require('axios');
@@ -68,6 +69,10 @@ export const Users = () => {
     
     return (
                 <Container  className="mt-5 pt-5">
+
+                    <Link to={"/"}>Back</Link>
+
+
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
