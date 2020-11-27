@@ -9,7 +9,7 @@ import {SignLogo} from "../components/common/SignLogo";
 import {RadialGradient} from "../components/common/RadialGradient";
 
 export const Games = (props) => {
-
+    
     return (
         <React.Fragment>
             <Section style={{paddingTop: "60px"}}>

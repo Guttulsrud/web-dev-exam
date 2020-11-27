@@ -7,53 +7,53 @@ using ASP.NETCoreWebApplication.Services;
 namespace ASP.NETCoreWebApplication.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase {
-        private readonly UsersService _usersService;
+    public class GameController : ControllerBase {
+        private readonly GamesService _gamesService;
 
-        public UserController(UsersService usersService)
+        public GameController(GamesService gamesService)
         {
-            _usersService = usersService;
+            _gamesService = gamesService;
         }
 
 
         [HttpGet]
-        public ActionResult<List<User>> Get()
+        public ActionResult<List<Game>> Get()
         {
-            return _usersService.Get();
+            return _gamesService.Get();
         }
 
         [HttpPost("create")]
-        public ActionResult<User> Post(User user)
+        public ActionResult<Game> Post(Game game)
         {
-            _usersService.Create(user);
-            return user;
+            _gamesService.Create(game);
+            return game;
         }
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var user = _usersService.Get(id);
+            var game = _gamesService.Get(id);
 
-            if (user == null)
+            if (game == null)
             {
                 return NotFound();
             }
 
-            _usersService.Remove(user.Id);
+            _gamesService.Remove(game.Id);
             return NoContent();
         }
 
         [HttpPut("edit/{id:length(24)}")]
-        public IActionResult Put(User userIn)
+        public IActionResult Put(Game gameIn)
         {
-            var user = _usersService.Get(userIn.Id);
+            var game = _gamesService.Get(gameIn.Id);
 
-            if (user == null)
+            if (game == null)
             {
                 return NotFound();
             }
 
-            _usersService.Update(user);
+            _gamesService.Update(game);
             return NoContent();
         }
     }

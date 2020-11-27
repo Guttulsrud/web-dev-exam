@@ -44,7 +44,6 @@ export const Users = () => {
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-    
         
         console.log(privileges)
         edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(() => handleClose())
