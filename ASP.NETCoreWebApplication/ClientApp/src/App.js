@@ -7,8 +7,14 @@ import {Game} from './pages/Game';
 import {Game2} from './pages/Game2';
 import {Game3} from './pages/Game3';
 import {Assets} from './pages/Assets';
-import {Users} from './pages/Users';
+
 import {Dashboard} from './pages/Dashboard';
+import {AdminGames} from './pages/AdminGames';
+import {AdminAccessories} from './pages/AdminAccessories';
+import {AdminGameCharacters} from './pages/AdminGameCharacters';
+import {AdminUsers} from './pages/AdminUsers';
+import {AdminSettings} from './pages/AdminSettings';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';
 import Layout from './components/Layout';
@@ -29,8 +35,11 @@ export default () => {
                     <AdminLayout>
                         <Switch>
                             <Route path='/admin' exact component={Dashboard} />
-                            <Route path='/admin/users' exact component={Users} />
-                            <Route path='/admin/games' exact component={Users} />
+                            <Route path='/admin/users' exact component={AdminUsers} />
+                            <Route path='/admin/games' exact component={AdminGames} />
+                            <Route path='/admin/gamecharacters' exact component={AdminGameCharacters} />
+                            <Route path='/admin/accessories' exact component={AdminAccessories} />
+                            <Route path='/admin/settings' exact component={AdminSettings} />
                         </Switch>
                     </AdminLayout>
                 </Route>

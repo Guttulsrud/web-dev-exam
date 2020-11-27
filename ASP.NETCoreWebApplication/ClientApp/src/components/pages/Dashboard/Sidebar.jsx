@@ -12,13 +12,13 @@ const Sidebar = () => {
 
                     <ul className={"nav sidebar-links flex-column"}>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/dashboard" className={"sidebar-link"} activeClassName="activeRouteSidebar">Dashboard</NavLink>
+                            <NavLink to="/admin" className={"sidebar-link"} activeClassName="activeRouteSidebar">Dashboard</NavLink>
                         </li>
                         <li className={"nav-item"}>
                             <NavLink to="/admin/games" className={"sidebar-link"} activeClassName="activeRouteSidebar">Games</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/characters" className={"sidebar-link"} activeClassName="activeRouteSidebar">Game Characters</NavLink>
+                            <NavLink to="/admin/gamecharacters" className={"sidebar-link"} activeClassName="activeRouteSidebar">Game Characters</NavLink>
                         </li>
                         <li className={"nav-item"}>
                             <NavLink to="/admin/accessories" className={"sidebar-link"} activeClassName="activeRouteSidebar">Accessories</NavLink>
@@ -39,7 +39,7 @@ const Sidebar = () => {
                     {/*
                                         <ul>
                         <li><Link activeClassName="activeRoute" activeStyle={{color: '#0070D1'}} to={"/admin"}>Dashboard</Link></li>
-                        <li><Link activeClassName="activeRoute" activeStyle={{color: '#0070D1'}} to={"/admin/users"}>Users</Link></li>
+                        <li><Link activeClassName="activeRoute" activeStyle={{color: '#0070D1'}} to={"/admin/users"}>AdminUsers</Link></li>
                         <li><Link to={"/admin/game"}>Game</Link></li>
                         <li><Link to={"/admin/accessories"}>Accessories</Link></li>
                         <li><Link to={"/admin/settings"}>Settings</Link></li>

@@ -8,7 +8,7 @@ import Form from "react-bootstrap/Form";
 import Badge from "react-bootstrap/Badge";
 import Link from "react-router-dom/Link";
 
-export const Users = () => {
+export const AdminUsers = () => {
     const axios = require('axios');
 
     const [users, setUsers] = useState([]);
@@ -69,6 +69,7 @@ export const Users = () => {
     
     return (
                 <Container>
+                    <h1>Users</h1>
 
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>

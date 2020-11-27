@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 export const Dashboard = () => {
     return (
         <React.Fragment>
+            <h1>Dashboard</h1>
             <Button as={Link} to={"admin/users"}>Edit Users</Button>
             <Button as={Link} to={"admin/game"}>Edit Game</Button>
             <Button as={Link} to={"admin/accessories"}>Edit Accessories</Button>
