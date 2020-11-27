@@ -23,8 +23,8 @@ const InfoSection = (props) => {
         <Section blue height={'500'}>
             <Container>
                 <SectionTitle white right>Play Has No Limits</SectionTitle>
-                <Video src={'ps5.mp4'} autoPlay muted loop />
-                <div style={{backgroundColor: "rgba(0,93,195,0.93)", height: "100%", width: "100%", position: "absolute", zIndex: 10, top: 0, left: 0}}/>
+                <Video src={'PS5-2.mp4'} autoPlay muted loop />
+                <div style={{backgroundColor: "rgba(0,93,195,0.89)", height: "100%", width: "100%", position: "absolute", zIndex: 10, top: 0, left: 0}}/>
             </Container>
         </Section>
     );
