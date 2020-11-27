@@ -13,7 +13,7 @@ export const Users = () => {
     const [users, setUsers] = useState([]);
     const [name, setName] = useState([]);
     const [id, setId] = useState(false);
-    const [privileges, setPrivileges] = useState([]);
+    const [privileges, setPrivileges] = useState('Read access');
     
     const [show, setShow] = useState(false);
     const [edit, setEdit] = useState(false);
@@ -44,9 +44,11 @@ export const Users = () => {
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-
+    
+        
+        console.log(privileges)
         edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(() => handleClose())
-            : axios.post('https://localhost:5001/user/create', {id, name, privileges}).then(() => handleClose())
+            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => handleClose())
 
     }
 
@@ -80,15 +82,20 @@ export const Users = () => {
                                 </Form.Group>
                                 <Form.Group>
                                     <Form.Label>Example select</Form.Label>
-                                    <Form.Control as="select" placeholder={edit ? privileges : "Read access"} onChange={(e) => setPrivileges(e.target.value)}>
-                                        <option>Read access</option>
-                                        <option>Write access</option>
-                                        <option>All</option>
+                                    <Form.Control as="select"
+                                                  placeholder={edit ? privileges : "Read access"} 
+                                                  onChange={(e) => setPrivileges(e.target.value)}
+                                                  value={privileges}>
+                                        <option value='Read access'>Read access</option>
+                                        <option value='Write access'>Write access</option>
                                     </Form.Control>
                                 </Form.Group>
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>
+                            <Button variant="danger" onClick={handleDelete}>
+                                Delete
+                            </Button>
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>
