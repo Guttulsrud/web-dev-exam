@@ -177,6 +177,7 @@ body {
   line-height: 0;
   border-radius: 8px;
   padding: 5px 20px;
+  transition: .2s ease;
 }
 
 a {
