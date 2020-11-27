@@ -18,7 +18,7 @@ const Sidebar = () => {
                             <NavLink to="/admin/games" className={"sidebar-link"} activeClassName="activeRouteSidebar">Games</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/characters" className={"sidebar-link"} activeClassName="activeRouteSidebar">GameCharacters</NavLink>
+                            <NavLink to="/admin/characters" className={"sidebar-link"} activeClassName="activeRouteSidebar">Game Characters</NavLink>
                         </li>
                         <li className={"nav-item"}>
                             <NavLink to="/admin/accessories" className={"sidebar-link"} activeClassName="activeRouteSidebar">Accessories</NavLink>
