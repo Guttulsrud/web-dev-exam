@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from 'react-bootstrap/cjs/Navbar';
 import Nav from 'react-bootstrap/cjs/Nav';
 import {NavLink,Link, useLocation} from 'react-router-dom';
-import {HeaderBody} from './style';
+import {HeaderBody, HeaderTop, Logo, CogIcon} from './style';
 
 import PsLogo from "./PsLogo";
 
@@ -16,8 +16,10 @@ const Header = () => {
     console.log(location.pathname)
     let whiteText = location.pathname === "/login"
     return (
-
+        <React.Fragment>
+        <HeaderTop><CogIcon as={Link} to={"/users"}/><Logo/></HeaderTop>
         <HeaderBody style={{zIndex: "100000"}}>
+
             <Container>
             <Navbar className={"d-flex justify-content-between pl-0 pr-0"} style={{width: "100%"}}>
                 <Navbar.Brand as={Link} to={"/"}>
@@ -43,6 +45,7 @@ const Header = () => {
             </Navbar>
             </Container>
         </HeaderBody>
+        </React.Fragment>
 
     )
 }
