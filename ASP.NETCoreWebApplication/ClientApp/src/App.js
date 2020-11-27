@@ -16,6 +16,7 @@ import Swipe from './pages/Swipe';
 import AnimatedRoutes from './components/layouts/Routes/AnimatedRoutes';
 import RouteTransition from './components/layouts/Routes/RouteTransition';
 import NotFound from './pages/NotFound';
+import {AdminGame} from "./pages/AdminGame";
 
 
 export default () => {
@@ -25,6 +26,7 @@ export default () => {
             <AnimatedRoutes exitBeforeEnter initial={false}>
                 <RouteTransition  exact path={"/"} children={<Home/>} />
                 <RouteTransition  path={"/accessories"} children={<Accessories/>} />
+                <RouteTransition  path={"/admin-game"} children={<AdminGame/>} />
                 <RouteTransition  path={"/games"} children={<Games/>} />
                 <RouteTransition  path={"/game"} children={<Game/>} />
                 <RouteTransition  path={"/game2"} children={<Game2/>} />
