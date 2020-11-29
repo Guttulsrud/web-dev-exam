@@ -27,7 +27,7 @@ namespace ASP.NETCoreWebApplication.Models {
         public string Publisher { get; set; }
         public string Year { get; set; }
         public string Screenshots { get; set; }
-        public string IsDark { get; set; }
-        public string IsFeatured { get; set; }
+        public bool IsDark { get; set; }
+        public bool IsFeatured { get; set; }
     }
 }
