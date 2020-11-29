@@ -34,10 +34,7 @@ const Layout = ({children}) => {
                         <Sidebar/>
                     </Col>
                     <Col xs={10} className={"page-content-wrapper "}>
-                        <Card className={"mt-5"}>
                             {children}
-                        </Card>
-
                     </Col>
                 </Row>
 
