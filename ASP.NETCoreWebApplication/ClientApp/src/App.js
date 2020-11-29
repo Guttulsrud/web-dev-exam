@@ -30,17 +30,16 @@ export default () => {
     return (
 
         <BrowserRouter>
+            <EntityProvider endpoint={'user'}>
                 <Switch>
                     <Route exact path='/admin/:users?'>
                         <AdminLayout>
                             <Switch>
                                 <Route path='/admin' exact component={Dashboard}/>
-                                <EntityProvider endpoint={'user'}>
                                 <Route path='/admin/users' exact component={AdminUsers}/>
-                                </EntityProvider>
                                 <Route path='/admin/games' exact component={AdminGames}/>
                                 <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
-                                <Route path='/admin/accessories' exact component={AdminAccessories} />
+                                <Route path='/admin/accessories' exact component={AdminAccessories}/>
                                 <Route path='/admin/settings' exact component={AdminSettings}/>
                             </Switch>
                         </AdminLayout>
@@ -60,8 +59,9 @@ export default () => {
                         </AnimatedRoutes>
                     </Layout>
                 </Switch>
-
+            </EntityProvider>
         </BrowserRouter>
 
-    );
+    )
+        ;
 }
