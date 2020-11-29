@@ -1,6 +1,7 @@
-import styled from "styled-components"
+import styled, {css} from 'styled-components';
 
 export const Button = styled.button`
+    position: relative;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -17,10 +18,23 @@ export const Button = styled.button`
     cursor: ${props => (props.disabled ? "arrow" : "pointer")};
     line-height: 0;
     transition: .2s ease;
+    z-index: ${props => props.zIndex ? props.zIndex : undefined};
     &:hover {
         background-color: #0070D1;
         color: #FFFFFF;
-        transition: .2s ease;
+        transform: scale(1.03);
+    }
+    
+   ${props => props.isWhite && css`
+      border-color: #fff;
+      color: #fff; 
+      background: none;
+      
+      &:hover {
+       background: none;
+       text-decoration: none;
+      }
+    `
     }
     
 `

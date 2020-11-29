@@ -3,7 +3,9 @@ import {Section} from '../../../base/Section';
 import {SectionTitle} from '../../../base/SectionTitle';
 import {SignLogo} from '../../../common/SignLogo';
 import Container from 'react-bootstrap/Container';
-import {Video} from './style';
+import {Video, VideoOverlay} from './style';
+import {Button} from '../../../base/Button';
+import {Link} from 'react-router-dom';
 
 const InfoSection = (props) => {
     const [offset, setOffset] = useState(0);
@@ -20,11 +22,16 @@ const InfoSection = (props) => {
     }, []);
 
     return (
-        <Section blue height={'500'}>
-            <Container>
+        <Section blue height={'700'}>
+            <Container className={"h-100 pb-5"}>
+                <div className={"d-flex flex-column h-100 justify-content-between"}>
                 <SectionTitle white right>Play Has No Limits</SectionTitle>
-                <Video src={'ps5.mp4'} autoPlay muted loop />
-                <div style={{backgroundColor: "rgba(0,93,195,0.93)", height: "100%", width: "100%", position: "absolute", zIndex: 10, top: 0, left: 0}}/>
+                <Button as={Link} to={"/playstation"} outline isWhite zIndex={11} className={"align-self-end justify-self-end"}>
+                    Explore
+                </Button>
+                </div>
+                <Video src={'PS5-2.mp4'} autoPlay muted loop/>
+                <VideoOverlay/>
             </Container>
         </Section>
     );

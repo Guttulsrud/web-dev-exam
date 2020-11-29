@@ -39,6 +39,8 @@ namespace ASP.NETCoreWebApplication {
                 sp => sp.GetRequiredService<IOptions<StoreDatabaseSettings>>().Value);
 
             services.AddSingleton<UsersService>();
+            services.AddSingleton<GamesService>();
+            services.AddSingleton<AccessoriesService>();
             
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration => { configuration.RootPath = "ClientApp/build"; });
