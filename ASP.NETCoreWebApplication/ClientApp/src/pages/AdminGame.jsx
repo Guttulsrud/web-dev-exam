@@ -27,14 +27,19 @@ export const AdminGame = (props) => {
         'favorites': "",
         'developer': "",
         'publisher': "",
-        'year': 0,
-        'screenshots': ["ke"],
+        'year': "",
+        'screenshots': "ke",
         'isDark': false,
         'isFeatured': false,
     });
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         game[e.target.id] = e.target.value
+        console.log(game[e.target.id])
+    }
+
+    const handleCheckBox = e => {
+        game[e.target.id] = e.target.checked
         console.log(game[e.target.id])
     }
 
@@ -97,10 +102,9 @@ export const AdminGame = (props) => {
                     </Form.Control>
 
                     <Form.Label>isDark</Form.Label>
-                    <Form.Check type="checkbox" id="isDark" onChange={handleChange}/>
+                    <Form.Check type="checkbox" id="isDark" onChange={handleCheckBox}/>
                     <Form.Label>isFeatured</Form.Label>
-                    <Form.Check type="checkbox" id="isFeatured" onChange={handleChange}/>
-
+                    <Form.Check type="checkbox" id="isFeatured" onChange={handleCheckBox}/>
 
                     <br/>
                     <Form.Label><h4>File uploads</h4></Form.Label>
