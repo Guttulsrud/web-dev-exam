@@ -1,10 +1,9 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios"
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import {UserContext} from '../context/UserContext';
 import PsLoading from '../components/Loading';
 
 
@@ -46,7 +45,7 @@ export const AdminAccessories = () => {
 
     const handleDelete = async () => axios.delete(`https://localhost:5001/accessory/delete/${id}`).then(() => handleClose());
 
-    const generateUser = () => {
+    const generateAccessories = () => {
         return temp.map((accessory, key) => (
 
             <tr className="text-left" key={key} onClick={() => handleEdit(accessory)}>
@@ -54,6 +53,8 @@ export const AdminAccessories = () => {
             </tr>
         ));
     };
+
+    console.log("hello")
 
     return (
         <div>
@@ -101,7 +102,7 @@ export const AdminAccessories = () => {
                     </thead>
                     <tbody>
 
-                    {generateUser()}
+                    {generateAccessories()}
                     </tbody>
                 </Table>
 

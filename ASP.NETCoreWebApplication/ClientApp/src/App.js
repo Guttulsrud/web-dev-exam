@@ -40,7 +40,7 @@ export default () => {
                                 </EntityProvider>
                                 <Route path='/admin/games' exact component={AdminGames}/>
                                 <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
-                                <Route path='/admin/accessories' exact component={AdminAccessories}/>
+                                <Route path='/admin/accessories' exact component={AdminAccessories} />
                                 <Route path='/admin/settings' exact component={AdminSettings}/>
                             </Switch>
                         </AdminLayout>
