@@ -56,7 +56,6 @@ export const AdminUsers = () => {
 
     return (
                 <Container>
-                    {console.log("hello")}
                     <h1>Users</h1>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
