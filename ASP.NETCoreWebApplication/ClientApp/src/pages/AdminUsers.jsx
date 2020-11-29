@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useContext} from 'react';
 import axios from "axios"
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
@@ -6,20 +6,19 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import {UserContext} from '../context/UserContext';
+import PsLoading from '../components/Loading';
 
 
 export const AdminUsers = () => {
-    const {user, users, fetchData} = useContext(UserContext)
-    const refetch = fetchData
-    const [usersState, setUsersState] = users
-    const [name, setName] = useState([]);
+    const {users, fetchData, loading} = useContext(UserContext)
+    const reFetch = fetchData
+    const [name, setName] = useState("");
     const [id, setId] = useState(false);
     const [privileges, setPrivileges] = useState('Read access');
-    
     const [show, setShow] = useState(false);
     const [edit, setEdit] = useState(false);
-    const [loading, setLoading] = useState(false);
-    
+
+
     const handleClose = () => setShow(false);
 
     const handleEdit = (user) => {
@@ -37,16 +36,15 @@ export const AdminUsers = () => {
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(refetch).then(() => handleClose())
-            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(refetch).then(() => handleClose())
+        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(reFetch).then(() => handleClose())
+            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(reFetch).then(() => handleClose())
 
     }
 
-    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(refetch).then(() => handleClose());
-
+    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(reFetch).then(() => handleClose());
 
     const generateUser = () => {
-        return usersState.map((user, key) => (
+        return users[0].map((user, key) => (
             <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
                 <td>{user.privileges}</td>
@@ -80,9 +78,11 @@ export const AdminUsers = () => {
                             </Form>
                         </Modal.Body>
                         <Modal.Footer>
+                            {edit &&
                             <Button variant="danger" onClick={handleDelete}>
                                 Delete
                             </Button>
+                            }
                             <Button variant="secondary" onClick={handleClose}>
                                 Close
                             </Button>
@@ -92,7 +92,6 @@ export const AdminUsers = () => {
                         </Modal.Footer>
                     </Modal>
                     <Button className="mt-4" onClick={handleAdd}>Add user</Button>
-
                     <Table striped bordered hover>
                         <thead>
                         <tr>
@@ -101,7 +100,8 @@ export const AdminUsers = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {generateUser()}
+                        {  loading ? <PsLoading/> :
+                            generateUser()}
                         </tbody>
                     </Table>
                 </Container>
