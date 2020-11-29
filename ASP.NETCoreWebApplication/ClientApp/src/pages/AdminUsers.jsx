@@ -9,9 +9,9 @@ import {UserContext} from '../context/UserContext';
 
 
 export const AdminUsers = () => {
-    const {user, users} = useContext(UserContext)
+    const {user, users, fetchData} = useContext(UserContext)
+    const refetch = fetchData
     const [usersState, setUsersState] = users
-    const [userState, setUserState] = user
     const [name, setName] = useState([]);
     const [id, setId] = useState(false);
     const [privileges, setPrivileges] = useState('Read access');
@@ -21,7 +21,7 @@ export const AdminUsers = () => {
     const [loading, setLoading] = useState(false);
     
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+
     const handleEdit = (user) => {
         setId(user.id);
         setName(user.name);
@@ -37,16 +37,15 @@ export const AdminUsers = () => {
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-        console.log(privileges)
-        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(() => handleClose())
-            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => handleClose())
+        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(refetch).then(() => handleClose())
+            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(refetch).then(() => handleClose())
 
     }
 
-    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(() => handleClose());
+    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(refetch).then(() => handleClose());
 
 
-    const list = () => {
+    const generateUser = () => {
         return usersState.map((user, key) => (
             <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
@@ -57,7 +56,7 @@ export const AdminUsers = () => {
 
     return (
                 <Container>
-                    { console.log("hello")}
+                    {console.log("hello")}
                     <h1>Users</h1>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
@@ -103,7 +102,7 @@ export const AdminUsers = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {list()}
+                        {generateUser()}
                         </tbody>
                     </Table>
                 </Container>
