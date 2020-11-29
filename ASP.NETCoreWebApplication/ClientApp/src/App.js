@@ -24,12 +24,14 @@ import Swipe from './pages/Swipe';
 import AnimatedRoutes from './components/layouts/Routes/AnimatedRoutes';
 import RouteTransition from './components/layouts/Routes/RouteTransition';
 import NotFound from './pages/NotFound';
+import {UserContext, UserProvider} from './context/UserContext';
 
 
 export default () => {
     return (
-        <React.Fragment>
+
         <BrowserRouter>
+            <UserProvider>
             <Switch>
                 <Route exact path='/admin/:users?'>
                     <AdminLayout>
@@ -43,10 +45,8 @@ export default () => {
                         </Switch>
                     </AdminLayout>
                 </Route>
-
                 <Layout>
                 <AnimatedRoutes exitBeforeEnter initial={true}>
-
                     <RouteTransition  exact path={"/accessories"} children={<Accessories/>} />
                     <RouteTransition  exact path={"/games"} children={<Games/>} />
                     <RouteTransition  path={"/game"} children={<Game/>} />
@@ -57,25 +57,11 @@ export default () => {
                     <RouteTransition exact path={"/swiper"} children={ <Swipe/>} />
                     <RouteTransition  exact path={"/"} children={<Home/>} />
                     <RouteTransition children={<NotFound/>}/>
-
                 </AnimatedRoutes>
                 </Layout>
-
-
-
-
             </Switch>
-
-
-
-
-
-
-
-
-
-
+            </UserProvider>
         </BrowserRouter>
-        </React.Fragment>
+
     );
 }

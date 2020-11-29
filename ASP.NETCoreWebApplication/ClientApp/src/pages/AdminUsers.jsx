@@ -1,17 +1,17 @@
-import React, {useState, useEffect} from 'react';
-
+import React, {useState, useEffect, useContext} from 'react';
+import axios from "axios"
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import Badge from "react-bootstrap/Badge";
-import Link from "react-router-dom/Link";
+import {UserContext} from '../context/UserContext';
+
 
 export const AdminUsers = () => {
-    const axios = require('axios');
-
-    const [users, setUsers] = useState([]);
+    const {user, users} = useContext(UserContext)
+    const [usersState, setUsersState] = users
+    const [userState, setUserState] = user
     const [name, setName] = useState([]);
     const [id, setId] = useState(false);
     const [privileges, setPrivileges] = useState('Read access');
@@ -34,19 +34,9 @@ export const AdminUsers = () => {
         setEdit(false);
         setName("");
     }
-    
-    useEffect(() => {
-        const url = 'https://localhost:5001/user'
-        axios.get(url).then(res => {
-            setUsers(res.data);
-        });
-    }, [users])
-
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-    
-        
         console.log(privileges)
         edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(() => handleClose())
             : axios.post('https://localhost:5001/user/create', {name, privileges}).then(() => handleClose())
@@ -57,7 +47,7 @@ export const AdminUsers = () => {
 
 
     const list = () => {
-        return users.map((user, key) => (
+        return usersState.map((user, key) => (
             <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
                 <td>{user.privileges}</td>
@@ -65,12 +55,10 @@ export const AdminUsers = () => {
         ));
     };
 
-
-    
     return (
                 <Container>
+                    { console.log("hello")}
                     <h1>Users</h1>
-
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
@@ -84,7 +72,7 @@ export const AdminUsers = () => {
                                 <Form.Group>
                                     <Form.Label>Example select</Form.Label>
                                     <Form.Control as="select"
-                                                  placeholder={edit ? privileges : "Read access"} 
+                                                  placeholder={edit ? privileges : "Read access"}
                                                   onChange={(e) => setPrivileges(e.target.value)}
                                                   value={privileges}>
                                         <option value='Read access'>Read access</option>
