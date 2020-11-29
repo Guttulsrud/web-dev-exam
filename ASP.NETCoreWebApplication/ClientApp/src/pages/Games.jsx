@@ -53,7 +53,7 @@ export const Games = (props) => {
             <Section style={{paddingTop: "60px"}}>
                 <Container>
                     <SectionTitle>Games</SectionTitle>
-                    <GameList data={games}/>
+                    <GameList data={data}></GameList>
                 </Container>
             </Section>
 

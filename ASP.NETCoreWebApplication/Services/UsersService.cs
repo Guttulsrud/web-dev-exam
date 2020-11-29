@@ -25,6 +25,11 @@ namespace ASP.NETCoreWebApplication.Services {
             return _users.Find(user => user.Id == id).SingleOrDefault();
         }
         
+        public User GetUserByUsername(string username)
+        {
+            return _users.Find(user => user.Username == username).SingleOrDefault();
+        }
+        
         public User Create(User user){
             _users.InsertOne(user);
             return user;
