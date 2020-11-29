@@ -5,19 +5,17 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
-import {UserContext} from '../context/UserContext';
+import {EntityContext} from '../context/EntityContext';
 import PsLoading from '../components/Loading';
 
 
 export const AdminUsers = () => {
-    const {users, fetchData, loading} = useContext(UserContext)
-    const reFetch = fetchData
+    const {entities, fetchData, loading} = useContext(EntityContext)
     const [name, setName] = useState("");
     const [id, setId] = useState(false);
     const [privileges, setPrivileges] = useState('Read access');
     const [show, setShow] = useState(false);
     const [edit, setEdit] = useState(false);
-
 
     const handleClose = () => setShow(false);
 
@@ -36,15 +34,14 @@ export const AdminUsers = () => {
 
     const handleSubmit = async () => {
         //SetLoading = true => Få på no kul loading animation
-        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(reFetch).then(() => handleClose())
-            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(reFetch).then(() => handleClose())
-
+        edit ? axios.put(`https://localhost:5001/user/edit`, {id, name, privileges}).then(fetchData).then(() => handleClose())
+            : axios.post('https://localhost:5001/user/create', {name, privileges}).then(fetchData).then(() => handleClose())
     }
 
-    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(reFetch).then(() => handleClose());
+    const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(fetchData).then(() => handleClose());
 
     const generateUser = () => {
-        return users[0].map((user, key) => (
+        return entities[0].map((user, key) => (
 
             <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
