@@ -45,6 +45,7 @@ export const AdminUsers = () => {
 
     const generateUser = () => {
         return users[0].map((user, key) => (
+
             <tr className="text-left" key={key} onClick={() => handleEdit(user)}>
                 <td>{user.name}</td>
                 <td>{user.privileges}</td>
@@ -92,6 +93,7 @@ export const AdminUsers = () => {
                         </Modal.Footer>
                     </Modal>
                     <Button className="mt-4" onClick={handleAdd}>Add user</Button>
+                    {  loading ? <PsLoading/> :
                     <Table striped bordered hover>
                         <thead>
                         <tr>
@@ -100,10 +102,11 @@ export const AdminUsers = () => {
                         </tr>
                         </thead>
                         <tbody>
-                        {  loading ? <PsLoading/> :
-                            generateUser()}
+
+                        {generateUser()}
                         </tbody>
                     </Table>
+                    }
                 </Container>
     );
 };
