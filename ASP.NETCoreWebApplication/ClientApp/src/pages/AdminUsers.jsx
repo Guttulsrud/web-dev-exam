@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react';
 import axios from "axios"
 import Table from "react-bootstrap/Table";
 import Container from "react-bootstrap/Container";
+import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
@@ -54,8 +55,8 @@ export const AdminUsers = () => {
     };
 
     return (
-                <Container>
-                    <h1>Users</h1>
+               <div>
+
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
                             <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
@@ -63,11 +64,12 @@ export const AdminUsers = () => {
                         <Modal.Body>
                             <Form className="text-left">
                                 <Form.Group>
+                                    <Form.Label>Name</Form.Label>
                                     <Form.Control type="text" placeholder={edit ? name : "Enter name"} value={name}
                                                   onChange={(e) => setName(e.target.value)}/>
                                 </Form.Group>
                                 <Form.Group>
-                                    <Form.Label>Example select</Form.Label>
+                                    <Form.Label>Select role</Form.Label>
                                     <Form.Control as="select"
                                                   placeholder={edit ? privileges : "Read access"}
                                                   onChange={(e) => setPrivileges(e.target.value)}
@@ -92,8 +94,14 @@ export const AdminUsers = () => {
                             </Button>
                         </Modal.Footer>
                     </Modal>
-                    <Button className="mt-4" onClick={handleAdd}>Add user</Button>
+                   <div className={"d-flex justify-content-between align-content-center align-items-center mt-5 mb-3"}>
+                       <h1 style={{lineHeight: "0px"}}>Users</h1>
+                       <Button onClick={handleAdd}>Add user</Button>
+                   </div>
+
+
                     {  loading ? <PsLoading/> :
+
                     <Table striped bordered hover>
                         <thead>
                         <tr>
@@ -106,7 +114,9 @@ export const AdminUsers = () => {
                         {generateUser()}
                         </tbody>
                     </Table>
+
                     }
-                </Container>
+
+                </div>
     );
 };
