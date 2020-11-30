@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -6,7 +6,9 @@ import {EntityContext} from '../../../context/EntityContext';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 
-const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleCheckBox}) => {
+const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
+    const [isFeatured, setFeatured] = useState(false)
+    const [isDark, setDark] = useState(false)
     const categories = [
         'Action RPG',
         'Racing',
@@ -20,6 +22,12 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleChec
             return [start];
         return [start, ...range(start + next, end)];
     };
+
+    /*For testing*/
+    const handleCheckBox = (e) => {
+        setDark(!isDark)
+        handleChange(e)
+    }
 
     const {fetchData} = useContext(EntityContext);
 
@@ -77,10 +85,12 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleChec
 
                         <React.Fragment>
                             <Form.Label>Developer</Form.Label>
-                            <Form.Control name='developer' placeholder='Developer' value={game.developer} onChange={(e) => handleChange(e)}/>
+                            <Form.Control name='developer' placeholder='Developer' value={game.developer}
+                                          onChange={(e) => handleChange(e)}/>
 
                             <Form.Label>Publisher</Form.Label>
-                            <Form.Control name='publisher' placeholder='Publisher' value={game.publisher} onChange={(e) => handleChange(e)}/>
+                            <Form.Control name='publisher' placeholder='Publisher' value={game.publisher}
+                                          onChange={(e) => handleChange(e)}/>
 
                             <Form.Label>Year</Form.Label>
                             <Form.Control name='year' as='select' value={game.year} onChange={(e) => handleChange(e)}>
@@ -91,29 +101,37 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleChec
                         <Row className={'pt-3 pl-3 w-50 justify-content-between'}>
                             <Form.Group>
                                 <Form.Label>Dark content</Form.Label>
-                                <Form.Check type='checkbox' id='isDark' value={game.isDark} onChange={handleCheckBox}/>
+                                <Form.Check type='checkbox' name='isDark' value={isDark}
+                                            onChange={(e) => handleCheckBox(e)}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Featured</Form.Label>
-                                <Form.Check type='checkbox' id='isFeatured' value={game.isFeatured} onChange={handleCheckBox}/>
+                                <Form.Check type='checkbox' name='isFeatured' value={game.isFeatured}
+                                            onChange={handleCheckBox}/>
                             </Form.Group>
+                            {isDark && "Kek"}
                         </Row>
                         <br/>
                         <Form.Label><h4>File uploads</h4></Form.Label>
                         <br/>
                         <Form.Label>Game logo</Form.Label>
-                        <Form.Control name='gameLogo' placeholder='Game logo' value={game.gameLogo} onChange={(e) => handleChange(e)}/>
+                        <Form.Control name='gameLogo' placeholder='Game logo' value={game.gameLogo}
+                                      onChange={(e) => handleChange(e)}/>
                         <Form.Label>Background image</Form.Label>
                         <Form.Control name='backgroundImage' placeholder='Background image'
                                       onChange={(e) => handleChange(e)}/>
                         <Form.Label>Screenshots</Form.Label>
-                        <Form.Control name='screenshots' placeholder='Screenshots' value={game.screenshots} onChange={(e) => handleChange(e)}/>
+                        <Form.Control name='screenshots' placeholder='Screenshots' value={game.screenshots}
+                                      onChange={(e) => handleChange(e)}/>
                         <Form.Label>Feature image</Form.Label>
-                        <Form.Control name='featureImage' placeholder='Feature image' value={game.featureImage} onChange={(e) => handleChange(e)}/>
+                        <Form.Control name='featureImage' placeholder='Feature image' value={game.featureImage}
+                                      onChange={(e) => handleChange(e)}/>
                         <Form.Label>Feature video</Form.Label>
-                        <Form.Control name='featureVideo' placeholder='Feature video' value={game.featureVideo} onChange={(e) => handleChange(e)}/>
+                        <Form.Control name='featureVideo' placeholder='Feature video' value={game.featureVideo}
+                                      onChange={(e) => handleChange(e)}/>
                         <Form.Label>Game box image</Form.Label>
-                        <Form.Control name='gameBoxImage' placeholder='Game box image' value={game.gameBoxImage} onChange={(e) => handleChange(e)}/>
+                        <Form.Control name='gameBoxImage' placeholder='Game box image' value={game.gameBoxImage}
+                                      onChange={(e) => handleChange(e)}/>
 
                     </Form.Group>
                 </Modal.Body>

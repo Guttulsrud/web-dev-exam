@@ -15,11 +15,7 @@ export const AdminGames = (props) => {
     const handleChange = e => {
         const {name, value} = e.target
         setGame(prevState => ({...prevState, [name]: value}))
-    }
-
-    const handleCheckBox = e => {
-        game[e.target.id] = e.target.checked
-        console.log(game[e.target.id])
+        console.log(e.target.value)
     }
 
     const handleClose = () => setShow(false);
