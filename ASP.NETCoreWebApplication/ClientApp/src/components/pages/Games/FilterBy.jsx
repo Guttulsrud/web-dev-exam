@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Main, DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
 
-const options = ["Popular", "Release date", "Something"];
+const options = ["Category 1", "Category 2", "Category 3"];
 
 const FilterBy = (props) => {
 
@@ -18,7 +18,7 @@ const FilterBy = (props) => {
 
     return (
         <DropDownContainer>
-            <DropDownHeader onClick={toggling}>
+            <DropDownHeader onClick={toggling} arrow={isOpen ? "selectarrowup.svg" : "selectarrowdown.svg"}>
                 {selectedOption || "Popular"}
             </DropDownHeader>
             {isOpen && (
