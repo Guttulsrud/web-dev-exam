@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useCallback, useContext, useEffect, useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -7,8 +7,9 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 
 const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
-    const [isFeatured, setFeatured] = useState(false)
-    const [isDark, setDark] = useState(false)
+    const {fetchData} = useContext(EntityContext);
+    const [isFeatured, setFeatured] = useState(game.isFeatured);
+    const [isDark, setDark] = useState(game.isDark);
     const categories = [
         'Action RPG',
         'Racing',
@@ -23,13 +24,11 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         return [start, ...range(start + next, end)];
     };
 
-    /*For testing*/
     const handleCheckBox = (e) => {
-        setDark(!isDark)
-        handleChange(e)
-    }
+        e.target.name === 'isDark' ?  setDark(!isDark) : setFeatured(!isFeatured);
 
-    const {fetchData} = useContext(EntityContext);
+        handleChange(e);
+    };
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -101,15 +100,15 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Row className={'pt-3 pl-3 w-50 justify-content-between'}>
                             <Form.Group>
                                 <Form.Label>Dark content</Form.Label>
-                                <Form.Check type='checkbox' name='isDark' value={isDark}
-                                            onChange={(e) => handleCheckBox(e)}/>
+                                <Form.Check type='checkbox' name='isDark' checked={game.isDark} value={game.isDark}
+                                            onChange={handleChange}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Featured</Form.Label>
-                                <Form.Check type='checkbox' name='isFeatured' value={game.isFeatured}
+                                <Form.Check type='checkbox' name='isFeatured' checked={isFeatured} value={isFeatured}
                                             onChange={handleCheckBox}/>
                             </Form.Group>
-                            {isDark && "Kek"}
+                            {isDark && 'Kek'}
                         </Row>
                         <br/>
                         <Form.Label><h4>File uploads</h4></Form.Label>
