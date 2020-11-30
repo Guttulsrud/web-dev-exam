@@ -1,9 +1,6 @@
 import React, {useState} from "react";
-import {Form, Button} from 'react-bootstrap'
-import axios from 'axios';
+import Button from 'react-bootstrap/Button'
 import {EntityProvider} from '../context/EntityContext';
-import ActionModal from '../components/pages/AdminAccesories/ActionModal';
-import AccessoriesList from '../components/pages/AdminAccesories/AccessoryList';
 import GamesModal from '../components/pages/AdminGames/GamesModal';
 import GamesList from '../components/pages/AdminGames/GamesList';
 
@@ -35,6 +32,7 @@ export const AdminGames = (props) => {
     });
 
     const handleChange = e => {
+        console.log(e)
         game[e.target.id] = e.target.value
         console.log(game[e.target.id])
     }
