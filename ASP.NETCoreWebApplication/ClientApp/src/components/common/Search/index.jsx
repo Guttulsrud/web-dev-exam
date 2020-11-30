@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import {SearchInput} from "./style";
+import {SearchInput, SearchWrapper, SearchButton} from "./style";
 
 
 const Search = (props) => {
@@ -18,7 +18,10 @@ const Search = (props) => {
                 style={{zIndex: "10000000", marginTop: "100px"}}
 
             >
-                <SearchInput placeholder="Search games" type="text"></SearchInput>
+                <SearchWrapper>
+                    <SearchInput placeholder="Search games" type="text"></SearchInput>
+                    <SearchButton placeholder={"Search"}></SearchButton>
+                </SearchWrapper>
 
                 {/*
                     <InputGroup className="mb-3">

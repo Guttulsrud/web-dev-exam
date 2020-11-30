@@ -24,6 +24,7 @@ export const Button = styled.button`
         background-color: #0070D1;
         color: #FFFFFF;
         transform: scale(1.03);
+        text-decoration: none;
     }
     
    ${props => props.isWhite && css`
