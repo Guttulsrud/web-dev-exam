@@ -106,7 +106,7 @@ export const Home = () => {
             <FeaturedSection data={data}/>
             <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
-            <ScreenShotSection title={"Screenshots"} data={data}/>
+            {/*<ScreenShotSection title={"Screenshots"} data={data}/>*/}
             </div>
         </React.Fragment>
     );

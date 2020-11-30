@@ -28,7 +28,7 @@ const InfoSection = (props) => {
     }, []);
 
     return (
-        <Section blue height={'700'}>
+        <Section noMarginBottom blue height={'700'}>
             <Container className={"h-100 pb-5"}>
                 <div className={"d-flex flex-column h-100 justify-content-between"}>
                 <SectionTitle white right>Play Has No Limits</SectionTitle>
