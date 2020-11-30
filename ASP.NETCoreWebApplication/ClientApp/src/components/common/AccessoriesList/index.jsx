@@ -5,10 +5,12 @@ import AccessoriesCard from "../AccessoriesCard";
 const AccessoriesList = (props) => {
 
     const getData = () => {
-        return props.data.map((item, i) => {
-            return <AccessoriesCard key={i} {...item}/>
-        });
+        return props.data.map((item, i) => (
+            <AccessoriesCard key={i} col={i === 0 ? "12" : "6"} {...item}/>
+        ));
     }
+
+
 
     return (
         <Row>

@@ -30,10 +30,10 @@ const Layout = ({children}) => {
             <HeaderTop><CogIcon as={Link} to={"/admin"}/><Logo/></HeaderTop>
             <Container fluid>
                 <Row>
-                    <Col xs={2} className={"sidebar-wrapper"}>
+                    <Col xs={12} md={3} lg={2} className={"sidebar-wrapper"}>
                         <Sidebar/>
                     </Col>
-                    <Col xs={10} className={"page-content-wrapper "}>
+                    <Col xs={12} md={9} lg={10} className={"page-content-wrapper "}>
                             {children}
                     </Col>
                 </Row>
