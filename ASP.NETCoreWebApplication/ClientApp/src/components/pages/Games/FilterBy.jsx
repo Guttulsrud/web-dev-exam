@@ -18,11 +18,11 @@ const FilterBy = (props) => {
 
     return (
         <DropDownContainer>
-            <DropDownHeader onClick={toggling} arrow={isOpen ? "selectarrowup.svg" : "selectarrowdown.svg"}>
+            <DropDownHeader onClick={toggling} open={isOpen}>
                 {selectedOption || "Categories"}
             </DropDownHeader>
             {isOpen && (
-                <DropDownListContainer>
+                <DropDownListContainer open={isOpen}>
                     <DropDownList>
                         {options.map((item, i) => (
                             <ListItem onClick={onOptionClicked(item)} key={i}>

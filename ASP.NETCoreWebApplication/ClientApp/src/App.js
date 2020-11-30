@@ -47,7 +47,7 @@ export default () => {
                         <AnimatedRoutes exitBeforeEnter initial={false}>
                             <RouteTransition exact path={'/accessories'} children={<Accessories/>}/>
                             <RouteTransition exact path={'/games'} children={<Games/>}/>
-                            <RouteTransition path={'/game'} children={<Game/>}/>
+                            <RouteTransition path={'/games/detail/:id'} children={<Game/>}/>
                             <RouteTransition path={'/game2'} children={<Game2/>}/>
                             <RouteTransition path={'/game3'} children={<Game3/>}/>
                             <RouteTransition path={'/assets'} children={<Assets/>}/>
