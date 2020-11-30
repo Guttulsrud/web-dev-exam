@@ -30,7 +30,6 @@ export default () => {
     return (
 
         <BrowserRouter>
-            <EntityProvider>
                 <Switch>
                     <Route exact path='/admin/:users?'>
                         <AdminLayout>
@@ -59,7 +58,6 @@ export default () => {
                         </AnimatedRoutes>
                     </Layout>
                 </Switch>
-            </EntityProvider>
         </BrowserRouter>
 
     )
