@@ -5,10 +5,16 @@ import {SignLogo} from '../../../common/SignLogo';
 import Container from 'react-bootstrap/Container';
 import {Video, VideoOverlay} from './style';
 import {Button} from '../../../base/Button';
-import {Link} from 'react-router-dom';
+import {Link, useHistory, useLocation} from 'react-router-dom';
 
 const InfoSection = (props) => {
     const [offset, setOffset] = useState(0);
+
+    const history = useHistory()
+    const handleRedirect = () => {
+        history.push("/playstation")
+    }
+
 
     useEffect(() => {
         function handleScroll() {
@@ -26,7 +32,7 @@ const InfoSection = (props) => {
             <Container className={"h-100 pb-5"}>
                 <div className={"d-flex flex-column h-100 justify-content-between"}>
                 <SectionTitle white right>Play Has No Limits</SectionTitle>
-                <Button as={Link} to={"/playstation"} outline isWhite zIndex={11} className={"align-self-end justify-self-end"}>
+                <Button outline isWhite zIndex={11} className={"align-self-end justify-self-end"} onClick={handleRedirect}>
                     Explore
                 </Button>
                 </div>

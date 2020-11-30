@@ -18,10 +18,6 @@ const Header = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-
-    const location = useLocation()
-    console.log(location.pathname)
-    let whiteText = location.pathname === "/login"
     return (
         <React.Fragment>
 

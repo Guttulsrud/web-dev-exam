@@ -3,10 +3,6 @@ import React, {useEffect, useState} from 'react';
 import {Section} from '../components/base/Section';
 import {SectionTitle} from '../components/base/SectionTitle';
 import Container from "react-bootstrap/Container";
-import GameList from "../components/common/GameList/GameList";
-import {data} from "../data";
-import {SignLogo} from "../components/common/SignLogo";
-import {RadialGradient} from "../components/common/RadialGradient";
 import AccessoriesList from "../components/common/AccessoriesList";
 
 export const Accessories = (props) => {

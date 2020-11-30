@@ -7,7 +7,6 @@ export const EntityProvider = (props) => {
     const [entities, setEntities] = useState([])
     const [loading, setLoading] = useState(false)
 
-
     useEffect(() => {
            fetchData()
     }, [])
