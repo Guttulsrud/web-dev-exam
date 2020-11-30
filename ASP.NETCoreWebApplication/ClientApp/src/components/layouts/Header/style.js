@@ -42,3 +42,87 @@ export const CogIcon = styled.div`
     }
 `
 
+export const DesktopNav = styled.div`
+    @media (max-width: 768px) {
+    display: none;
+  }
+    
+
+`
+
+
+export const MobileNavWrapper = styled.div`
+    display: none;
+    @media (max-width: 768px) {
+    display: block;
+  }
+
+`
+
+export const Hamburger = styled.div`
+  position: absolute;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000000000;
+  visibility: hidden;
+  
+    @media (max-width: 768px) {
+    visibility: visible;
+  }
+    
+  &:focus {
+    outline: none;
+  }
+
+  div {
+    width: 30px;
+    height: 4px;
+    background:  ${({ open }) => open ? '#FFF' : '#0070D1'};
+    border-radius: 10px;
+    transition: all .2s linear;
+    position: relative;
+    transform-origin: 1px;
+    
+    :first-child {
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+    }
+
+    :nth-child(2) {
+      opacity: ${({ open }) => open ? '0' : '1'};
+      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+    }
+
+    :nth-child(3) {
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+    }
+  }
+`
+
+export const MobileMenu = styled.nav`
+  display: flex;
+  flex-direction: column;
+  background: rgb(0,112,209);
+  background: linear-gradient(30deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
+  height: 100vh;
+  width: 100vw;
+  text-align: left;
+  padding: 30px;
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 90000000;
+  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+    `

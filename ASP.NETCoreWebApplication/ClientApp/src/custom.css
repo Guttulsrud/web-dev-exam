@@ -272,3 +272,40 @@ code {
   padding-left: 20px;
   margin-left: 80px;
 }
+
+
+
+/** MOBILE MENU **/
+
+.mobile-menu {
+  position: relative;
+  top: 120px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.mobile-menu li {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.mobile-menu a {
+
+  padding-left: 20px;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.mobile-menu a:hover {
+  display: block;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  transition: .2s ease;
+}
