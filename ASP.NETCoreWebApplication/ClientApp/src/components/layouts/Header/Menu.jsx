@@ -2,10 +2,13 @@ import React from 'react';
 
 import {MobileMenu} from './style';
 import {Link, NavLink} from "react-router-dom";
+import {SignLogo} from "../../common/SignLogo";
+
 
 const Menu = ({ open, setOpen }) => {
     return (
         <MobileMenu open={open}>
+            <SignLogo/>
            <ul className={"mobile-menu"}>
                <li><NavLink as={Link} onClick={() => setOpen(false)} to="/">Home</NavLink></li>
                <li><NavLink as={Link} onClick={() => setOpen(false)} to="/games">Explore Games</NavLink></li>

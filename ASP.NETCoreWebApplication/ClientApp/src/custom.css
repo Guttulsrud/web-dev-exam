@@ -284,28 +284,30 @@ code {
   margin: 0;
   padding: 0;
   width: 100%;
+  z-index: 90000000;
 }
 
 .mobile-menu li {
+  position: relative;
   color: #fff;
   margin-bottom: 20px;
+  width: 100%;
+  transition: .2s ease;
+}
+
+.mobile-menu li:hover {
+  background-color: rgba(255,255,255,0.2);
+  cursor: pointer;
+  border-radius: 15px;
+  transition: .2s ease;
 }
 
 .mobile-menu a {
-
+  display: block;
+  width: 100%;
   padding-left: 20px;
   font-size: 2rem;
   color: #fff;
   text-decoration: none;
-  transition: .2s ease;
 }
 
-.mobile-menu a:hover {
-  display: block;
-  font-size: 2rem;
-  color: #fff;
-  text-decoration: none;
-  background-color: rgba(255,255,255,0.2);
-  border-radius: 15px;
-  transition: .2s ease;
-}

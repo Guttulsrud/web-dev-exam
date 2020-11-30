@@ -116,7 +116,7 @@ export const MobileMenu = styled.nav`
   text-align: left;
   padding: 30px;
   position: absolute;
-  
+  overflow: hidden;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
