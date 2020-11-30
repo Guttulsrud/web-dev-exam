@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import {SectionTitle} from "../../../base/SectionTitle";
 import {Button} from "../../../base/Button";
 import GameList from "../../../common/GameList/GameList";
+import {Link} from 'react-router-dom';
 
 
 const GamesSection = (props) => {
@@ -13,7 +14,7 @@ const GamesSection = (props) => {
                     <SectionTitle>{props.title}</SectionTitle>
                     <GameList data={props.data}/>
                     <div className={"d-flex justify-content-center"}>
-                        <Button outline>View more</Button>
+                        <Button as={Link} outline>View more</Button>
                     </div>
             </Container>
         </Section>

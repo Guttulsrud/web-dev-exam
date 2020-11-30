@@ -5,8 +5,10 @@ import {SectionTitle} from '../components/base/SectionTitle';
 import Container from "react-bootstrap/Container";
 import GameList from "../components/common/GameList/GameList";
 import {data} from "../data";
+import SortBy from "../components/pages/Games/SortBy";
 import {SignLogo} from "../components/common/SignLogo";
 import {RadialGradient} from "../components/common/RadialGradient";
+import FilterBy from "../components/pages/Games/FilterBy";
 
 export const Games = (props) => {
 
@@ -52,7 +54,12 @@ export const Games = (props) => {
         <React.Fragment>
             <Section style={{paddingTop: "60px"}}>
                 <Container>
-                    <SectionTitle>Games</SectionTitle>
+                    <div className={"d-flex justify-content-between align-content-center align-items-center"}>
+                        <SectionTitle>Games</SectionTitle>
+                        <SortBy/>
+                        <FilterBy/>
+                    </div>
+
                     <GameList data={data}></GameList>
                 </Container>
             </Section>
