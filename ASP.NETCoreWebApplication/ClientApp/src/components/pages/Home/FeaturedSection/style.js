@@ -39,6 +39,7 @@ export const CarouselDesc = styled.h2`
     color: #000;
     width: 360px;
     margin-top: 20px;
+    margin-bottom: 20px;
 `
 
 export const CardBack = styled.div`

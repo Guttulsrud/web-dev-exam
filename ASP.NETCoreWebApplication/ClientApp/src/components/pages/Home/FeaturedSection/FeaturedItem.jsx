@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import {CarouselOverlay, CardBack, CarouselImage, CarouselTitle, CarouselDesc} from "./style";
 import {Container} from "react-bootstrap";
+import {Button} from "../../../base/Button";
 
 
 const FeaturedItem = ({title, description, backgroundImage}) => {
@@ -18,7 +19,7 @@ const FeaturedItem = ({title, description, backgroundImage}) => {
                             <CarouselDesc>
                                 {description}
                             </CarouselDesc>
-
+                            <Button outline>More</Button>
                         </Carousel.Caption>
 
                         <CarouselImage>
