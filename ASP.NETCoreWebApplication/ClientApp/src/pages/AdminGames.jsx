@@ -3,38 +3,18 @@ import Button from 'react-bootstrap/Button'
 import {EntityProvider} from '../context/EntityContext';
 import GamesModal from '../components/pages/AdminGames/GamesModal';
 import GamesList from '../components/pages/AdminGames/GamesList';
+import {gameModel} from '../models/gameModel';
 
 export const AdminGames = (props) => {
     const [id, setId] = useState()
     const [show, setShow] = useState(false);
     const [edit, setEdit] = useState(false);
-    const [game, setGame] = useState({
-        'title': "",
-        'name': "",
-        'category': "",
-        'subtitle': "",
-        'description': "",
-        'description2': "",
-        'featureImage': "",
-        'featureVideo': "",
-        'gameBoxImage': "",
-        'trailerLink': "",
-        'price': "",
-        'backgroundImage': "",
-        'gameLogo': "",
-        'favorites': "",
-        'developer': "",
-        'publisher': "",
-        'year': "",
-        'screenshots': "",
-        'isDark': false,
-        'isFeatured': false,
-    });
+    const [game, setGame] = useState(gameModel);
+
 
     const handleChange = e => {
-        console.log(e)
-        game[e.target.id] = e.target.value
-        console.log(game[e.target.id])
+        const {name, value} = e.target
+        setGame(prevState => ({...prevState, [name]: value}))
     }
 
     const handleCheckBox = e => {
@@ -51,7 +31,8 @@ export const AdminGames = (props) => {
         setEdit(true);
     };
 
-    const handleAdd = () => {
+    const handleAdd = (e) => {
+        setGame(gameModel)
         setShow(true);
         setEdit(false);
     };

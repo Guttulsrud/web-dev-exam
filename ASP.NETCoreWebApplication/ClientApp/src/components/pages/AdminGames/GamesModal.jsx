@@ -25,10 +25,11 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleChec
 
     const handleForm = (e) => {
         e.preventDefault();
-        const url = 'https://localhost:5001/game/create';
+        const addUrl = 'https://localhost:5001/game/create';
+        const editUrl = 'https://localhost:5001/game/edit';
         edit ?
-            axios.put(url, game).then(fetchData).then(() => handleClose()) :
-            axios.post(url, game).then(fetchData).then(() => handleClose());
+            axios.put(editUrl, game).then(fetchData).then(() => handleClose()) :
+            axios.post(addUrl, game).then(fetchData).then(() => handleClose());
     };
 
     const handleDelete = async () => axios.delete(`https://localhost:5001/game/delete/${id}`).then(fetchData).then(() => handleClose());
@@ -41,73 +42,78 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange, handleChec
             <Form onSubmit={handleForm}>
                 <Modal.Body>
                     <Form.Group>
-                        <Form.Label>title</Form.Label>
-                        <Form.Control id='title' placeholder={edit ? game.title : 'Title'}
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control name='title' placeholder={'Title'} value={game.title}
                                       onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>category</Form.Label>
-                        <Form.Control id='category' placeholder={edit ? game.category : 'Category'} as='select'
+                        <Form.Label>Category</Form.Label>
+                        <Form.Control name='category' placeholder={'Category'} value={game.category} as='select'
                                       onChange={(e) => handleChange(e)}>
                             {categories.map((c) => <option key={c} value={c}>{c}</option>)}
                         </Form.Control>
 
-                        <Form.Label>subtitle</Form.Label>
-                        <Form.Control id='subtitle' placeholder={edit ? game.subtitle : 'Subtitle'}
-                                      onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Subtitle</Form.Label>
+                        <Form.Control name='subtitle' placeholder={'Subtitle'} value={game.subtitle}
+                                      onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>description</Form.Label>
-                        <Form.Control id='description' placeholder={edit ? game.description : 'Description'}
-                                      onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Description</Form.Label>
+                        <Form.Control name='description' placeholder={'Description'} value={game.description}
+                                      onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>description2</Form.Label>
-                        <Form.Control id='description2' placeholder={edit ? game.description : 'Description 2'}
-                                      onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Description 2</Form.Label>
+                        <Form.Control name='description2' placeholder={'Description 2'} value={game.description2}
+                                      onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>trailerLink</Form.Label>
-                        <Form.Control id='trailerLink' placeholder={edit ? game.trailerLink : 'Trailer link'}
-                                      onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Trailer link</Form.Label>
+                        <Form.Control name='trailerLink' placeholder={'Trailer link'} value={game.trailerLink}
+                                      onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>price</Form.Label>
-                        <Form.Control id='price' placeholder='price' onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Price</Form.Label>
+                        <Form.Control name='price' value={game.price} onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>favorites</Form.Label>
-                        <Form.Control id='favorites' placeholder='favorites' onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Favorites</Form.Label>
+                        <Form.Control name='favorites' value={game.favorites} onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>developer</Form.Label>
-                        <Form.Control id='developer' placeholder='developer' onChange={(e) =>handleChange(e)}/>
 
-                        <Form.Label>publisher</Form.Label>
-                        <Form.Control id='publisher' placeholder='publisher' onChange={(e) =>handleChange(e)}/>
+                        <React.Fragment>
+                            <Form.Label>Developer</Form.Label>
+                            <Form.Control name='developer' placeholder='Developer' value={game.developer} onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>year</Form.Label>
-                        <Form.Control id='year' placeholder='year' as='select' onChange={(e) =>handleChange(e)}>
-                            {range(2021, 1990).map(year => <option key={year} value={year}>{year}</option>)}
-                        </Form.Control>
+                            <Form.Label>Publisher</Form.Label>
+                            <Form.Control name='publisher' placeholder='Publisher' value={game.publisher} onChange={(e) => handleChange(e)}/>
+
+                            <Form.Label>Year</Form.Label>
+                            <Form.Control name='year' as='select' value={game.year} onChange={(e) => handleChange(e)}>
+                                {range(2021, 1990).map(year => <option key={year} value={year}>{year}</option>)}
+                            </Form.Control>
+                        </React.Fragment>
+
                         <Row className={'pt-3 pl-3 w-50 justify-content-between'}>
                             <Form.Group>
-                                <Form.Label>Dark header</Form.Label>
-                                <Form.Check type='checkbox' id='isDark' onChange={handleCheckBox}/>
+                                <Form.Label>Dark content</Form.Label>
+                                <Form.Check type='checkbox' id='isDark' value={game.isDark} onChange={handleCheckBox}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Featured</Form.Label>
-                                <Form.Check type='checkbox' id='isFeatured' onChange={handleCheckBox}/>
+                                <Form.Check type='checkbox' id='isFeatured' value={game.isFeatured} onChange={handleCheckBox}/>
                             </Form.Group>
                         </Row>
                         <br/>
                         <Form.Label><h4>File uploads</h4></Form.Label>
                         <br/>
-                        <Form.Label>gameLogo</Form.Label>
-                        <Form.Control id='gameLogo' placeholder='gameLogo' onChange={(e) =>handleChange(e)}/>
-                        <Form.Label>backgroundImage</Form.Label>
-                        <Form.Control id='backgroundImage' placeholder='backgroundImage' onChange={(e) =>handleChange(e)}/>
-                        <Form.Label>screenshots</Form.Label>
-                        <Form.Control id='screenshots' placeholder='screenshots' onChange={(e) =>handleChange(e)}/>
-                        <Form.Label>featureImage</Form.Label>
-                        <Form.Control id='featureImage' placeholder='featureImage' onChange={(e) =>handleChange(e)}/>
-                        <Form.Label>featureVideo</Form.Label>
-                        <Form.Control id='featureVideo' placeholder='featureVideo' onChange={(e) =>handleChange(e)}/>
-                        <Form.Label>gameBoxImage</Form.Label>
-                        <Form.Control id='gameBoxImage' placeholder='gameBoxImage' onChange={(e) =>handleChange(e)}/>
+                        <Form.Label>Game logo</Form.Label>
+                        <Form.Control name='gameLogo' placeholder='Game logo' value={game.gameLogo} onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Background image</Form.Label>
+                        <Form.Control name='backgroundImage' placeholder='Background image'
+                                      onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Screenshots</Form.Label>
+                        <Form.Control name='screenshots' placeholder='Screenshots' value={game.screenshots} onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Feature image</Form.Label>
+                        <Form.Control name='featureImage' placeholder='Feature image' value={game.featureImage} onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Feature video</Form.Label>
+                        <Form.Control name='featureVideo' placeholder='Feature video' value={game.featureVideo} onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Game box image</Form.Label>
+                        <Form.Control name='gameBoxImage' placeholder='Game box image' value={game.gameBoxImage} onChange={(e) => handleChange(e)}/>
 
                     </Form.Group>
                 </Modal.Body>

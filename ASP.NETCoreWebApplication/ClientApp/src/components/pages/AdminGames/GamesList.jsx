@@ -12,7 +12,7 @@ const GamesList = ({handleEdit}) => {
             <tr className='text-left' key={key} onClick={() => handleEdit(game)}>
                 <td >{game.title}</td>
                 <td>{game.category}</td>
-                <td><TableImage src={game.gameBoxImage} alt={"box art"}/></td>
+                <td className={"text-center"}><TableImage src={game.gameBoxImage} alt={"box art"}/></td>
                 <td>{game.isFeatured}</td>
             </tr>
         ));
