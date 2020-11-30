@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 
 namespace ASP.NETCoreWebApplication.Models {
-    public class Accessory {
+    public class Device {
 
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

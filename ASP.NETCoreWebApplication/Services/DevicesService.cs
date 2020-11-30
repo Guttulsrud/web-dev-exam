@@ -5,37 +5,37 @@ using System.Linq;
 using System.Collections.Generic;
 
 namespace ASP.NETCoreWebApplication.Services {
-    public class AccessoriesService {
-        private readonly IMongoCollection<Accessory> _accessories;
+    public class DevicesService {
+        private readonly IMongoCollection<Device> _devices;
 
-        public AccessoriesService(DatabaseSettings settings)
+        public DevicesService(DatabaseSettings settings)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DataBaseName);
-            _accessories = database.GetCollection<Accessory>(settings.AccessoryCollectionName);
+            _devices = database.GetCollection<Device>(settings.DeviceCollectionName);
         }
 
-        public List<Accessory> Get()
+        public List<Device> Get()
         {
-            return _accessories.Find(accessory => true).ToList();
+            return _devices.Find(device => true).ToList();
         }
 
-        public Accessory Get(string id)
+        public Device Get(string id)
         {
-            return _accessories.Find(accessory => accessory.Id == id).SingleOrDefault();
+            return _devices.Find(device => device.Id == id).SingleOrDefault();
         }
 
-        public Accessory Create(Accessory accessory){
-            _accessories.InsertOne(accessory);
-            return accessory;
+        public Device Create(Device device){
+            _devices.InsertOne(device);
+            return device;
         }
 
         public void Remove(string id){
-            _accessories.DeleteMany( accessory => accessory.Id == id );
+            _devices.DeleteMany( device => device.Id == id );
         }
 
-        public void Update( Accessory accessoryIn ){
-            _accessories.ReplaceOne( accessory => accessory.Id == accessoryIn.Id, accessoryIn );
+        public void Update( Device deviceIn ){
+            _devices.ReplaceOne( device => device.Id == deviceIn.Id, deviceIn );
         }
     }
 }

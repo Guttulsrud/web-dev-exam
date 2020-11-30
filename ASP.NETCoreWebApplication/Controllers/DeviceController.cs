@@ -9,49 +9,49 @@ using ASP.NETCoreWebApplication.Services;
 namespace ASP.NETCoreWebApplication.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class AccessoryController : ControllerBase {
-        private readonly AccessoriesService _accessoriesService;
+    public class DeviceController : ControllerBase {
+        private readonly DevicesService _devicesService;
 
-        public AccessoryController(AccessoriesService accessoriesService)
+        public DeviceController(DevicesService devicesService)
         {
-            _accessoriesService = accessoriesService;
+            _devicesService = devicesService;
         }
 
 
         [HttpGet]
-        public ActionResult<List<Accessory>> Get()
+        public ActionResult<List<Device>> Get()
         {
-            return _accessoriesService.Get();
+            return _devicesService.Get();
         }
 
         [HttpGet("{id:length(24)}")]
         [Route("[action]")]
-        public Accessory GetOne(string id)
+        public Device GetOne(string id)
         {
-            return _accessoriesService.Get(id);
+            return _devicesService.Get(id);
         }
 
 
 
         [HttpPost("create")]
-        public ActionResult<Accessory> Post(Accessory accessory)
+        public ActionResult<Device> Post(Device device)
         {
-            _accessoriesService.Create(accessory);
-            return accessory;
+            _devicesService.Create(device);
+            return device;
         }
 
         [HttpPut("edit")]
-        public IActionResult Put(Accessory accessory)
+        public IActionResult Put(Device device)
         {
 
-            var user = _accessoriesService.Get(accessory.Id);
+            var user = _devicesService.Get(device.Id);
 
             if (user == null)
             {
                 return NotFound();
             }
 
-            _accessoriesService.Update(accessory);
+            _devicesService.Update(device);
             return NoContent();
         }
 
@@ -63,14 +63,14 @@ namespace ASP.NETCoreWebApplication.Controllers {
 
         public IActionResult Delete(string id)
         {
-            var accessory = _accessoriesService.Get(id);
+            var device = _devicesService.Get(id);
 
-            if (accessory == null)
+            if (device == null)
             {
                 return NotFound();
             }
 
-            _accessoriesService.Remove(accessory.Id);
+            _devicesService.Remove(device.Id);
             return NoContent();
         }
 

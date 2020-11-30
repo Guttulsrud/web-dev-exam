@@ -12,7 +12,7 @@ namespace ASP.NETCoreWebApplication.Services {
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DataBaseName);
-            _accessories = database.GetCollection<Accessory>(settings.AccessoryCollectionName);
+            _accessories = database.GetCollection<Accessory>(settings.DeviceCollectionName);
         }
 
         public List<Accessory> Get()
