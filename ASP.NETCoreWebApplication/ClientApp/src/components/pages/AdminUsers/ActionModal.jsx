@@ -8,7 +8,8 @@ import {EntityContext} from '../../../context/EntityContext';
 const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName, handlePrivileges}) => {
     const {fetchData} = useContext(EntityContext);
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         edit ? axios.put(`https://localhost:5001/user/edit`, {
                 id,
                 name,
@@ -27,8 +28,8 @@ const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName,
             <Modal.Header closeButton>
                 <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
             </Modal.Header>
+            <Form className='text-left' onSubmit={handleSubmit}>
             <Modal.Body>
-                <Form className='text-left'>
                     <Form.Group>
                         <Form.Label>Name</Form.Label>
                         <Form.Control type='text' placeholder={edit ? name : 'Enter name'} value={name}
@@ -44,7 +45,6 @@ const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName,
                             <option value='Write access'>Write access</option>
                         </Form.Control>
                     </Form.Group>
-                </Form>
             </Modal.Body>
             <Modal.Footer>
                 {edit &&
@@ -55,10 +55,11 @@ const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName,
                 <Button variant='secondary' onClick={handleClose}>
                     Close
                 </Button>
-                <Button variant='primary' onClick={handleSubmit}>
+                <Button variant='primary' type={"submit"}>
                     Submit
                 </Button>
             </Modal.Footer>
+        </Form>
         </Modal>
     );
 };

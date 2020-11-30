@@ -33,7 +33,8 @@ namespace ASP.NETCoreWebApplication.Controllers {
         }
         
 
-        [HttpDelete("{id:length(24)}")]
+        [HttpDelete("delete/{id:length(24)}")]
+        [Route("[action]")]
         public IActionResult Delete(string id)
         {
             var game = _gamesService.Get(id);
@@ -47,7 +48,7 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return NoContent();
         }
 
-        [HttpPut("edit/{id:length(24)}")]
+        [HttpPut("edit")]
         public IActionResult Put(Game gameIn)
         {
             var game = _gamesService.Get(gameIn.Id);
@@ -57,7 +58,7 @@ namespace ASP.NETCoreWebApplication.Controllers {
                 return NotFound();
             }
 
-            _gamesService.Update(game);
+            _gamesService.Update(gameIn);
             return NoContent();
         }
     }
