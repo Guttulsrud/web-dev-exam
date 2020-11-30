@@ -18,7 +18,7 @@ const Footer = () => {
                           <li><NavLink as={Link} to="/games">Explore Games</NavLink></li>
                           <li> <NavLink as={Link} to="/psplus">PS Plus</NavLink></li>
                           <li> <NavLink as={Link} to="/accessories">Accessories</NavLink></li>
-                          <li> <NavLink as={Link} to="/playstation">Playstation 5</NavLink></li>
+                          <li> <NavLink as={Link} to="/devices">Playstation 5</NavLink></li>
                       </ul>
                       <ul className={"footer-links links-spacer"}>
                           <li><NavLink as={Link} to="/login">Register</NavLink></li>
