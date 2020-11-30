@@ -28,7 +28,17 @@ export const CarouselTitle = styled.h1`
     line-height: 7rem;
     text-align: left;
     font-weight: bold;
-    text-shadow: 0px 0px 10px rgba(150, 150, 150, 0.4);
+    color: #0070D1;
+`
+
+export const CarouselDesc = styled.h2`
+    font-family: "SST Light", Arial;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    text-align: left;
+    color: #000;
+    width: 360px;
+    margin-top: 20px;
 `
 
 export const CardBack = styled.div`
