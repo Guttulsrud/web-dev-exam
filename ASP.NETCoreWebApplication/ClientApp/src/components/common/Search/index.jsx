@@ -15,10 +15,10 @@ const Search = (props) => {
             <Modal
                 show={props.show}
                 onHide={props.handleClose}
-                style={{zIndex: "10000000", marginTop: "100px"}}
+                style={{position: "absolute", zIndex: "100000"}}
 
             >
-                <SearchWrapper>
+                <SearchWrapper style={{position: "absolute", marginTop: "100px"}}>
                     <SearchInput placeholder="Search games" type="text"></SearchInput>
                     <SearchButton placeholder={"Search"}></SearchButton>
                 </SearchWrapper>

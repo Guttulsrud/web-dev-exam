@@ -1,22 +1,11 @@
 import styled from "styled-components";
 
-export const Overlay = styled.div`
- position: relative;
- width: 600px;
- height: 600px;
- background-color: #ff00cc;
-`
-
 export const SearchWrapper = styled.div`
  position: relative;
-
  border-radius: 15px;
 `
 
 export const SearchInput = styled.input`
-
-
-
  position: relative;
  font-size: 2.2rem;
  padding: 20px;
@@ -26,7 +15,9 @@ export const SearchInput = styled.input`
  padding-left: 20px;
  padding-right: 130px;
  margin: 0;
+ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
 `
+
 export const SearchButton = styled.button`
  position: absolute;
  background-color: transparent;

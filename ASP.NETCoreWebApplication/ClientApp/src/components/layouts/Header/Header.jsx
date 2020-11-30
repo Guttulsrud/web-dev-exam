@@ -43,7 +43,7 @@ const Header = () => {
                     </Nav.Item>
                 </Nav>
                 <Navbar.Brand style={{cursor: "pointer"}} onClick={handleShow}>
-                    <SearchIcon color={ show ? "#0070D1" : "#c4c4c4"}/>
+                    <SearchIcon color={ show ? "#0070D1" : "#0070D1"}/>
                 </Navbar.Brand>
             </Navbar>
             </Container>
