@@ -19,14 +19,14 @@ const SortBy = (props) => {
     return (
             <DropDownContainer>
                 <DropDownHeader onClick={toggling} arrow={isOpen ? "selectarrowup.svg" : "selectarrowdown.svg"}>
-                    {selectedOption || "Popular"}
+                    {selectedOption || "Sort by"}
                 </DropDownHeader>
                 {isOpen && (
                     <DropDownListContainer>
                         <DropDownList>
-                            {options.map(option => (
-                                <ListItem onClick={onOptionClicked(option)} key={Math.random()}>
-                                    {option}
+                            {options.map((item, i) => (
+                                <ListItem onClick={onOptionClicked(item)} key={i}>
+                                    {item}
                                 </ListItem>
                             ))}
                         </DropDownList>
