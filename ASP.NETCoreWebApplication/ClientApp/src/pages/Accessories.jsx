@@ -48,7 +48,6 @@ export const Accessories = (props) => {
                     <AccessoriesList data={data}/>
                 </Container>
             </Section>
-
         </React.Fragment>
     );
 };
