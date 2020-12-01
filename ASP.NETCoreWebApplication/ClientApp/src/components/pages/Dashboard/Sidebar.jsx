@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {SidebarWrapper} from './style';
 import Button from "react-bootstrap/Button";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useHistory} from 'react-router-dom';
 import Nav from "react-bootstrap/cjs/Nav";
 import Navbar from "react-bootstrap/cjs/Navbar";
+import {AuthContext} from '../../../context/AuthContext';
 
 const Sidebar = () => {
+    const {handleLogin} = useContext(AuthContext)
+    const history = useHistory()
+
+    const handleLogout = () => {
+        handleLogin(false)
+    }
+
     return (
             <>
                 <SidebarWrapper>
-
                     <ul className={"nav sidebar-links flex-column"}>
                         <li className={"nav-item"}>
                             <NavLink to="/admin" className={"sidebar-link"} activeClassName="activeRouteSidebar">Dashboard</NavLink>
@@ -30,7 +37,7 @@ const Sidebar = () => {
                             <NavLink to="/admin/settings" className={"sidebar-link"} activeClassName="activeRouteSidebar">Settings</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/logout" className={"sidebar-link"} activeClassName="activeRouteSidebar">Log out</NavLink>
+                            <NavLink to={"/"} onClick={handleLogout} className={"sidebar-link"} activeClassName="activeRouteSidebar">Log out</NavLink>
                         </li>
                         <li className={"nav-item"}>
                             <NavLink to="/" className={"sidebar-link"} activeClassName="activeRouteSidebar">Back</NavLink>

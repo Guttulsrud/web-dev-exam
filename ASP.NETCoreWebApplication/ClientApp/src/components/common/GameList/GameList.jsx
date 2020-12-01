@@ -1,18 +1,21 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Row from 'react-bootstrap/Row';
 import GameCard from "../GameCard/GameCard";
+import {EntityContext} from '../../../context/EntityContext';
+import {Link} from 'react-router-dom';
 
 
 const GameList = (props) => {
-    const getData = () => {
-        return props.data.map((game, i) => {
+    const {entities} = useContext(EntityContext)
+    const generateGames = () => {
+        return entities[0].map((game, i) => {
             return <GameCard key={i} {...game}/>
         });
     }
 
     return (
         <Row>
-            {getData()}
+            {generateGames()}
         </Row>
     )
 }
