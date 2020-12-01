@@ -25,7 +25,7 @@ export const CarouselOverlay = styled.div`
 
 export const CarouselTitle = styled.h1`
     font-size: 8rem;
-    line-height: 7rem;
+    line-height: 8rem;
     text-align: left;
     font-weight: bold;
     color: #0070D1;

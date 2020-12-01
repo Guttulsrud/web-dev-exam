@@ -18,7 +18,7 @@ const SortBy = (props) => {
 
     return (
             <DropDownContainer>
-                <DropDownHeader onClick={toggling} arrow={isOpen ? "selectarrowup.svg" : "selectarrowdown.svg"}>
+                <DropDownHeader onClick={toggling} open={isOpen}>
                     {selectedOption || "Sort by"}
                 </DropDownHeader>
                 {isOpen && (

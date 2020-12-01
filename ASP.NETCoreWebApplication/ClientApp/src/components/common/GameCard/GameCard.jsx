@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import { useSpring, animated } from 'react-spring';
 import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper} from './style';
 import Ps5Logo from "./Ps5Logo";
+import {Link} from 'react-router-dom';
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 60, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -16,6 +17,8 @@ const GameCard = ({id,title,category,backgroundImage}) => {
     return (
 
         <Col xs={12} lg={3} style={{ marginBottom: "30px"}}>
+
+            <Link to={`games/detail/${id}`}>
 
             <CardWrapper onMouseOver={() => setHovered(true) } onMouseLeave={() => setHovered(false)} style={{zIndex: isHovered ? "9999999999" : "100000"}}>
                 <animated.div
@@ -47,7 +50,7 @@ const GameCard = ({id,title,category,backgroundImage}) => {
 
                 </animated.div>
         </CardWrapper>
-
+            </Link>
         </Col>
 
     )

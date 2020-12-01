@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Section} from '../../../base/Section';
 import {SectionTitle} from '../../../base/SectionTitle';
+import {SectionText} from '../../../base/SectionText';
 import {SignLogo} from '../../../common/SignLogo';
 import Container from 'react-bootstrap/Container';
 import {Video, VideoOverlay} from './style';
@@ -28,11 +29,12 @@ const InfoSection = (props) => {
     }, []);
 
     return (
-        <Section blue height={'700'}>
+        <Section noMarginBottom blue height={'700'}>
             <Container className={"h-100 pb-5"}>
                 <div className={"d-flex flex-column h-100 justify-content-between"}>
-                <SectionTitle white right>Play Has No Limits</SectionTitle>
-                <Button outline isWhite zIndex={11} className={"align-self-end justify-self-end"} onClick={handleRedirect}>
+                <SectionTitle center white>Play Has No Limits</SectionTitle>
+                    <SectionText center white>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus posuere risus vel semper. Etiam tempus arcu non velit dignissim semper in ac turpis.</SectionText>
+                <Button outline isWhite zIndex={11} className={"align-self-center justify-self-center"} onClick={handleRedirect}>
                     Explore
                 </Button>
                 </div>

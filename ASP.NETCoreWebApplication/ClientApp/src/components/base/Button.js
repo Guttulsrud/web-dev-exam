@@ -14,7 +14,7 @@ export const Button = styled.button`
     color: ${props => (props.outline ? "#0070D1" : props.disabled ? "#c4c4c4" : "#FFFFFF")};
     font-weight: 500;
     font-size: 1rem;
-    min-width: 180px;
+    max-width: 180px;
     height: 48px;
     cursor: ${props => (props.disabled ? "arrow" : "pointer")};
     line-height: 0;

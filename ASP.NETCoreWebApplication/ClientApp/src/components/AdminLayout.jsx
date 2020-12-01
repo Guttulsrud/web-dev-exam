@@ -27,7 +27,7 @@ const Layout = ({children}) => {
 
     return (
         <React.Fragment>
-            <HeaderTop><CogIcon as={Link} to={"/admin"}/><Logo/></HeaderTop>
+            <HeaderTop><CogIcon as={Link} to={"/admin"}/><a href={"http://www.sony.com/"}><Logo/></a></HeaderTop>
             <Container fluid>
                 <Row>
                     <Col xs={12} md={3} lg={2} className={"sidebar-wrapper"}>

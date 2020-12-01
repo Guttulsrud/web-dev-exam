@@ -24,7 +24,7 @@ const Layout = ({children}) => {
 
             <RadialGradient style={{zIndex: "-100"}}/>
             <SignLogo style={{zIndex: "-99", transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
-            <HeaderTop><CogIcon as={Link} to={"/admin"}/><Logo/></HeaderTop>
+            <HeaderTop><CogIcon as={Link} to={"/admin"}/><a href={"http://www.sony.com/"}><Logo/></a></HeaderTop>
             <Header/>
                 {children}
             <Footer/>

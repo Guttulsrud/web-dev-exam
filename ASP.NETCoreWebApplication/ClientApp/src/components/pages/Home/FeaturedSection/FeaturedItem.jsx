@@ -3,9 +3,10 @@ import Carousel from 'react-bootstrap/Carousel';
 import {CarouselOverlay, CardBack, CarouselImage, CarouselTitle, CarouselDesc} from "./style";
 import {Container} from "react-bootstrap";
 import {Button} from "../../../base/Button";
+import {Link} from 'react-router-dom';
 
 
-const FeaturedItem = ({title, description, backgroundImage}) => {
+const FeaturedItem = ({id, title, description, backgroundImage}) => {
 
     return (
         <div style={{position: "relative"}}>
@@ -19,7 +20,7 @@ const FeaturedItem = ({title, description, backgroundImage}) => {
                             <CarouselDesc>
                                 {description}
                             </CarouselDesc>
-                            <Button outline>More</Button>
+                            <Button as={Link} to={`/games/detail/${id}`} outline>More</Button>
                         </Carousel.Caption>
 
                         <CarouselImage>

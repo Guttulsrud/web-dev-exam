@@ -1,7 +1,7 @@
 export const gameModel = {
     'title': "",
     'name': "",
-    'category': "",
+    'category': "Action RPG",
     'subtitle': "",
     'description': "",
     'description2': "",
