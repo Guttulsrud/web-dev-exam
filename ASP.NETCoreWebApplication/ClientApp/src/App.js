@@ -24,20 +24,20 @@ import Swipe from './pages/Swipe';
 import AnimatedRoutes from './components/layouts/Routes/AnimatedRoutes';
 import RouteTransition from './components/layouts/Routes/RouteTransition';
 import NotFound from './pages/NotFound';
-import {EntityProvider} from './context/EntityContext';
+import {LayoutProvider} from './context/LayoutContext';
 
 export default () => {
     return (
-
         <BrowserRouter>
+            <LayoutProvider>
                 <Switch>
                     <Route exact path='/admin/:users?'>
                         <AdminLayout>
                             <Switch>
                                 <Route path='/admin' exact component={Dashboard}/>
                                 <Route path='/admin/games' exact component={AdminGames}/>
-                                <Route path='/admin/users' exact component={AdminUsers}/>
-                                <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
+                                <Route path='/admin/users' exact component={AdminUsers}/> <Route
+                                path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
                                 <Route path='/admin/accessories' exact component={AdminAccessories}/>
                                 <Route path='/admin/settings' exact component={AdminSettings}/>
                             </Switch>
@@ -58,8 +58,8 @@ export default () => {
                         </AnimatedRoutes>
                     </Layout>
                 </Switch>
+            </LayoutProvider>
         </BrowserRouter>
 
-    )
-        ;
+    );
 }
