@@ -64,14 +64,14 @@ namespace ASP.NETCoreWebApplication.Controllers {
 
         public IActionResult Delete(string id)
         {
-            var accessory = _charactersService.Get(id);
+            var character = _charactersService.Get(id);
 
-            if (accessory == null)
+            if (character == null)
             {
                 return NotFound();
             }
 
-            _charactersService.Remove(accessory.Id);
+            _charactersService.Remove(character.Id);
             return NoContent();
         }
 

@@ -30,7 +30,7 @@ namespace ASP.NETCoreWebApplication.Services {
         }
 
         public void Remove(string id){
-            _characters.DeleteMany( accessory => accessory.Id == id );
+            _characters.DeleteMany( character => character.Id == id );
         }
 
         public void Update( Character characterIn ){
