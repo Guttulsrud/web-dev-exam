@@ -20,9 +20,8 @@ export const EntityProvider = ({children, endpoint}) => {
     }
     
     
-    const setData = (data) => {
-        setEntities(data)
-        console.log(data)
+    const setData = () => {
+        console.log(entities)
     }
 
     return (

@@ -36,18 +36,16 @@ export const Games = (props) => {
     }]);
     
     return (
-        <React.Fragment>
+        <EntityProvider endpoint={"game"}>
             <Section style={{paddingTop: '60px'}}>
                 <Container>
                     <div className={'d-flex justify-content-between align-content-center align-items-center'}>
                         <SectionTitle>Games</SectionTitle>
                     </div>
-                    <EntityProvider endpoint={'game'}>
                         <GameList />
-                    </EntityProvider>
                 </Container>
             </Section>
 
-        </React.Fragment>
+        </EntityProvider>
     );
 };

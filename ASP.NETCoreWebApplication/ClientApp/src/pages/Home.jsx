@@ -6,6 +6,7 @@ import InfoSection from "../components/pages/Home/InfoSection";
 import ScreenShotSection from "../components/pages/Home/ScreenshotSection";
 import {RadialGradient} from "../components/common/RadialGradient";
 import {SignLogo} from "../components/common/SignLogo";
+import {EntityProvider} from '../context/EntityContext';
 
 
 export const Home = () => {
@@ -98,16 +99,14 @@ export const Home = () => {
         */
 
 
-
-
     return (
-        <React.Fragment>
+        <EntityProvider endpoint={"game"}>
             <div style={{position: "relative"}}>
             <FeaturedSection data={data}/>
             <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
             {/*<ScreenShotSection title={"Screenshots"} data={data}/>*/}
             </div>
-        </React.Fragment>
+        </EntityProvider>
     );
 };

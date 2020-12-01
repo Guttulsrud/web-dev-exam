@@ -5,12 +5,8 @@ export const LayoutContext = createContext()
 export const LayoutProvider = ({children}) => {
     const [isDark, setIsDark] = useState(false)
 
-    const handleDark = (state) => {
-        setIsDark(state)
-    }
-
     return (
-        <LayoutContext.Provider value={{isDark: [isDark, setIsDark], handleDark}}>
+        <LayoutContext.Provider value={{isDark: [isDark, setIsDark]}}>
             {children}
         </LayoutContext.Provider>
     )

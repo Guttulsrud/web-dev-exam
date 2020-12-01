@@ -13,14 +13,15 @@ import Search from '../../common/Search';
 import {LayoutContext} from '../../../context/LayoutContext';
 
 const Header = () => {
-    const {isDark, handleDark} = useContext(LayoutContext);
+    const {isDark} = useContext(LayoutContext);
+    const [whiteBg, setWhite] = isDark
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     return (
         <React.Fragment>
-            <HeaderBody style={{zIndex: '100000'}} isDark={isDark[0]}>
+            <HeaderBody style={{zIndex: '100000'}} whiteBg={whiteBg}>
                 <Container>
                     <DesktopNav>
                         <Navbar className={'d-flex justify-content-between pl-0 pr-0'} style={{width: '100%'}}>

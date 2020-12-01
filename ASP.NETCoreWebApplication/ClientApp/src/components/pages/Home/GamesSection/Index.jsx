@@ -12,9 +12,7 @@ const GamesSection = (props) => {
         <Section>
             <Container>
                 <SectionTitle>{props.title}</SectionTitle>
-                <EntityProvider endpoint={'game'}>
                     <GameList/>
-                </EntityProvider>
                 <div className={'d-flex justify-content-center'}>
                     <Button as={Link} outline>View more</Button>
                 </div>
