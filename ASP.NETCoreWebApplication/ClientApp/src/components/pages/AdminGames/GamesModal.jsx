@@ -17,6 +17,8 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         'Adventure'
     ];
 
+    let fileList = [];
+
     const range = (start, end) => {
         const next = start < end ? 1 : -1;
         if (start === end)
@@ -25,7 +27,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
     };
 
     const handleCheckBox = (e) => {
-        e.target.name === 'isDark' ?  setDark(!isDark) : setFeatured(!isFeatured);
+        e.target.name === 'isDark' ? setDark(!isDark) : setFeatured(!isFeatured);
 
         handleChange(e);
     };
@@ -34,12 +36,41 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         e.preventDefault();
         const addUrl = 'https://localhost:5001/game/create';
         const editUrl = 'https://localhost:5001/game/edit';
+        uploadImages()
         edit ?
             axios.put(editUrl, game).then(fetchData).then(() => handleClose()) :
             axios.post(addUrl, game).then(fetchData).then(() => handleClose());
     };
 
     const handleDelete = async () => axios.delete(`https://localhost:5001/game/delete/${id}`).then(fetchData).then(() => handleClose());
+
+    const handleImageChange = (e) => {
+        for (let i = 0; i < e.target.files.length; i++) {
+            fileList.push({
+                file: e.target.files[i],
+                name: e.target.name + "_" + i
+            });
+        }
+    }
+    const uploadImages = () => {
+        fileList.forEach(image => uploadImage(image.name, image.file))
+        fileList = []
+    }
+
+    const uploadImage = (name, file) => {
+        file.filename = game.title + "_" + name + '_image.png'
+        game['gameBoxImage'] = file.filename
+        console.log(name)
+        let data = new FormData();
+        data.append('file', file, file.filename);
+
+        axios({
+            method: "post",
+            url: "https://localhost:5001/ImageUpload/UploadImage",
+            data: data,
+            config: {headers: {"Content-Type": "multipart/form-data"}}
+        });
+    }
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -114,23 +145,23 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Form.Label><h4>File uploads</h4></Form.Label>
                         <br/>
                         <Form.Label>Game logo</Form.Label>
-                        <Form.Control name='gameLogo' placeholder='Game logo' value={game.gameLogo}
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='gameLogo' type="file"/>
+
                         <Form.Label>Background image</Form.Label>
-                        <Form.Control name='backgroundImage' placeholder='Background image'
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='backgroundImage' type="file"/>
+
                         <Form.Label>Screenshots</Form.Label>
-                        <Form.Control name='screenshots' placeholder='Screenshots' value={game.screenshots}
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='screenshots' multiple type="file"/>
+
                         <Form.Label>Feature image</Form.Label>
-                        <Form.Control name='featureImage' placeholder='Feature image' value={game.featureImage}
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='featureImage' type="file"/>
+
                         <Form.Label>Feature video</Form.Label>
-                        <Form.Control name='featureVideo' placeholder='Feature video' value={game.featureVideo}
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='featureVideo' type="file"/>
+
                         <Form.Label>Game box image</Form.Label>
-                        <Form.Control name='gameBoxImage' placeholder='Game box image' value={game.gameBoxImage}
-                                      onChange={(e) => handleChange(e)}/>
+                        <input onChange={handleImageChange} name='gameBoxImage' type="file"/>
+
 
                     </Form.Group>
                 </Modal.Body>
