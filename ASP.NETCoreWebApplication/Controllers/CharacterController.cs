@@ -9,50 +9,50 @@ using ASP.NETCoreWebApplication.Services;
 namespace ASP.NETCoreWebApplication.Controllers {
     [ApiController]
     [Route("[controller]")]
-    public class AccessoryController : ControllerBase {
-        private readonly AccessoriesService _accessoriesService;
+    public class CharacterController : ControllerBase {
+        private readonly CharactersService _charactersService;
 
-        public AccessoryController(AccessoriesService accessoriesService)
+        public CharacterController(CharactersService charactersService)
         {
-            _accessoriesService = accessoriesService;
+            _charactersService = charactersService;
         }
 
 
         [HttpGet]
-        public ActionResult<List<Accessory>> Get()
+        public ActionResult<List<Character>> Get()
         {
-            return _accessoriesService.Get();
+            return _charactersService.Get();
         }
         
         [HttpGet("{id:length(24)}")]
         [Route("[action]")]
-        public Accessory GetOne(string id)
+        public Character GetOne(string id)
         {
-            return _accessoriesService.Get(id);
+            return _charactersService.Get(id);
         }
         
         
 
         [HttpPost("create")]
-        public ActionResult<Accessory> Post(Accessory accessory)
+        public ActionResult<Character> Post(Character character)
         {
-            _accessoriesService.Create(accessory);
-            return accessory;
+            _charactersService.Create(character);
+            return character;
         }
-
+        
 
         [HttpPut("edit")]
-        public IActionResult Put(Accessory accessory)
+        public IActionResult Put(Character character)
         {
             
-            var user = _accessoriesService.Get(accessory.Id);
+            var characterPut = _charactersService.Get(character.Id);
 
-            if (user == null)
+            if (characterPut == null)
             {
                 return NotFound();
             }
             
-            _accessoriesService.Update(accessory);
+            _charactersService.Update(character);
             return NoContent();
         }
   
@@ -64,14 +64,14 @@ namespace ASP.NETCoreWebApplication.Controllers {
 
         public IActionResult Delete(string id)
         {
-            var accessory = _accessoriesService.Get(id);
+            var accessory = _charactersService.Get(id);
 
             if (accessory == null)
             {
                 return NotFound();
             }
 
-            _accessoriesService.Remove(accessory.Id);
+            _charactersService.Remove(accessory.Id);
             return NoContent();
         }
 
