@@ -6,7 +6,7 @@ const AccessoriesList = (props) => {
 
     const getData = () => {
         return props.data.map((item, i) => (
-            <AccessoriesCard key={i} col={i === 0 ? "12" : "6"} {...item}/>
+            <AccessoriesCard key={i} col={i === 0 ? "12" : "12"} {...item}/>
         ));
     }
 
