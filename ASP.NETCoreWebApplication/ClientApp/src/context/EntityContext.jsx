@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const EntityContext = createContext()
 
-export const EntityProvider = (props) => {
+export const EntityProvider = ({children, endpoint}) => {
     const [entities, setEntities] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -13,7 +13,7 @@ export const EntityProvider = (props) => {
 
     const fetchData = () => {
         setLoading(true)
-        const url = `https://localhost:5001/${props.endpoint}`
+        const url = `https://localhost:5001/${endpoint}`
         axios.get(url).then(res => {
             setEntities(res.data);
         }).then(() => setLoading(false));
@@ -21,7 +21,7 @@ export const EntityProvider = (props) => {
 
     return (
         <EntityContext.Provider value={{entities: [entities, setEntities], fetchData, loading}}>
-            {props.children}
+            {children}
         </EntityContext.Provider>
     )
 }
