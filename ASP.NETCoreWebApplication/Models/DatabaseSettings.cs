@@ -3,6 +3,7 @@ namespace ASP.NETCoreWebApplication.Models {
         string UserCollectionName { get; set; }
         string GameCollectionName { get; set; }
         string AccessoryCollectionName { get; set; }
+        string CharacterCollectionName { get; set; }
         string ConnectionString { get; set; }
         string DataBaseName { get; set; }
     }
@@ -14,6 +15,8 @@ namespace ASP.NETCoreWebApplication.Models {
         public string GameCollectionName { get; set; }
         
         public string AccessoryCollectionName { get; set; }
+        
+        public string CharacterCollectionName { get; set; }
         public string ConnectionString { get; set; }
         public string DataBaseName { get; set; }
 
