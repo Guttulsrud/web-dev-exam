@@ -6,3 +6,8 @@ export const LoginWrapper = styled.section`
     background-image: url("sony-background.jpg");
     background-size: cover;
 `
+
+export const ErrorText = styled.p`
+    color: #fc4141;
+    
+`

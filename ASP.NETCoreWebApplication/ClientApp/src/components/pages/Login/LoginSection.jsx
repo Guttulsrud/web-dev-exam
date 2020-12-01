@@ -1,15 +1,20 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import PsLogo from '../../layouts/Header/PsLogo';
 import Input from '../../common/Input';
 import {Button} from '../../base/Button';
+import {useHistory} from 'react-router';
+import {ErrorText} from './style';
+import {AuthContext} from '../../../context/AuthContext';
 
 
 const LoginSection = () => {
+    const {handleLogin} = useContext(AuthContext)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [login, setLogin] = useState(false);
+    const [error, setError] = useState(false);
+    const history = useHistory()
     const axios = require('axios');
 
     const handleOnSubmit = (e) => {
@@ -17,9 +22,11 @@ const LoginSection = () => {
         axios.post(`https://localhost:5001/user/login`, {username, password}).then(res => {
             
             if (res.data) {
-                //Success. Redirect to home page
+                handleLogin(true)
+                history.push("/admin")
             } else {
                 //Wrong pass or username. Display error
+                setError(true)
             }
         })
     };
@@ -36,6 +43,7 @@ const LoginSection = () => {
                            onChange={(e) => setUsername(e.target.value)}/>
                     <Input label={"Password"} type={'password'} value={password}
                            onChange={(e) => setPassword(e.target.value)} className={"mt-4"}/>
+                    {error && <ErrorText>Wrong username or password</ErrorText>}
                     <Button type={'submit'} className={'mt-4 w-100'} disabled={username === "" || password === ""}>
                         Log in
                     </Button>
