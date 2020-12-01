@@ -68,7 +68,6 @@ export const Devices = () => {
                                 backgroundPosition: "top",
                                 marginTop: "-18vh",
                                 marginLeft: "5vh",
-                                borderBottom: "10vh",
                                 backgroundRepeat: "no-repeat"
                             }} fluid></div>
                         </Col>
