@@ -28,7 +28,9 @@ export const CarouselTitle = styled.h1`
     line-height: 8rem;
     text-align: left;
     font-weight: bold;
-    color: #0070D1;
+      background: -webkit-linear-gradient(#0070D1, #164496);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `
 
 export const CarouselDesc = styled.h2`
