@@ -100,7 +100,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Row className={'pt-3 pl-3 w-50 justify-content-between'}>
                             <Form.Group>
                                 <Form.Label>Dark content</Form.Label>
-                                <Form.Check type='checkbox' name='isDark' checked={game.isDark} value={game.isDark}
+                                <Form.Check type='checkbox' name='isDark' checked={isDark} value={isDark}
                                             onChange={handleChange}/>
                             </Form.Group>
                             <Form.Group>

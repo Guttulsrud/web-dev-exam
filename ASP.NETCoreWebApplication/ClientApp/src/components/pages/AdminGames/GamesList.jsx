@@ -12,11 +12,11 @@ const GamesList = ({handleEdit}) => {
 
     const generateGames = () => {
         return entities[0].map((game, key) => (
-            <tr className='text-left' key={key} onClick={() => handleEdit(game)}>
-                <td>{game.title}</td>
-                <td>{game.category}</td>
+            <tr  className='text-left' key={key} onClick={() => handleEdit(game)}>
+                <td style={{verticalAlign: "middle"}}>{game.title}</td>
+                <td style={{verticalAlign: "middle"}}>{game.category}</td>
                 <td className={'text-center'}><TableImage src={game.gameBoxImage} alt={'box art'}/></td>
-                <td className={'text-center'}>{game.isFeatured ?
+                <td style={{verticalAlign: "middle"}} className={'text-center'}>{game.isFeatured ?
                     <FontAwesomeIcon icon={faCheckCircle} className={"my-auto"} color={'#58a458'} size={'2x'}/> :
                     <FontAwesomeIcon icon={faTimesCircle} color={'#9f3333'} size={'2x'}/>}</td>
             </tr>
