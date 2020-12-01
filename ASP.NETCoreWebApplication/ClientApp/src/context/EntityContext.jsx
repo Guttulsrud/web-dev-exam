@@ -18,9 +18,15 @@ export const EntityProvider = ({children, endpoint}) => {
             setEntities(res.data);
         }).then(() => setLoading(false));
     }
+    
+    
+    const setData = (data) => {
+        setEntities(data)
+        console.log(data)
+    }
 
     return (
-        <EntityContext.Provider value={{entities: [entities, setEntities], fetchData, loading}}>
+        <EntityContext.Provider value={{entities: [entities, setEntities], setData , fetchData, loading}}>
             {children}
         </EntityContext.Provider>
     )
