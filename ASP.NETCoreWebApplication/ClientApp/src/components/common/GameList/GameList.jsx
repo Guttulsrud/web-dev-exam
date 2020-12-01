@@ -1,12 +1,15 @@
 import React, {useContext} from 'react';
 import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
 import GameCard from "../GameCard/GameCard";
 import {EntityContext} from '../../../context/EntityContext';
-import {Link} from 'react-router-dom';
+import SortBy from "../../pages/Games/SortBy";
+import FilterBy from "../../pages/Games/FilterBy";
 
 
 const GameList = (props) => {
-    const {entities} = useContext(EntityContext)
+    const {entities, test} = useContext(EntityContext)
+    
     const generateGames = () => {
         return entities[0].map((game, i) => {
             return <GameCard key={i} {...game}/>
@@ -14,9 +17,16 @@ const GameList = (props) => {
     }
 
     return (
-        <Row>
-            {generateGames()}
-        </Row>
+        <div>
+            <div style={{position:"relative",zIndex:"100000000000000000000000000"}}>
+                <SortBy games={entities[0]}/>
+                <FilterBy games={entities[0]}/>
+            </div>
+         
+            <Row>
+                {generateGames()}
+            </Row>
+        </div>
     )
 }
 
