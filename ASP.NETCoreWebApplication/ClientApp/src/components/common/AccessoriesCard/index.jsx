@@ -1,10 +1,12 @@
 import React from 'react';
 import {Col} from "react-bootstrap";
-import {Card, Overlay, Wave, CardTitle, CardDesc, CardBody, CardImage} from './style';
+import {CardWrapper, Card, CardBack, Overlay, Wave, CardTitle, CardDesc, CardBody, CardImage} from './style';
 
 const AccessoriesCard = ({col, id, title, description, image, price}) => {
     return (
         <Col lg={col}>
+            <CardWrapper>
+
 
             <Card>
 
@@ -16,7 +18,10 @@ const AccessoriesCard = ({col, id, title, description, image, price}) => {
                     <Wave/>
 
             </Card>
+                <CardBack/>
 
+
+            </CardWrapper>
         </Col>
     )
 }

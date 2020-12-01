@@ -2,8 +2,7 @@ import styled from "styled-components"
 
 export const Card = styled.div`
     position: relative;
-    background: #ffffff;
-    background: linear-gradient(0deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+    background-color: #ffffff;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.20);
     border-radius: 15px;
     min-height: 400px;
@@ -14,6 +13,20 @@ export const Card = styled.div`
     justify-content: space-between;
     align-items: center;
 
+`
+
+export const CardBack = styled.div`
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+    background: rgb(0,112,209);
+    background: linear-gradient(5deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%);
+    top: 0;
+    left: 0px;
+    transform: rotate(-5deg);
+    transition: ease .2s;
+    overflow: hidden;    
 `
 
 export const Overlay = styled.div`
@@ -67,4 +80,9 @@ export const CardBody = styled.div`
     position: relative;
     z-index: 1000009999999;
     width: 600px; 
+`
+
+export const CardWrapper = styled.div`
+    position: relative;
+    padding-bottom: 40px;
 `

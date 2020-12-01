@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardWrapper = styled.h3`
+export const CardWrapper = styled.div`
  position: relative;
 `
 
