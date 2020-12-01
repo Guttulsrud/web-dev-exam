@@ -41,6 +41,8 @@ namespace ASP.NETCoreWebApplication {
             services.AddSingleton<UsersService>();
             services.AddSingleton<GamesService>();
             services.AddSingleton<AccessoriesService>();
+            services.AddSingleton<CharactersService>();
+
             services.AddSingleton<DevicesService>();
 
             // In production, the React files will be served from this directory
