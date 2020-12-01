@@ -3,41 +3,46 @@ import PsLoading from '../../Loading';
 import Table from 'react-bootstrap/Table';
 import {EntityContext} from '../../../context/EntityContext';
 import {TableImage} from './style';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/faCheckCircle';
+import {faTimesCircle} from '@fortawesome/free-solid-svg-icons/faTimesCircle';
 
 const GamesList = ({handleEdit}) => {
-    const {entities, loading} = useContext(EntityContext)
+    const {entities, loading} = useContext(EntityContext);
 
     const generateGames = () => {
         return entities[0].map((game, key) => (
             <tr className='text-left' key={key} onClick={() => handleEdit(game)}>
-                <td >{game.title}</td>
+                <td>{game.title}</td>
                 <td>{game.category}</td>
-                <td className={"text-center"}><TableImage src={game.gameBoxImage} alt={"box art"}/></td>
-                <td>{game.isFeatured}</td>
+                <td className={'text-center'}><TableImage src={game.gameBoxImage} alt={'box art'}/></td>
+                <td className={'text-center'}>{game.isFeatured ?
+                    <FontAwesomeIcon icon={faCheckCircle} className={"my-auto"} color={'#58a458'} size={'2x'}/> :
+                    <FontAwesomeIcon icon={faTimesCircle} color={'#9f3333'} size={'2x'}/>}</td>
             </tr>
         ));
     };
 
     return (
         <React.Fragment>
-        {
-            loading ? <PsLoading/> :
-                <Table striped bordered hover>
-                    <thead>
-                    <tr>
-                        <th className='text-left'>Title</th>
-                        <th className='text-left'>Category</th>
-                        <th className='text-left'>Box Art</th>
-                        <th className='text-left'>Featured</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {generateGames()}
-                    </tbody>
-                </Table>
-        }
+            {
+                loading ? <PsLoading/> :
+                    <Table striped bordered hover>
+                        <thead>
+                        <tr>
+                            <th className='text-left'>Title</th>
+                            <th className='text-left'>Category</th>
+                            <th className='text-left'>Box Art</th>
+                            <th className='text-left'>Featured</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {generateGames()}
+                        </tbody>
+                    </Table>
+            }
         </React.Fragment>
-    )
-}
+    );
+};
 
-export default  GamesList
+export default GamesList;
