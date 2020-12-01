@@ -4,6 +4,7 @@ import {Container} from "react-bootstrap";
 import {Paragraph} from "../../../base/Paragraph";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import {Subtitle} from "../../../base/Subtitle";
 
 const InfoSection = () => {
     return (
@@ -11,6 +12,7 @@ const InfoSection = () => {
             <Container>
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
+                        <Subtitle>Unleash some pussy</Subtitle>
                         <Paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

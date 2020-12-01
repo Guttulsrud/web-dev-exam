@@ -4,6 +4,7 @@ import {Container} from "react-bootstrap";
 import {Paragraph} from "../../../base/Paragraph";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import {Subtitle} from "../../../base/Subtitle";
 
 const DeveloperSection = () => {
     return (
@@ -11,6 +12,7 @@ const DeveloperSection = () => {
             <Container>
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
+                        <Subtitle>Developer</Subtitle>
                         <Paragraph>
                             Developer Section
                         </Paragraph>
