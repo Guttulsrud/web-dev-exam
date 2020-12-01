@@ -11,7 +11,7 @@ const Sidebar = () => {
     const history = useHistory()
 
     const handleLogout = () => {
-        handleLogin(false)
+        handleLogin("", false)
     }
 
     return (

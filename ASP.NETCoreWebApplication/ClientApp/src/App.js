@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Home} from './pages/Home';
 import {Games} from './pages/Games';
+import {Devices} from './pages/Devices';
 import {Accessories} from './pages/Accessories';
 import {Game} from './pages/Game';
 import {Game2} from './pages/Game2';
@@ -53,6 +54,7 @@ export default () => {
                                 <RouteTransition path={'/game2'} children={<Game2/>}/>
                                 <RouteTransition path={'/game3'} children={<Game3/>}/>
                                 <RouteTransition path={'/assets'} children={<Assets/>}/>
+                                <RouteTransition path={'/devices'} children={<Devices/>}/>
                                 <RouteTransition path={'/login'} children={<Login/>}/>
                                 <RouteTransition exact path={'/swiper'} children={<Swipe/>}/>
                                 <RouteTransition exact path={'/'} children={<Home/>}/>

@@ -22,7 +22,7 @@ const LoginSection = () => {
         axios.post(`https://localhost:5001/user/login`, {username, password}).then(res => {
             
             if (res.data) {
-                handleLogin(true)
+                handleLogin(username, true)
                 history.push("/admin")
             } else {
                 //Wrong pass or username. Display error

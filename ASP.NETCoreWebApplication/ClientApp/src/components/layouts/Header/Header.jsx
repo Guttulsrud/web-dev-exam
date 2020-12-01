@@ -43,7 +43,7 @@ const Header = () => {
                                              activeStyle={{color: '#0070D1'}}>Accessories</NavLink>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <NavLink to='/playstation' activeClassName='activeRoute'
+                                    <NavLink to='/devices' activeClassName='activeRoute'
                                              activeStyle={{color: '#0070D1'}}>Playstation 5</NavLink>
                                 </Nav.Item>
                             </Nav>

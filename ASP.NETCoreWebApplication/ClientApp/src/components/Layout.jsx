@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 import {AuthContext} from '../context/AuthContext';
 
 const Layout = ({children}) => {
-    const {isLoggedIn} = useContext(AuthContext)
+    const {isLoggedIn, user} = useContext(AuthContext)
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
@@ -25,7 +25,11 @@ const Layout = ({children}) => {
         <React.Fragment>
             <RadialGradient style={{zIndex: "-100"}}/>
             <SignLogo style={{zIndex: "-99", transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
-            <HeaderTop><CogIcon as={Link} to={isLoggedIn[0] ? "/admin" : "/login"}/><a href={"http://www.sony.com/"}><Logo/></a></HeaderTop>
+            <HeaderTop>
+                {isLoggedIn && <p className={"text-white my-auto"}>Logged in as: {user}</p>}
+                <CogIcon as={Link} to={isLoggedIn ? "/admin" : "/login"}/>
+                <a href={"http://www.sony.com/"}><Logo/></a>
+            </HeaderTop>
             <Header/>
                 {children}
             <Footer/>
