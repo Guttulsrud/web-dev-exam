@@ -13,9 +13,6 @@ const DeveloperSection = () => {
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
                         <Subtitle>Developer</Subtitle>
-                        <Paragraph>
-                            Developer Section
-                        </Paragraph>
                     </Col>
 
                     <Col lg={"6"}>

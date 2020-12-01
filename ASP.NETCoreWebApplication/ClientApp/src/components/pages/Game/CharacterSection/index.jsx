@@ -4,6 +4,7 @@ import {Container} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Paragraph} from "../../../base/Paragraph";
+import {Subtitle} from "../../../base/Subtitle";
 
 const CharacterSection = () => {
     return (
@@ -11,9 +12,7 @@ const CharacterSection = () => {
             <Container>
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
-                        <Paragraph>
-                            Character SECTION
-                        </Paragraph>
+                        <Subtitle>Characters</Subtitle>
                     </Col>
 
                     <Col lg={"6"}>

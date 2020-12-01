@@ -4,16 +4,15 @@ import {Container} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Paragraph} from "../../../base/Paragraph";
+import {Subtitle} from "../../../base/Subtitle";
 
 const ScreenshotSection = () => {
     return (
-        <Section>
+        <Section paddingTop={30}>
             <Container>
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
-                        <Paragraph>
-                            Screenshot SECTION
-                        </Paragraph>
+                        <Subtitle>Screenshots</Subtitle>
                     </Col>
 
                     <Col lg={"6"}>

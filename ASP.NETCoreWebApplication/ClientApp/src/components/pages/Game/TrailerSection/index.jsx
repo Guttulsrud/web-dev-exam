@@ -9,12 +9,11 @@ import {SignLogo} from "../../../common/SignLogo";
 const TrailerSection = () => {
     return (
         <Section blue>
-            <SignLogo right></SignLogo>
             <Container>
-                <Row className={"d-flex align-items-center"}>
+                <Row className={"d-flex align-items-center pt-5 pb-5"}>
                     <Col lg={"12"}>
                         <iframe width="100%" height="500" frameBorder="none"
-                                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1">
+                                src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
                         </iframe>
                     </Col>
 
