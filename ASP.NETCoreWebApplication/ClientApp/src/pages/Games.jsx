@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
-
 import {Section} from '../components/base/Section';
 import {SectionTitle} from '../components/base/SectionTitle';
 import Container from 'react-bootstrap/Container';
 import GameList from '../components/common/GameList/GameList';
-import SortBy from '../components/pages/Games/SortBy';
-import FilterBy from '../components/pages/Games/FilterBy';
 import {EntityProvider} from '../context/EntityContext';
 
 export const Games = (props) => {
@@ -37,15 +34,13 @@ export const Games = (props) => {
         isFeatured: true,
 
     }]);
-
+    
     return (
         <React.Fragment>
             <Section style={{paddingTop: '60px'}}>
                 <Container>
                     <div className={'d-flex justify-content-between align-content-center align-items-center'}>
                         <SectionTitle>Games</SectionTitle>
-                        <SortBy/>
-                        <FilterBy/>
                     </div>
                     <EntityProvider endpoint={'game'}>
                         <GameList />
