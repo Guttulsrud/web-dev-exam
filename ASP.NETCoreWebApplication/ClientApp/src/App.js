@@ -54,6 +54,7 @@ export default () => {
                                 <RouteTransition path={'/game2'} children={<Game2/>}/>
                                 <RouteTransition path={'/game3'} children={<Game3/>}/>
                                 <RouteTransition path={'/assets'} children={<Assets/>}/>
+                                <RouteTransition path={'/devices'} children={<Devices/>}/>
                                 <RouteTransition path={'/login'} children={<Login/>}/>
                                 <RouteTransition exact path={'/swiper'} children={<Swipe/>}/>
                                 <RouteTransition exact path={'/'} children={<Home/>}/>

@@ -13,7 +13,7 @@ const InfoSection = (props) => {
 
     const history = useHistory()
     const handleRedirect = () => {
-        history.push("/playstation")
+        history.push("/devices")
     }
 
 
