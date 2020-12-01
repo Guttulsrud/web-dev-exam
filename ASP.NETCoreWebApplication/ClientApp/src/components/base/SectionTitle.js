@@ -5,7 +5,12 @@ export const SectionTitle = styled.h1`
     display: flex;
     justify-content: ${props => (props.right ? "flex-end" : props.center ? "center" : "flex-start")};
     width: 100%;
-    color: ${props => (props.white ? "#FFFFFF" : " #0070D1")};
+    ${props => (
+        props.white ? "color: #FFFFFF;" : 
+                      "background: -webkit-linear-gradient(0deg, #164496, #0070D1);" +
+                      "-webkit-background-clip: text;" +
+                      "-webkit-text-fill-color: transparent;")};
+  
     text-align: center;
     font-size: 6rem;
     font-weight: bold;

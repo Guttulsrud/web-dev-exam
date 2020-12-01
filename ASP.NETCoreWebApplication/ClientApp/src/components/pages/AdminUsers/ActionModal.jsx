@@ -5,36 +5,55 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import {EntityContext} from '../../../context/EntityContext';
 
-const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName, handlePrivileges}) => {
+const ActionModal = ({show, edit, id, name, username, password, privileges, handleClose, handleName, handlePrivileges, handleUsername, handlePassword}) => {
     const {fetchData} = useContext(EntityContext);
 
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        console.log(username)
+        console.log(password)
         edit ? axios.put(`https://localhost:5001/user/edit`, {
                 id,
                 name,
-                privileges
+                privileges,
+                username,
+                password
             }).then(fetchData).then(() => handleClose())
             : axios.post('https://localhost:5001/user/create', {
                 name,
-                privileges
+                privileges,
+                username,
+                password
             }).then(fetchData).then(() => handleClose());
     };
 
+    console.log(name)
+    console.log(username)
     const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(fetchData).then(() => handleClose());
-
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{edit ? 'Edit user' : 'Add new user'}</Modal.Title>
             </Modal.Header>
             <Form className='text-left' onSubmit={handleSubmit}>
-            <Modal.Body>
+                <Modal.Body>
                     <Form.Group>
                         <Form.Label>Name</Form.Label>
                         <Form.Control type='text' placeholder={edit ? name : 'Enter name'} value={name}
                                       onChange={(e) => handleName(e.target.value)}/>
                     </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Username (email)</Form.Label>
+                        <Form.Control type='text' placeholder={edit ? username : 'Enter username'} value={username}
+                                      onChange={(e) => handleUsername(e.target.value)}/>
+                    </Form.Group>
+                    {!edit &&
+                    <Form.Group>
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control type='password' placeholder={'Password'} value={password}
+                                      onChange={(e) => handlePassword(e.target.value)}/>
+                    </Form.Group>
+                    }
                     <Form.Group>
                         <Form.Label>Select role</Form.Label>
                         <Form.Control as='select'
@@ -45,21 +64,21 @@ const ActionModal = ({show, edit, id, name, privileges, handleClose, handleName,
                             <option value='Write access'>Write access</option>
                         </Form.Control>
                     </Form.Group>
-            </Modal.Body>
-            <Modal.Footer>
-                {edit &&
-                <Button variant='danger' onClick={handleDelete}>
-                    Delete
-                </Button>
-                }
-                <Button variant='secondary' onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant='primary' type={"submit"}>
-                    Submit
-                </Button>
-            </Modal.Footer>
-        </Form>
+                </Modal.Body>
+                <Modal.Footer>
+                    {edit &&
+                    <Button variant='danger' onClick={handleDelete}>
+                        Delete
+                    </Button>
+                    }
+                    <Button variant='secondary' onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant='primary' type={'submit'}>
+                        Submit
+                    </Button>
+                </Modal.Footer>
+            </Form>
         </Modal>
     );
 };

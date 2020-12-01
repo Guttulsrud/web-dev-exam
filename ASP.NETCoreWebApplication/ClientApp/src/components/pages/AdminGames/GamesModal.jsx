@@ -132,7 +132,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                             <Form.Group>
                                 <Form.Label>Dark content</Form.Label>
                                 <Form.Check type='checkbox' name='isDark' checked={isDark} value={isDark}
-                                            onChange={handleChange}/>
+                                            onChange={handleCheckBox}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Featured</Form.Label>

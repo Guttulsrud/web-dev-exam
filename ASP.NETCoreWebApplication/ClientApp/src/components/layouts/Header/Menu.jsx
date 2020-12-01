@@ -14,7 +14,7 @@ const Menu = ({ open, setOpen }) => {
                <li><NavLink as={Link} onClick={() => setOpen(false)} to="/games">Explore Games</NavLink></li>
                <li><NavLink as={Link} onClick={() => setOpen(false)} to="/psplus">PS Plus</NavLink></li>
                <li><NavLink as={Link} onClick={() => setOpen(false)} to="/accessories">Accessories</NavLink></li>
-               <li><NavLink as={Link} onClick={() => setOpen(false)} to="/playstation">Playstation 5</NavLink></li>
+               <li><NavLink as={Link} onClick={() => setOpen(false)} to="/devices">Playstation 5</NavLink></li>
            </ul>
         </MobileMenu>
     )

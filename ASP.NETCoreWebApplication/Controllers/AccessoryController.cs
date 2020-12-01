@@ -39,19 +39,7 @@ namespace ASP.NETCoreWebApplication.Controllers {
             _accessoriesService.Create(accessory);
             return accessory;
         }
-        
-        // [HttpPost("login")]
-        // public bool Login(Accessory accessory)
-        // {
-        //     var user = _accessoriesService.GetUserByUsername(accessory.Name);
-        //     
-        //     if (user == null)
-        //     {
-        //         return false;
-        //     }
-        //     
-        //     return user.Password == userIn.Password;
-        // }
+
 
         [HttpPut("edit")]
         public IActionResult Put(Accessory accessory)
