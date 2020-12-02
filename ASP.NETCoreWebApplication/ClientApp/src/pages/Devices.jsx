@@ -44,7 +44,7 @@ export const Devices = () => {
                                         height: "70vh",
                                         backgroundPosition: "top",
                                         backgroundSize: "contain",
-                                        backgroundRepeat: "no-repeat",
+                                        backgroundRepeat: "no-repeat"
                                     }}/>
                                 </Col>
                             </Row>
