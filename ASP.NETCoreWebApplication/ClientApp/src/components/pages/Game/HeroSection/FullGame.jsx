@@ -21,6 +21,7 @@ import {
 } from './style';
 import ScreenThumb from "./ScreenThumb";
 import {SingleGameContext} from "../../../../context/SingleGameContext";
+import GameThumb from "../../../common/GameThumb/GameThumb";
 
 
 const FullGame = () => {
@@ -29,7 +30,7 @@ const FullGame = () => {
 
      const generateScreenshots = () => {
         return singleGame.screenshots ?  singleGame.screenshots.slice(0, 3).map((image, index) => (
-             <ScreenThumb key={`screenshot${index}`} image={image}/>
+             <GameThumb key={`screenshot${index}`} image={image}/>
          )) : null
      }
 

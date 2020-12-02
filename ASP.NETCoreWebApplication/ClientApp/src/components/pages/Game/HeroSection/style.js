@@ -15,7 +15,6 @@ export const HeroWrapper = styled.section`
 export const ThumbWrapper = styled.div`
     width: 100%;
     display: flex;
-    justify-content: flex-end;
 `
 
 export const SectionWrapper = styled.div`
