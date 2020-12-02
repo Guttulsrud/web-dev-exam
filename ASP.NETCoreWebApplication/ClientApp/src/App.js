@@ -12,7 +12,6 @@ import {Assets} from './pages/Assets';
 
 import {Dashboard} from './pages/Dashboard';
 import {AdminGames} from './pages/AdminGames';
-import {AdminAccessories} from './pages/AdminAccessories';
 import {AdminGameCharacters} from './pages/AdminGameCharacters';
 import {AdminUsers} from './pages/AdminUsers';
 import {AdminSettings} from './pages/AdminSettings';
@@ -42,7 +41,6 @@ export default () => {
                                     <Route path='/admin/games' exact component={AdminGames}/>
                                     <Route path='/admin/users' exact component={AdminUsers}/>
                                     <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
-                                    <Route path='/admin/accessories' exact component={AdminAccessories}/>
                                     <Route path='/admin/settings' exact component={AdminSettings}/>
                                 </Switch>
                             </AdminLayout>

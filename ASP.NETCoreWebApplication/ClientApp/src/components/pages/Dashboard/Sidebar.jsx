@@ -34,25 +34,12 @@ const Sidebar = () => {
                             <NavLink exact to="/admin/users" className={"sidebar-link"} activeClassName="activeRouteSidebar">Users</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink exact to="/admin/settings" className={"sidebar-link"} activeClassName="activeRouteSidebar">Settings</NavLink>
-                        </li>
-                        <li className={"nav-item"}>
                             <NavLink exact to={"/"} onClick={handleLogout} className={"sidebar-link"} activeClassName="activeRouteSidebar">Log out</NavLink>
                         </li>
                         <li className={"nav-item"}>
                             <NavLink exact to="/" className={"sidebar-link"} activeClassName="activeRouteSidebar">Back</NavLink>
                         </li>
                     </ul>
-                    {/*
-                                        <ul>
-                        <li><Link activeClassName="activeRoute" activeStyle={{color: '#0070D1'}} to={"/admin"}>Dashboard</Link></li>
-                        <li><Link activeClassName="activeRoute" activeStyle={{color: '#0070D1'}} to={"/admin/users"}>AdminUsers</Link></li>
-                        <li><Link to={"/admin/game"}>Game</Link></li>
-                        <li><Link to={"/admin/accessories"}>Accessories</Link></li>
-                        <li><Link to={"/admin/settings"}>Settings</Link></li>
-                        <li><Link to={"#"}>Log out</Link></li>
-                    </ul>
-                    */}
 
                 </SidebarWrapper>
             </>
