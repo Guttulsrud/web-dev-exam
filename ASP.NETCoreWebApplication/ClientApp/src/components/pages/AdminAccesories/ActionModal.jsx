@@ -30,14 +30,14 @@ const ActionModal = ({show, edit, id, accessory, handleClose, handleChange}) => 
                         <Form.Label>
                             Name
                         </Form.Label>
-                        <Form.Control name={"name"} type='text' placeholder={'Enter name'} value={accessory.name}
+                        <Form.Control name={"name"} type='text' placeholder={'Name'} value={accessory.name}
                                       onChange={(e) => handleChange(e)}/>
                     </Form.Group>
                     <Form.Group>
                         <Form.Label>
                             Description
                         </Form.Label>
-                        <Form.Control name={"description"} type='text' placeholder={'Enter name'} value={accessory.description}
+                        <Form.Control name={"description"} type='text' placeholder={'Description'} value={accessory.description}
                                       onChange={(e) => handleChange(e)}/>
                     </Form.Group>
                     <Form.Group>
