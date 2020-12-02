@@ -31,8 +31,6 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
 
     if(loading) return <PsLoading/>
 
-
-
     return (
         <div>
             {explore &&

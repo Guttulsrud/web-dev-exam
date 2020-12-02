@@ -27,6 +27,7 @@ import RouteTransition from './components/layouts/Routes/RouteTransition';
 import NotFound from './pages/NotFound';
 import {LayoutProvider} from './context/LayoutContext';
 import {AuthProvider} from './context/AuthContext';
+import {AdminAccessories} from './pages/AdminAccessories';
 
 export default () => {
     return (
@@ -40,8 +41,8 @@ export default () => {
                                     <Route path='/admin' exact component={Dashboard}/>
                                     <Route path='/admin/games' exact component={AdminGames}/>
                                     <Route path='/admin/users' exact component={AdminUsers}/>
+                                    <Route path='/admin/accessories' exact component={AdminAccessories}/>
                                     <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
-                                    <Route path='/admin/settings' exact component={AdminSettings}/>
                                 </Switch>
                             </AdminLayout>
                         </Route>
