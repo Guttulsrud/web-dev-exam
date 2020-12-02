@@ -317,3 +317,17 @@ code {
   text-decoration: none;
 }
 
+/** mobile **/
+@media screen and (max-width:768px){
+  .device-disk-phone-view {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1024px){
+  .device-disk-desktop-view {
+    display: none;
+  }
+}
+
+
