@@ -13,13 +13,7 @@ const DeveloperSection = () => {
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
                         <Subtitle>Developer</Subtitle>
-                        <Paragraph>
-                            Developer Section
-                        </Paragraph>
-                    </Col>
-
-                    <Col lg={"6"}>
-                        <div style={{backgroundColor: "#ff00cc", width: "500px", height: "500px"}}></div>
+                        <Paragraph>Guerilla</Paragraph>
                     </Col>
 
                 </Row>

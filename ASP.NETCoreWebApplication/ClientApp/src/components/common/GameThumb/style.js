@@ -105,3 +105,23 @@ export const ThumbContainer = styled.div`
   margin-left: 20px;
   margin-right: 20px;   
 `
+
+export const OpenWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999999990000000000000;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: rgba(0,0,0,0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const ImageContainer = styled.div`
+position: relative;
+height: 600px;
+
+`

@@ -11,7 +11,7 @@ export const SectionTitle = styled.h1`
                       "-webkit-background-clip: text;" +
                       "-webkit-text-fill-color: transparent;")};
   
-    text-align: center;
+
     font-size: 6rem;
     font-weight: bold;
     z-index: 1000;

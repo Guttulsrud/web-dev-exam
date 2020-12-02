@@ -69,16 +69,21 @@ export const TitleDesc = styled.h2`
     font-size: 1.2rem;
     font-weight: 300;
     max-width: 600px;
+    font-family: "SST Light", Arial;
 `
 
-export const TitleCat = styled.h2`
-    padding: 10px;
+export const TitleCat = styled.div`
+    position: absolute;
+    padding-left: 20px;
+    padding-top: 8px;
+    padding-right: 20px;
+    padding-bottom: 8px;
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
-    max-width: 100px;
     border: 2px solid #fff;
     border-radius: 15px;
+    
 `
 
 export const Caption = styled.h3`

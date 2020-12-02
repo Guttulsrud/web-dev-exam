@@ -4,23 +4,18 @@ import {Container} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Paragraph} from "../../../base/Paragraph";
+import {Subtitle} from "../../../base/Subtitle";
+import GameThumbList from "../../../common/GameThumbList/GameThumbList";
 
-const ScreenshotSection = () => {
+
+const ScreenshotSection = (props) => {
     return (
-        <Section>
+        <Section blue paddingTop={30}>
             <Container>
-                <Row className={"d-flex align-items-center"}>
-                    <Col lg={"6"}>
-                        <Paragraph>
-                            Screenshot SECTION
-                        </Paragraph>
-                    </Col>
+                <Subtitle white right>Screenshots</Subtitle>
 
-                    <Col lg={"6"}>
-                        <div style={{backgroundColor: "#ff00cc", width: "500px", height: "500px"}}></div>
-                    </Col>
-
-                </Row>
+                <GameThumbList data={props.data}></GameThumbList>
+               {/*<GameThumbList data={data}>*/}
 
             </Container>
         </Section>
