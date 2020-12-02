@@ -3,9 +3,6 @@ import React, {useEffect, useState} from 'react';
 import FeaturedSection from '../components/pages/Home/FeaturedSection/Index';
 import GamesSection from "../components/pages/Home/GamesSection/Index";
 import InfoSection from "../components/pages/Home/InfoSection";
-import ScreenShotSection from "../components/pages/Home/ScreenshotSection";
-import {RadialGradient} from "../components/common/RadialGradient";
-import {SignLogo} from "../components/common/SignLogo";
 import {EntityProvider} from '../context/EntityContext';
 
 
@@ -107,7 +104,6 @@ export const Home = () => {
 
             <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
-            {/*<ScreenShotSection title={"Screenshots"} data={data}/>*/}
         </EntityProvider>
     );
 };

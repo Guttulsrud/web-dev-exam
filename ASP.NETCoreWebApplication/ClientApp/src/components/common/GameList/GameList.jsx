@@ -11,16 +11,16 @@ const GameList = ({explore, query}) => {
     const [filterValue, setValue] = useState('');
 
     const generateGames = () => {
-            return games.filter(game => game.category.includes(filterValue)).map((game, i) => {
-                return <GameCard key={i} {...game}/>;
-            });
+        return games.filter(game => game.category.includes(filterValue)).map((game, i) => {
+            return <GameCard key={i} {...game}/>;
+        });
     };
 
-   const generateSearchedGames = () => {
-       return games.filter(game => game.title.toLowerCase().includes(query.toLowerCase()) && game.category.includes(filterValue)).map((game, i) => {
-           return <GameCard key={i} {...game}/>;
-       });
-   }
+    const generateSearchedGames = () => {
+        return games.filter(game => game.title.toLowerCase().includes(query.toLowerCase()) && game.category.includes(filterValue)).map((game, i) => {
+            return <GameCard key={i} {...game}/>;
+        });
+    }
 
     return (
         <div>

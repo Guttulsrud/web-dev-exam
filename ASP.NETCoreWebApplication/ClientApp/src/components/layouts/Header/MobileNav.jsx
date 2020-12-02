@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {MobileNavWrapper} from "./style";
 import Nav from 'react-bootstrap/cjs/Nav';
 import Burger from './Burger';
@@ -12,7 +12,6 @@ const MobileNav = (props) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <>
         <MobileNavWrapper>
             <Navbar className={"d-flex justify-content-between pl-0 pr-0"}>
                 <Navbar.Brand as={Link} to={"/"}>
@@ -24,10 +23,9 @@ const MobileNav = (props) => {
                 </Nav>
             </Navbar>
 
-                <Menu open={open} setOpen={setOpen}/>
+            <Menu open={open} setOpen={setOpen}/>
 
         </MobileNavWrapper>
-            </>
     )
 }
 

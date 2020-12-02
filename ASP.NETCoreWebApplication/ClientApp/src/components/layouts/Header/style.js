@@ -86,23 +86,23 @@ export const Hamburger = styled.div`
   div {
     width: 30px;
     height: 4px;
-    background:  ${({ open }) => open ? '#FFF' : '#0070D1'};
+    background:  ${({open}) => open ? '#FFF' : '#0070D1'};
     border-radius: 10px;
     transition: all .2s linear;
     position: relative;
     transform-origin: 1px;
     
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      transform: ${({open}) => open ? 'rotate(45deg)' : 'rotate(0)'};
     }
 
     :nth-child(2) {
-      opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      opacity: ${({open}) => open ? '0' : '1'};
+      transform: ${({open}) => open ? 'translateX(20px)' : 'translateX(0)'};
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      transform: ${({open}) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
 `
@@ -124,7 +124,7 @@ export const MobileMenu = styled.nav`
   left: 0;
   transition: transform 0.3s ease-in-out;
   z-index: 90000000;
-  transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
   @media (max-width: 576px) {
     width: 100%;
   }

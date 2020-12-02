@@ -1,8 +1,8 @@
 import React from 'react';
 import {Hamburger} from './style';
 
-const Burger = ({ open, setOpen }) => {
-    return(
+const Burger = ({open, setOpen}) => {
+    return (
         <Hamburger open={open} onClick={() => setOpen(!open)}>
             <div/>
             <div/>

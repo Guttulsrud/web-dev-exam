@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
 
-
 const options = ["All", "3D Platformer", "Action RPG", "Adventure", "Racing"];
 
 const FilterBy = ({handleFilter}) => {

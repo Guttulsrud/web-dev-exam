@@ -4,7 +4,6 @@ import {
     CardWrapper,
     Card,
     CardBack,
-    Overlay,
     Wave,
     CardTitle,
     CardDesc,
@@ -19,21 +18,20 @@ const AccessoriesCard = ({col, name, description, image}) => {
     return (
         <Col lg={col}>
             <CardWrapper>
-
-
-            <Card>
-
+                <Card>
                     <CardBody>
-                    <CardTitle>{name}</CardTitle>
-                    <CardDesc>{description}</CardDesc>
+                        <CardTitle>{name}</CardTitle>
+                        <CardDesc>{description}</CardDesc>
                     </CardBody>
                     <CardImage backgroundImage={image}/>
                     <Wave/>
-
-            </Card>
-                <CardBack><SignLogo/><LogoWrapper><Ps5Logo/></LogoWrapper></CardBack>
-
-
+                </Card>
+                <CardBack>
+                    <SignLogo/>
+                    <LogoWrapper>
+                        <Ps5Logo/>
+                    </LogoWrapper>
+                </CardBack>
             </CardWrapper>
         </Col>
     )

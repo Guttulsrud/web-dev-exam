@@ -11,7 +11,7 @@ const Input = ({onChange, value, label, placeholder, type, className, transparen
     };
 
     return (
-        <InputWrapper  className={className}>
+        <InputWrapper className={className}>
             <StyledInput filled={isFilled}
                          onFocus={() => {
                              setFocus(true);

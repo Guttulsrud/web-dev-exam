@@ -1,6 +1,5 @@
 import styled, {css} from 'styled-components';
 
-
 export const Button = styled.button`
     position: relative;
     background-color: #ffffff;
@@ -38,6 +37,6 @@ export const Button = styled.button`
        text-decoration: none;
       }
     `
-    }
+}
     
 `

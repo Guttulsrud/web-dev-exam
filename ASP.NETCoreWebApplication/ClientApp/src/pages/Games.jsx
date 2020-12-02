@@ -14,7 +14,7 @@ export const Games = () => {
                     <div className={'d-flex justify-content-between align-content-center align-items-center'}>
                         <SectionTitle>Games</SectionTitle>
                     </div>
-                        <GameList explore/>
+                    <GameList explore/>
                 </Container>
             </Section>
 

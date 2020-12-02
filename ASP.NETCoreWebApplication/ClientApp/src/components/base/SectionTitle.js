@@ -6,12 +6,11 @@ export const SectionTitle = styled.h1`
     justify-content: ${props => (props.right ? "flex-end" : props.center ? "center" : "flex-start")};
     width: 100%;
     ${props => (
-        props.white ? "color: #FFFFFF;" : 
-                      "background: -webkit-linear-gradient(0deg, #164496, #0070D1);" +
-                      "-webkit-background-clip: text;" +
-                      "-webkit-text-fill-color: transparent;")};
-  
-
+    props.white ? "color: #FFFFFF;" :
+        "background: -webkit-linear-gradient(0deg, #164496, #0070D1);" +
+        "-webkit-background-clip: text;" +
+        "-webkit-text-fill-color: transparent;")};
+ 
     font-size: 6rem;
     font-weight: bold;
     z-index: 1000;

@@ -8,18 +8,19 @@ const SearchBar = (props) => {
     const [searchQuery, setQuery] = useState("")
     const history = useHistory()
 
-    const handleRedirect = () =>  {
-        if(searchQuery) {
+    const handleRedirect = () => {
+        if (searchQuery) {
             history.push(`/search/${searchQuery}`)
             props.handleClose()
             setQuery("")
         }
     }
     return (
-                <SearchBarWrapper>
-            <Input transparent={true} label={"Search games"} style={{position: "relative"}} value={searchQuery} onChange={(e) => setQuery(e.target.value)}/>
+        <SearchBarWrapper>
+            <Input transparent={true} label={"Search games"} style={{position: "relative"}} value={searchQuery}
+                   onChange={(e) => setQuery(e.target.value)}/>
             <Button isWhite outline marginLeft onClick={handleRedirect}>Search</Button>
-                </SearchBarWrapper>
+        </SearchBarWrapper>
     )
 }
 

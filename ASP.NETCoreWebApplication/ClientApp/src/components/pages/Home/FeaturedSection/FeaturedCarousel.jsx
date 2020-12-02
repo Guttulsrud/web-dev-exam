@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import FeaturedItem from "./FeaturedItem";
-import {Container} from "react-bootstrap";
-import {SectionTitle} from "../../../base/SectionTitle";
 
 const FeaturedCarousel = (props) => {
 
@@ -13,9 +11,9 @@ const FeaturedCarousel = (props) => {
     }
 
     return (
-            <Carousel>
-                {getData()}
-            </Carousel>
+        <Carousel>
+            {getData()}
+        </Carousel>
     )
 }
 

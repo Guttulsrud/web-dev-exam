@@ -20,7 +20,6 @@ export const SieLogo = styled.div`
     margin: 0 8px;
 `
 
-
 export const Author = styled.div`
     text-align: center;
     padding-top: 10px;

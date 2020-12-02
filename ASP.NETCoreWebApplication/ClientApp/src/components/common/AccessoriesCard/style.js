@@ -29,15 +29,6 @@ export const CardBack = styled.div`
     overflow: hidden;    
 `
 
-export const Overlay = styled.div`
-   position: absolute;
-   transition: ease 1s;
-   height: 400px;
-   width: 100%;
-   bottom: 0px;
-   border-radius: 15px;
-`
-
 export const Wave = styled.div`
    position: absolute;
    bottom: -100px;
