@@ -1,17 +1,29 @@
 import React, {useContext} from 'react';
 import { motion } from "framer-motion"
+
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import {
     HeroWrapper,
     ThumbWrapper,
+    ScreenshotWrapper,
     TitleText,
     TitleDesc,
     TitleCat,
+    TitleSection,
     Caption,
-    SignLogoSmall
+    SignLogo,
+    SectionWrapper,
+    Card,
+    CardTitle,
+    SignLogoSmall,
+    ScreenshotsArea
 } from './style';
 import ScreenThumb from "./ScreenThumb";
 import {SingleGameContext} from "../../../../context/SingleGameContext";
+import GameThumb from "../../../common/GameThumb/GameThumb";
 
 
 const FullGame = () => {
@@ -20,7 +32,7 @@ const FullGame = () => {
 
      const generateScreenshots = () => {
         return singleGame.screenshots ?  singleGame.screenshots.slice(0, 3).map((image, index) => (
-             <ScreenThumb key={`screenshot${index}`} image={image}/>
+             <GameThumb key={`screenshot${index}`} small image={image}/>
          )) : null
      }
 
@@ -59,18 +71,24 @@ const FullGame = () => {
                         transition={{ duration: 1, delay: 1.2 }}
                     >
                 <div>
-
+                    <ScreenshotsArea>
                     <motion.div
                         initial={{ x: 0, opacity: 0}}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 2, delay: 1.5}}
                     >
+
                 <Caption>Screenshots</Caption>
                     </motion.div>
-                <ThumbWrapper>
-                   {generateScreenshots()}
-                </ThumbWrapper>
+                <ScreenshotWrapper>
+                    <Row>
+                        {generateScreenshots()}
+                    </Row>
+
+                </ScreenshotWrapper>
+                </ScreenshotsArea>
                 </div>
+
                     </motion.div>
 
                     <motion.div

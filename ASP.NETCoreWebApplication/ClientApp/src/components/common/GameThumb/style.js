@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {css} from 'styled-components';
 
 export const ThumbButton = styled.div`
   display: flex;
@@ -23,6 +23,7 @@ export const ThumbButton = styled.div`
      width: 62px;
      height: 62px;
     }
+   
 `
 export const Thumb = styled.div`
   background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
@@ -35,6 +36,11 @@ export const Thumb = styled.div`
   overflow: hidden;
   transition: ease .3s;
   border-radius: 15px;
+     ${props => props.small && css`
+        height: 135px;
+        width: 240px;
+    `
+}
 `
 
 export const Overlay = styled.div`
@@ -45,6 +51,11 @@ export const Overlay = styled.div`
   bottom: 0px;
   opacity: 0;
   border-radius: 15px;
+       ${props => props.small && css`
+        height: 135px;
+
+    `
+}
 `
 export const Hover = styled.div`
   width: 100%;
@@ -56,6 +67,8 @@ export const Hover = styled.div`
   opacity: 0;
   transition: ease 350ms;
   
+  
+  
    
 `
 
@@ -66,6 +79,11 @@ export const ThumbWrapper = styled.div`
   border-radius: 15px;
   transition: ease .3s;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+         ${props => props.small && css`
+        height: 135px;
+        width: 240px;
+    `
+}
 
   &:hover {
     transform: scale(1.05);
@@ -99,13 +117,6 @@ export const ThumbWrapper = styled.div`
   
 `
 
-export const ThumbContainer = styled.div`
-  position: absolute;
-  bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;   
-`
-
 export const OpenWrapper = styled.div`
   position: fixed;
   top: 0;
@@ -125,3 +136,4 @@ position: relative;
 height: 600px;
 
 `
+

@@ -4,7 +4,7 @@ import {ThumbWrapper, Thumb, ThumbButton, Overlay, Hover} from './style';
 import ZoomIcon from "./ZoomIcon";
 import OpenThumb from "./OpenThumb";
 
-const GameThumb = ({image}) => {
+const GameThumb = ({small, image}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -15,8 +15,8 @@ const GameThumb = ({image}) => {
     return (
         <Col xs={6} s={6} md={6} lg={4} style={{ marginBottom: "30px"}}>
             <ThumbWrapper>
-                <Thumb backgroundImage={image}>
-                    <Overlay>
+                <Thumb small={small} backgroundImage={image}>
+                    <Overlay small={small}>
                         <Hover>
                             <ThumbButton onClick={() => setOpen(true)}><ZoomIcon/></ThumbButton>
 
