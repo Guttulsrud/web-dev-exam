@@ -4,9 +4,10 @@ import GameCard from '../GameCard/GameCard';
 import {EntityContext} from '../../../context/EntityContext';
 import SortBy from '../../pages/Games/SortBy';
 import FilterBy from '../../pages/Games/FilterBy';
+import PsLoading from '../../Loading';
 
 const GameList = ({explore, query, currentTitle, currentCategory}) => {
-    const {entities} = useContext(EntityContext);
+    const {entities, loading} = useContext(EntityContext);
     const [games] = entities;
     const [filterValue, setValue] = useState('');
 
@@ -27,6 +28,10 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
             <GameCard key={`gamecard${i}`} {...game}/>
         ))
     }
+
+    if(loading) return <PsLoading/>
+
+
 
     return (
         <div>
