@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Section = styled.div`
     position: relative;
+    min-height: 200px;
     width: 100%;
     height: ${props => props.height}px;
     margin-top: 0px;

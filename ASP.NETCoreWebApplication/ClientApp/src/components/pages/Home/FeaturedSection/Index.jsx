@@ -9,7 +9,9 @@ const HeaderSection = (props) => {
 
     return (
             <Section>
-                <FeaturedCarousel data={props.data}/>
+
+                    <FeaturedCarousel data={props.data}/>
+
             </Section>
     )
 }

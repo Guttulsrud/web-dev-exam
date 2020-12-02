@@ -108,30 +108,21 @@ body {
   font-family: "SST Medium", Arial;
 }
 
-
-/* Carousel */
-
-.carousel-indicators .active{
-  background-color: #0070D1;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
-}
-
-.carousel-inner {
-  overflow: visible;
-}
-
 .carousel-indicators li{
+  position: relative;
   background-color: #c4c4c4;
   opacity: 0.3;
   border: none;
   height: 18px;
   width: 18px;
   border-radius: 50%;
+  z-index: 10000000000000000;
+  top: 80px;
 }
 
-.carousel-control-next, .carousel-control-prev {
-  color: #ff00cc;
-  opacity: 1;
+.carousel-indicators .active{
+  background-color: #0070D1;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.30);
 }
 
 .carousel-control-prev-icon {
@@ -143,9 +134,30 @@ body {
   z-index: 500000;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(0, 112, 209)' width='8' height='8' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z'/%3e%3c/svg%3e");
 }
+
+.carousel-inner {
+  overflow: visible;
+}
+
+/* Carousel */
+/*
+
+
+
+
+
+
+
+.carousel-control-next, .carousel-control-prev {
+  color: #ff00cc;
+  opacity: 1;
+}
+
+
 .carousel-item {
 
 }
+*/
 
 
 /** MISC **/

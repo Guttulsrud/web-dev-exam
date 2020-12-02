@@ -101,12 +101,13 @@ export const Home = () => {
 
     return (
         <EntityProvider endpoint={"game"}>
-            <div style={{position: "relative"}}>
-            <FeaturedSection data={data}/>
+            <div style={{marginTop: "130px"}}>
+                <FeaturedSection data={data}/>
+            </div>
+
             <GamesSection title={"Most awaited games"} data={data}/>
             <InfoSection/>
             {/*<ScreenShotSection title={"Screenshots"} data={data}/>*/}
-            </div>
         </EntityProvider>
     );
 };
