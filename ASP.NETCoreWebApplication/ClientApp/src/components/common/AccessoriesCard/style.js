@@ -52,6 +52,10 @@ export const CardDesc = styled.h2`
    font-size: 1.2rem;
    color: #000;
    font-family: "SST Light", Arial;
+           @media (max-width: 576px) {
+            font-size: 1rem;
+        }
+
    
 `
 
