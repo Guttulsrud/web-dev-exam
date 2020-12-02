@@ -60,14 +60,11 @@ export const CardImage = styled.div`
    z-index: 1000009999999;
    width: 300px;
    height: 300px;
-   background-image: url(accessories/${props => props.backgroundImage});
+   background-image: url(${props => props.backgroundImage});
    background-size: contain;
    background-position: center;
-   background-repeat: no-repeat;
-   
+   background-repeat: no-repeat; 
 `
-
-
 
 export const CardBody = styled.div`
     padding-left: 20px;

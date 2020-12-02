@@ -14,7 +14,6 @@ export const AdminGameCharacters = () => {
     const handleChange = e => {
         const {name, value} = e.target;
         setCharacter(prevState => ({...prevState, [name]: value}));
-
     };
 
     const handleClose = () => setShow(false);
