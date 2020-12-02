@@ -1,29 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import {SearchInput, SearchWrapper, SearchButton} from "./style";
+import {SearchWrapper} from "./style";
 import Input from "../Input";
+import {useHistory} from 'react-router';
 
 
 const Search = (props) => {
+    const [searchQuery, setQuery] = useState("")
+    const history = useHistory()
+
+    const handleRedirect = () =>  {
+        if(searchQuery) {
+        history.push(`/search/${searchQuery}`)
+            props.handleClose()
+            setQuery("")
+        }
+    }
 
     return (
         <>
-
             <Modal
                 show={props.show}
                 onHide={props.handleClose}
                 style={{position: "absolute", zIndex: "100000"}}
-
             >
                 <SearchWrapper className={"d-flex justify-content-between"}>
-
-                    <Input label={"Search games"} style={{position: "relative"}}></Input>
-                    <Button>Search</Button>
-
+                    <Input label={"Search games"} style={{position: "relative"}} value={searchQuery} onChange={(e) => setQuery(e.target.value)}/>
+                    <Button onClick={handleRedirect}>Search</Button>
                 </SearchWrapper>
 
 
@@ -45,8 +49,6 @@ const Search = (props) => {
                     </InputGroup>
 
                     */}
-
-
 
             </Modal>
             </>

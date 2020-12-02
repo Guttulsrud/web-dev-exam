@@ -26,7 +26,7 @@ const Header = () => {
                     <DesktopNav>
                         <Navbar className={'d-flex justify-content-between pl-0 pr-0'} style={{width: '100%'}}>
                             <Navbar.Brand as={Link} to={'/'}>
-                                <PsLogo color={'#0070D1'}></PsLogo>
+                                <PsLogo color={'#0070D1'}/>
                             </Navbar.Brand>
                             <Nav className={'d-flex justify-content-around pl-0 pr-0 header-links'}
                                  style={{width: '100%', fontSize: '1.1rem', fontWeight: '500'}}>
@@ -57,7 +57,7 @@ const Header = () => {
                     <MobileNav/>
                 </Container>
             </HeaderBody>
-            <Search show={show} handleClose={() => handleClose()}/>
+            <Search show={show} handleClose={handleClose}/>
         </React.Fragment>
 
     );
