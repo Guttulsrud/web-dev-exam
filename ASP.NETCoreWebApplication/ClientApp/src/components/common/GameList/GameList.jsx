@@ -5,13 +5,13 @@ import {EntityContext} from '../../../context/EntityContext';
 import SortBy from "../../pages/Games/SortBy";
 import FilterBy from "../../pages/Games/FilterBy";
 
-const GameList = ({explore, query}) => {
+const GameList = ({explore}) => {
     const {entities} = useContext(EntityContext)
     const [games] = entities
     const [filterValue, setValue] = useState("")
 
     const generateGames = () => {
-        return games.filter(game => game.title.toLowerCase().includes(query.toLowerCase())).map((game, i) => {
+        return games.filter(game => game.category.includes(filterValue)).map((game, i) => {
             return <GameCard key={i} {...game}/>
         });
     }
