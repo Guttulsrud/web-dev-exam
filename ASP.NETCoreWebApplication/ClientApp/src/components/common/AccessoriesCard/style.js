@@ -89,3 +89,20 @@ export const CardWrapper = styled.div`
     position: relative;
     padding-bottom: 40px;
 `
+export const SignLogo = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-image: url("signlogo.png");
+    background-size: cover;
+    background-position: center;
+    width: 18px;
+    height: 18px;    
+`
+
+export const LogoWrapper = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transform: rotate(0deg);    
+`

@@ -2,6 +2,9 @@ import styled from "styled-components";
 
 export const CardWrapper = styled.div`
  position: relative;
+ @media (max-width: 576px) {
+            transform: scale(0.8);
+        }
 `
 
 export const CardCategory = styled.h3`

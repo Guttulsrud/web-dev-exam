@@ -16,7 +16,7 @@ const GameCard = ({id,title, year, category,backgroundImage}) => {
 
     return (
 
-        <Col xs={12} lg={3} style={{ marginBottom: "30px"}}>
+        <Col xs={12} lg={3} className={"col-margin"}>
 
             <Link to={`games/detail/${id}`}>
 

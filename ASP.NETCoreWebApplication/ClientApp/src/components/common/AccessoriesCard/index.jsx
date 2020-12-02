@@ -1,6 +1,19 @@
 import React from 'react';
 import {Col} from "react-bootstrap";
-import {CardWrapper, Card, CardBack, Overlay, Wave, CardTitle, CardDesc, CardBody, CardImage} from './style';
+import {
+    CardWrapper,
+    Card,
+    CardBack,
+    Overlay,
+    Wave,
+    CardTitle,
+    CardDesc,
+    CardBody,
+    CardImage,
+    SignLogo,
+    LogoWrapper
+} from './style';
+import Ps5Logo from "../GameCard/Ps5Logo";
 
 const AccessoriesCard = ({col, name, description, image}) => {
     return (
@@ -18,7 +31,7 @@ const AccessoriesCard = ({col, name, description, image}) => {
                     <Wave/>
 
             </Card>
-                <CardBack/>
+                <CardBack><SignLogo/><LogoWrapper><Ps5Logo/></LogoWrapper></CardBack>
 
 
             </CardWrapper>
