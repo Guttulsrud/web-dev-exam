@@ -36,7 +36,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         e.preventDefault();
         const addUrl = 'https://localhost:5001/game/create';
         const editUrl = 'https://localhost:5001/game/edit';
-        uploadImages()
+        uploadImages();
         edit ?
             axios.put(editUrl, game).then(fetchData).then(() => handleClose()) :
             axios.post(addUrl, game).then(fetchData).then(() => handleClose());
@@ -48,29 +48,29 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         for (let i = 0; i < e.target.files.length; i++) {
             fileList.push({
                 file: e.target.files[i],
-                name: e.target.name + "_" + i
+                name: e.target.name + '_' + i
             });
         }
-    }
+    };
     const uploadImages = () => {
-        fileList.forEach(image => uploadImage(image.name, image.file))
-        fileList = []
-    }
+        fileList.forEach(image => uploadImage(image.name, image.file));
+        fileList = [];
+    };
 
     const uploadImage = (name, file) => {
-        file.filename = game.title + "_" + name + '_image.png'
-        game['gameBoxImage'] = file.filename
-        console.log(name)
+        file.filename = game.title + '_' + name + '_image.png';
+        game['gameBoxImage'] = file.filename;
+        console.log(name);
         let data = new FormData();
         data.append('file', file, file.filename);
 
         axios({
-            method: "post",
-            url: "https://localhost:5001/ImageUpload/UploadImage",
+            method: 'post',
+            url: 'https://localhost:5001/ImageUpload/UploadImage',
             data: data,
-            config: {headers: {"Content-Type": "multipart/form-data"}}
+            config: {headers: {'Content-Type': 'multipart/form-data'}}
         });
-    }
+    };
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -112,21 +112,18 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Form.Label>Favorites</Form.Label>
                         <Form.Control name='favorites' value={game.favorites} onChange={(e) => handleChange(e)}/>
 
+                        <Form.Label>Developer</Form.Label>
+                        <Form.Control name='developer' placeholder='Developer' value={game.developer}
+                                      onChange={(e) => handleChange(e)}/>
 
-                        <React.Fragment>
-                            <Form.Label>Developer</Form.Label>
-                            <Form.Control name='developer' placeholder='Developer' value={game.developer}
-                                          onChange={(e) => handleChange(e)}/>
+                        <Form.Label>Publisher</Form.Label>
+                        <Form.Control name='publisher' placeholder='Publisher' value={game.publisher}
+                                      onChange={(e) => handleChange(e)}/>
 
-                            <Form.Label>Publisher</Form.Label>
-                            <Form.Control name='publisher' placeholder='Publisher' value={game.publisher}
-                                          onChange={(e) => handleChange(e)}/>
-
-                            <Form.Label>Year</Form.Label>
-                            <Form.Control name='year' as='select' value={game.year} onChange={(e) => handleChange(e)}>
-                                {range(2021, 1990).map(year => <option key={year} value={year}>{year}</option>)}
-                            </Form.Control>
-                        </React.Fragment>
+                        <Form.Label>Year</Form.Label>
+                        <Form.Control name='year' as='select' value={game.year} onChange={(e) => handleChange(e)}>
+                            {range(2020, 2025).map(year => <option key={year} value={year}>{year}</option>)}
+                        </Form.Control>
 
                         <Row className={'pt-3 pl-3 w-50 justify-content-between'}>
                             <Form.Group>
@@ -145,22 +142,22 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Form.Label><h4>File uploads</h4></Form.Label>
                         <br/>
                         <Form.Label>Game logo</Form.Label>
-                        <input onChange={handleImageChange} name='gameLogo' type="file"/>
+                        <input onChange={handleImageChange} name='gameLogo' type='file'/>
 
                         <Form.Label>Background image</Form.Label>
-                        <input onChange={handleImageChange} name='backgroundImage' type="file"/>
+                        <input onChange={handleImageChange} name='backgroundImage' type='file'/>
 
                         <Form.Label>Screenshots</Form.Label>
-                        <input onChange={handleImageChange} name='screenshots' multiple type="file"/>
+                        <input onChange={handleImageChange} name='screenshots' multiple type='file'/>
 
                         <Form.Label>Feature image</Form.Label>
-                        <input onChange={handleImageChange} name='featureImage' type="file"/>
+                        <input onChange={handleImageChange} name='featureImage' type='file'/>
 
                         <Form.Label>Feature video</Form.Label>
-                        <input onChange={handleImageChange} name='featureVideo' type="file"/>
+                        <input onChange={handleImageChange} name='featureVideo' type='file'/>
 
                         <Form.Label>Game box image</Form.Label>
-                        <input onChange={handleImageChange} name='gameBoxImage' type="file"/>
+                        <input onChange={handleImageChange} name='gameBoxImage' type='file'/>
 
 
                     </Form.Group>
