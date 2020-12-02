@@ -5,7 +5,6 @@ import {EntityContext} from '../../../context/EntityContext';
 import SortBy from "../../pages/Games/SortBy";
 import FilterBy from "../../pages/Games/FilterBy";
 
-
 const GameList = ({explore}) => {
     const {entities} = useContext(EntityContext)
     const [games] = entities
