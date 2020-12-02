@@ -18,6 +18,14 @@ export const ThumbWrapper = styled.div`
     justify-content: flex-end;
 `
 
+export const ScreenshotWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+`
+
+
+
 export const SectionWrapper = styled.div`
     width: 100%;
     padding-top: 30px;
@@ -179,4 +187,17 @@ export const RadialGradient = styled.div`
     left: -500px;
     bottom: -250px;
 `
+
+export const ScreenshotsArea = styled.div`
+       @media (max-width: 576px) {
+            display: none
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+        @media (max-width: 992px) {
+            display: none;
+        }
+`
+
 

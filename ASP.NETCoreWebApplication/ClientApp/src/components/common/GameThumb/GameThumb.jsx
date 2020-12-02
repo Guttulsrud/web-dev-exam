@@ -15,8 +15,8 @@ const GameThumb = ({small, image}) => {
     return (
         <Col xs={6} s={6} md={6} lg={4} style={{ marginBottom: "30px"}}>
             <ThumbWrapper>
-                <Thumb small backgroundImage={image}>
-                    <Overlay>
+                <Thumb small={small} backgroundImage={image}>
+                    <Overlay small={small}>
                         <Hover>
                             <ThumbButton onClick={() => setOpen(true)}><ZoomIcon/></ThumbButton>
 
