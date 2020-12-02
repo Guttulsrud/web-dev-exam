@@ -16,7 +16,6 @@ const CharacterSection = () => {
                     </Col>
 
                     <Col lg={"6"}>
-                        <div style={{backgroundColor: "#ff00cc", width: "500px", height: "500px"}}></div>
                     </Col>
 
                 </Row>

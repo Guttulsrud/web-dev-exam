@@ -15,6 +15,9 @@ const InfoSection = () => {
                 <Row className={"d-flex align-items-center align-content-center"}>
 
                     <Col lg={"6"} >
+                        <div style={{backgroundColor: "#ff00cc"}}>
+
+
                         <Paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -24,6 +27,7 @@ const InfoSection = () => {
                             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                             deserunt mollit anim id est laborum.
                         </Paragraph>
+                        </div>
                     </Col>
 
                     <Col lg={"6"} className={"d-flex justify-content-center"}>
