@@ -21,10 +21,6 @@ export const AdminGameCharacters = () => {
     const handleEdit = (character) => {
         setId(character.id);
         setCharacter(character)
-        /*setName(character.name);
-        setDescription(character.description);
-        setImage(character.image);
-        setGame(character.game);*/
         setShow(true);
         setEdit(true);
     };
