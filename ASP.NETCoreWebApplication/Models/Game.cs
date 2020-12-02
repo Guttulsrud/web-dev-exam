@@ -16,17 +16,13 @@ namespace ASP.NETCoreWebApplication.Models {
         public string Description { get; set; }
         public string Description2 { get; set; }
         public string FeatureImage { get; set; }
-        public string FeatureVideo { get; set; }
         public string GameBoxImage { get; set; }
         public string TrailerLink { get; set; }
         public string Price { get; set; }
-        public string BackgroundImage { get; set; }
         public string GameLogo { get; set; }
-        public string Favorites { get; set; }
         public string Developer { get; set; }
-        public string Publisher { get; set; }
         public string Year { get; set; }
-        public string Screenshots { get; set; }
+        public List<string> Screenshots { get; set; }
         public bool IsDark { get; set; }
         public bool IsFeatured { get; set; }
     }

@@ -59,7 +59,12 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
 
     const uploadImage = (propertyName, file) => {
         file.filename = new Date().getTime()*Math.random()+ '.png'
-        game[propertyName] = 'https://localhost:5001/images/' + file.filename
+        
+        const imagePath = 'https://localhost:5001/images/' + file.filename
+        if(propertyName === 'screenshots')
+            game[propertyName].push(imagePath)
+        else 
+            game[propertyName] = imagePath
         
         let data = new FormData();
         data.append('file', file, file.filename);
@@ -109,15 +114,8 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Form.Label>Price</Form.Label>
                         <Form.Control name='price' value={game.price} onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>Favorites</Form.Label>
-                        <Form.Control name='favorites' value={game.favorites} onChange={(e) => handleChange(e)}/>
-
                         <Form.Label>Developer</Form.Label>
                         <Form.Control name='developer' placeholder='Developer' value={game.developer}
-                                      onChange={(e) => handleChange(e)}/>
-
-                        <Form.Label>Publisher</Form.Label>
-                        <Form.Control name='publisher' placeholder='Publisher' value={game.publisher}
                                       onChange={(e) => handleChange(e)}/>
 
                         <Form.Label>Year</Form.Label>
@@ -143,18 +141,12 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <br/>
                         <Form.Label>Game logo</Form.Label>
                         <input onChange={handleImageChange} name='gameLogo' type='file'/>
-
-                        <Form.Label>Background image</Form.Label>
-                        <input onChange={handleImageChange} name='backgroundImage' type='file'/>
-
+                        
                         <Form.Label>Screenshots</Form.Label>
                         <input onChange={handleImageChange} name='screenshots' multiple type='file'/>
 
                         <Form.Label>Feature image</Form.Label>
                         <input onChange={handleImageChange} name='featureImage' type='file'/>
-
-                        <Form.Label>Feature video</Form.Label>
-                        <input onChange={handleImageChange} name='featureVideo' type='file'/>
 
                         <Form.Label>Game box image</Form.Label>
                         <input onChange={handleImageChange} name='gameBoxImage' type='file'/>
