@@ -20,8 +20,14 @@ namespace ASP.NETCoreWebApplication.Controllers {
         [HttpGet]
         public ActionResult<List<Game>> Get()
         {
-
             return _gamesService.Get();
+        }
+        
+        [HttpGet("get/{id:length(24)}")]
+        [Route("[action]")]
+        public ActionResult<Game> Get(string id)
+        {
+            return _gamesService.Get(id);
         }
 
         [HttpPost("create")]
