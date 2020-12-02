@@ -36,7 +36,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         e.preventDefault();
         const addUrl = 'https://localhost:5001/game/create';
         const editUrl = 'https://localhost:5001/game/edit';
-        uploadImages();
+        uploadImages()
         edit ?
             axios.put(editUrl, game).then(fetchData).then(() => handleClose()) :
             axios.post(addUrl, game).then(fetchData).then(() => handleClose());
@@ -48,19 +48,19 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         for (let i = 0; i < e.target.files.length; i++) {
             fileList.push({
                 file: e.target.files[i],
-                name: e.target.name + '_' + i
+                propertyName: e.target.name
             });
         }
-    };
+    }
     const uploadImages = () => {
-        fileList.forEach(image => uploadImage(image.name, image.file));
-        fileList = [];
-    };
+        fileList.forEach(image => uploadImage(image.propertyName, image.file))
+        fileList = []
+    }
 
-    const uploadImage = (name, file) => {
-        file.filename = game.title + '_' + name + '_image.png';
-        game['gameBoxImage'] = file.filename;
-        console.log(name);
+    const uploadImage = (propertyName, file) => {
+        file.filename = new Date().getTime()*Math.random()+ '.png'
+        game[propertyName] = 'https://localhost:5001/images/' + file.filename
+        
         let data = new FormData();
         data.append('file', file, file.filename);
 
@@ -136,6 +136,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                                 <Form.Check type='checkbox' name='isFeatured' checked={isFeatured} value={isFeatured}
                                             onChange={handleCheckBox}/>
                             </Form.Group>
+                            {isDark && 'Kek'}
                         </Row>
                         <br/>
                         <Form.Label><h4>File uploads</h4></Form.Label>
