@@ -93,7 +93,8 @@ export const TitleDesc = styled.h2`
 `
 
 export const TitleCat = styled.div`
-    position: absolute;
+    position: relative;
+    display: inline-block;
     padding-left: 20px;
     padding-top: 8px;
     padding-right: 20px;
@@ -103,6 +104,7 @@ export const TitleCat = styled.div`
     font-weight: 500;
     border: 2px solid #fff;
     border-radius: 15px;
+    margin-right: 20px;
     
 `
 
