@@ -290,7 +290,7 @@ code {
 
 .mobile-menu {
   position: relative;
-  top: 120px;
+  top: 30px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -322,7 +322,17 @@ code {
   text-decoration: none;
 }
 
+.col-margin {
+  margin-bottom: 30px;
+}
+
 /** mobile **/
+@media screen and (max-width:576px){
+  .col-margin {
+    margin-bottom: 0;
+  }
+
+}
 @media screen and (max-width:768px){
   .device-disk-phone-view {
     display: none;
@@ -334,5 +344,6 @@ code {
     display: none;
   }
 }
+
 
 

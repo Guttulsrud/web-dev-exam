@@ -1,6 +1,5 @@
 import styled, {css} from 'styled-components';
 
-
 export const Button = styled.button`
     position: relative;
     background-color: #ffffff;
@@ -8,6 +7,7 @@ export const Button = styled.button`
     justify-content: center;
     align-items: center;
     padding: ${props => (props.outline ? "12px 40px 12px 40px" : "12px 40px 14px 40px")};
+    margin-left:  ${props => (props.marginLeft ? "20px" : "0px")};
     border-radius: 15px;
     border: ${props => (props.outline ? "2px solid #0070D1" : props.disabled ? "2px solid #C4C4C4" : "none")};
     background-color: ${props => (props.outline ? "transparent" : props.disabled ? "none" : "#0070D1")};
@@ -37,6 +37,6 @@ export const Button = styled.button`
        text-decoration: none;
       }
     `
-    }
+}
     
 `

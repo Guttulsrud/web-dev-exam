@@ -32,7 +32,7 @@ position: relative;
       height: 32px;
       background-image: url(selectarrowdown.svg);
       transition: .2s ease;
-      transform: ${({ open }) => open ? 'rotate(180deg)' : 'rotate(0)'};
+      transform: ${({open}) => open ? 'rotate(180deg)' : 'rotate(0)'};
       background-repeat: no-repeat;
       background-position: center;
       background-size: 32px;

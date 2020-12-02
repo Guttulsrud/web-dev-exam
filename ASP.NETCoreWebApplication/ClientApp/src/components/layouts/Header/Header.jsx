@@ -31,7 +31,8 @@ const Header = () => {
                             <Nav className={'d-flex justify-content-around pl-0 pr-0 header-links'}
                                  style={{width: '100%', fontSize: '1.1rem', fontWeight: '500'}}>
                                 <Nav.Item>
-                                    <NavLink exact to='/' activeClassName='activeRoute' activeStyle={{color: '#0070D1'}}>
+                                    <NavLink exact to='/' activeClassName='activeRoute'
+                                             activeStyle={{color: '#0070D1'}}>
                                         Home
                                     </NavLink>
                                 </Nav.Item>

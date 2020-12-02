@@ -32,11 +32,14 @@ const InfoSection = (props) => {
         <Section noMarginBottom blue height={'700'}>
             <Container className={"h-100 pb-5"}>
                 <div className={"d-flex flex-column h-100 justify-content-between"}>
-                <SectionTitle center white>Play Has No Limits</SectionTitle>
-                    <SectionText center white>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus posuere risus vel semper. Etiam tempus arcu non velit dignissim semper in ac turpis.</SectionText>
-                <Button outline isWhite zIndex={11} className={"align-self-center justify-self-center"} onClick={handleRedirect}>
-                    Explore
-                </Button>
+                    <SectionTitle center white>Play Has No Limits</SectionTitle>
+                    <SectionText center white>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus
+                        posuere risus vel semper. Etiam tempus arcu non velit dignissim semper in ac
+                        turpis.</SectionText>
+                    <Button outline isWhite zIndex={11} className={"align-self-center justify-self-center"}
+                            onClick={handleRedirect}>
+                        Explore
+                    </Button>
                 </div>
                 <Video src={'PS5-2.mp4'} autoPlay muted loop/>
                 <VideoOverlay/>

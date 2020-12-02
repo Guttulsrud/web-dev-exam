@@ -29,15 +29,6 @@ export const CardBack = styled.div`
     overflow: hidden;    
 `
 
-export const Overlay = styled.div`
-   position: absolute;
-   transition: ease 1s;
-   height: 400px;
-   width: 100%;
-   bottom: 0px;
-   border-radius: 15px;
-`
-
 export const Wave = styled.div`
    position: absolute;
    bottom: -100px;
@@ -88,4 +79,21 @@ export const CardBody = styled.div`
 export const CardWrapper = styled.div`
     position: relative;
     padding-bottom: 40px;
+`
+export const SignLogo = styled.div`
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-image: url("signlogo.png");
+    background-size: cover;
+    background-position: center;
+    width: 18px;
+    height: 18px;    
+`
+
+export const LogoWrapper = styled.div`
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transform: rotate(0deg);    
 `

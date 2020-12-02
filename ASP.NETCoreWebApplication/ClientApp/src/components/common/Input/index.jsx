@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FocusLine, InputWrapper, Label, StyledInput} from './style';
 
-const Input = ({onChange, value, label, placeholder, type, className}) => {
+const Input = ({onChange, value, label, placeholder, type, className, transparent}) => {
     const [isFilled, setFilled] = useState(false);
     const [hasFocus, setFocus] = useState(false);
     const [hadFocus, setHadFocus] = useState(false);
@@ -19,13 +19,14 @@ const Input = ({onChange, value, label, placeholder, type, className}) => {
                          }}
                          onBlur={() => setFocus(false)} type={type} placeholder={hasFocus ? placeholder : ''}
                          value={value}
+                         transparent={transparent}
                          onChange={(e) => {
                              onChange(e);
                              handleChange(e);
                          }}
             />
-            <Label filled={isFilled}>{label}</Label>
-            <FocusLine isFocused={hasFocus} hadFocus={hadFocus}/>
+            <Label transparent={transparent} filled={isFilled}>{label}</Label>
+            <FocusLine transparent={transparent} isFocused={hasFocus} hadFocus={hadFocus}/>
         </InputWrapper>
     );
 };
