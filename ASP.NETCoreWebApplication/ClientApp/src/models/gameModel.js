@@ -8,7 +8,7 @@ export const gameModel = {
     'featureImage': "https://localhost:5001/images/ps_logo.png",
     'featureVideo': "https://localhost:5001/images/ps_logo.png",
     'gameBoxImage': "https://localhost:5001/images/ps_logo.png",
-    'trailerLink': "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    'trailerLink': "https://www.youtube.com/embed/dQw4w9WgXcQ",
     'price': "69.99",
     'backgroundImage': "https://localhost:5001/images/ps_logo.png",
     'gameLogo': "https://localhost:5001/images/ps_logo.png",
