@@ -2,11 +2,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import {DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
 import {EntityContext} from '../../../context/EntityContext';
 
-const options = ['Release date', 'Category 1', 'Category 2', 'Category 3'];
+const options = ['Release ascending', 'Release descending', 'Price ascending', 'Price descending'];
 
-const SortBy = (props) => {
+const SortBy = () => {
     const {entities} = useContext(EntityContext);
-
 
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -15,22 +14,22 @@ const SortBy = (props) => {
 
     const toggling = () => setIsOpen(!isOpen);
 
-    const sortByYear = (asc) => {
-        if (asc) {
-            return [...games].sort((a, b) => parseInt(a.year) > parseInt(b.year) ? 1 : -1);
+    const sortByYear = (value) => {
+        if (value.includes('Release')) {
+            return value.includes('ascending') ? [...games].sort((a, b) => parseInt(a.year) > parseInt(b.year) ? 1 : -1) :
+                [...games].sort((a, b) => parseInt(a.year) < parseInt(b.year) ? 1 : -1);
         } else {
-            return [...games].sort((a, b) => parseInt(a.year) < parseInt(b.year) ? 1 : -1);
+            return value.includes('ascending') ? [...games].sort((a, b) => parseInt(a.price) > parseInt(b.price) ? 1 : -1) :
+                [...games].sort((a, b) => parseInt(a.price) < parseInt(b.price) ? 1 : -1);
         }
     };
 
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
+        setYearAsc(!yearAsc);
+        setGames(sortByYear(value));
 
-        if (value === 'Release date') {
-            setYearAsc(!yearAsc);
-            setGames(sortByYear(yearAsc));
-        }
     };
 
     return (
