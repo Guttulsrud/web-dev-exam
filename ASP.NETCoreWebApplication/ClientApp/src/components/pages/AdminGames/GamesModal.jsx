@@ -58,8 +58,9 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
     }
 
     const uploadImage = (propertyName, file) => {
-        file.filename = new Date().getTime()*Math.random()+'.png'
-        game[propertyName] = file.filename
+        file.filename = new Date().getTime()*Math.random()+ '.png'
+        game[propertyName] = 'https://localhost:5001/images/' + file.filename
+        
         let data = new FormData();
         data.append('file', file, file.filename);
 

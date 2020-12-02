@@ -16,7 +16,7 @@ const GamesList = ({handleEdit}) => {
                 <td style={{verticalAlign: "middle"}}>{game.title}</td>
                 <td style={{verticalAlign: "middle"}}>{game.category}</td>
 
-                <td className={'text-center'}><TableImage src={"https://localhost:5001/images/" + game.gameBoxImage} alt="gamebox"/></td>
+                <td className={'text-center'}><TableImage src={game.gameBoxImage} alt="gamebox"/></td>
                 <td style={{verticalAlign: "middle"}} className={'text-center'}>{game.isFeatured ?
                     <FontAwesomeIcon icon={faCheckCircle} className={"my-auto"} color={'#58a458'} size={'2x'}/> :
                     <FontAwesomeIcon icon={faTimesCircle} color={'#9f3333'} size={'2x'}/>}</td>
