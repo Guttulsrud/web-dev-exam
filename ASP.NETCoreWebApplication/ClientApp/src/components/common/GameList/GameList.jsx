@@ -5,7 +5,7 @@ import {EntityContext} from '../../../context/EntityContext';
 import SortBy from '../../pages/Games/SortBy';
 import FilterBy from '../../pages/Games/FilterBy';
 
-const GameList = ({explore, query}) => {
+const GameList = ({explore, query, currentTitle, currentCategory}) => {
     const {entities} = useContext(EntityContext);
     const [games] = entities;
     const [filterValue, setValue] = useState('');
@@ -22,6 +22,12 @@ const GameList = ({explore, query}) => {
         });
     }
 
+    const generateRelatedGames = () => {
+        return games.filter(game => game.title !== currentTitle && game.category === currentCategory).map((game, i) => (
+            <GameCard key={`gamecard${i}`} {...game}/>
+        ))
+    }
+
     return (
         <div>
             {explore &&
@@ -31,7 +37,9 @@ const GameList = ({explore, query}) => {
             </Row>
             }
             <Row>
-                {!query ? generateGames() : generateSearchedGames()}
+                {(!query && !currentCategory && !currentTitle) && generateGames()}
+                {query && generateSearchedGames()}
+                {currentTitle && currentCategory && generateRelatedGames()}
             </Row>
         </div>
     );

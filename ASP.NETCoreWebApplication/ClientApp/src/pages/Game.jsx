@@ -18,13 +18,13 @@ export const Game = () => {
     return (
         <EntityProvider endpoint={"character"}>
             <SingleGameProvider endpoint={id}>
-            <FullGame></FullGame>
-            <InfoSection></InfoSection>
-            <TrailerSection></TrailerSection>
-            <CharacterSection></CharacterSection>
-            <ScreenshotSection></ScreenshotSection>
-            <DeveloperSection></DeveloperSection>
-            <RelatedSection></RelatedSection>
+            <FullGame/>
+            <InfoSection/>
+            <TrailerSection/>
+            <CharacterSection/>
+            <ScreenshotSection/>
+            <DeveloperSection/>
+            <RelatedSection/>
             </SingleGameProvider>
         </EntityProvider>
     );
