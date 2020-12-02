@@ -29,9 +29,9 @@ export const Devices = () => {
                         <Col md={7}>
                             <Row>
                                 <Col lg={12}>
-                                    <SectionTitle className="text-left" style={{fontSize: "120px"}}>Play has no
+                                    <SectionTitle className="text-left" style={{fontSize: "120px", paddingTop:"30px"}}>Play has no
                                         limits™</SectionTitle>
-                                    <Paragraph>Experience lightning-fast loading with an ultra-high speed SSD, deeper
+                                    <Paragraph style={{paddingBottom: "20px"}}>Experience lightning-fast loading with an ultra-high speed SSD, deeper
                                         immersion
                                         with support for haptic feedback, adaptive triggers and 3D Audio*, and an
                                         all-new
