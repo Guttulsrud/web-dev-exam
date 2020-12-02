@@ -16,7 +16,7 @@ export const gameModel = {
     'developer': "",
     'publisher': "",
     'year': "",
-    'screenshots': "https://localhost:5001/images/ps_logo.png",
+    'screenshots': [],
     'isDark': false,
     'isFeatured': false,
 }
