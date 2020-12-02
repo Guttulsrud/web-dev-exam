@@ -2,11 +2,11 @@ import React, {createContext, useEffect, useState} from 'react';
 import axios from 'axios';
 
 
-export const SingleGameContext = createContext();
+export const AccessoryContext = createContext();
 
-export const SingleGameProvider = ({children, endpoint}) => {
+export const AccessoryProvider = ({children, endpoint}) => {
 
-    const [game, setGame] = useState({})
+    const [accessory, setAccessories] = useState([{}])
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -14,15 +14,15 @@ export const SingleGameProvider = ({children, endpoint}) => {
     }, []);
 
     const fetchData = async () => {
-        const url = `https://localhost:5001/game/${endpoint}`;
+        const url = `https://localhost:5001/${endpoint}`;
         await axios.get(url).then(res => {
-            setGame(res.data);
+            setAccessories(res.data);
             console.log(res.data);
         }).then(() => setLoading(false));
     };
     return (
-        <SingleGameContext.Provider value={{game: [game, setGame]}}>
+        <AccessoryContext.Provider value={{accessory: [accessory, setAccessories]}}>
             {children}
-        </SingleGameContext.Provider>
+        </AccessoryContext.Provider>
     )
 }

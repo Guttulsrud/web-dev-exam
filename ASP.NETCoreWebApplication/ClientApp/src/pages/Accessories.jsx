@@ -4,6 +4,7 @@ import {Section} from '../components/base/Section';
 import {SectionTitle} from '../components/base/SectionTitle';
 import Container from "react-bootstrap/Container";
 import AccessoriesList from "../components/common/AccessoriesList";
+import {EntityProvider} from "../context/EntityContext";
 
 export const Accessories = (props) => {
 
@@ -40,13 +41,19 @@ export const Accessories = (props) => {
         },
         ]
 
+
+
     return (
         <React.Fragment>
             <Section style={{paddingTop: "60px"}}>
-                <Container>
-                    <SectionTitle>Accessories</SectionTitle>
-                    <AccessoriesList data={data}/>
-                </Container>
+                <EntityProvider endpoint={"accessory"}>
+                    <Container>
+                        <SectionTitle>Accessories</SectionTitle>
+                        <AccessoriesList/>
+                    </Container>
+                </EntityProvider>
+
+
             </Section>
         </React.Fragment>
     );
