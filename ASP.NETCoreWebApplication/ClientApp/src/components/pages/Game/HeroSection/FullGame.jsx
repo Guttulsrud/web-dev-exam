@@ -32,7 +32,6 @@ const FullGame = () => {
 
             <HeroWrapper backgroundImage={"forbidden-west.jpg"}>
                 <Container>
-                <SignLogo backgroundImage={"signlogo.png"}></SignLogo>
 
                     <motion.div
                                 initial={{ x: -200, opacity: 0}}

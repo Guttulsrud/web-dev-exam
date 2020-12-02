@@ -5,14 +5,16 @@ import {Paragraph} from "../../../base/Paragraph";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import {Subtitle} from "../../../base/Subtitle";
+import {BoxArt, BoxArtWrapper, Price} from "./style";
 
 const InfoSection = () => {
     return (
         <Section>
             <Container>
-                <Row className={"d-flex align-items-center"}>
-                    <Col lg={"6"}>
-                        <Subtitle>Unleash some pussy</Subtitle>
+                <Subtitle>Unleash some pussy</Subtitle>
+                <Row className={"d-flex align-items-center align-content-center"}>
+
+                    <Col lg={"6"} >
                         <Paragraph>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -24,8 +26,13 @@ const InfoSection = () => {
                         </Paragraph>
                     </Col>
 
-                    <Col lg={"6"}>
-                        <div style={{backgroundColor: "#ff00cc", width: "500px", height: "500px"}}></div>
+                    <Col lg={"6"} className={"d-flex justify-content-center"}>
+
+                        <BoxArtWrapper>
+                            <BoxArt backgroundImage={"horizonbox.jpg"}></BoxArt>
+                            <Price>Price $89</Price>
+                        </BoxArtWrapper>
+
                     </Col>
 
                 </Row>

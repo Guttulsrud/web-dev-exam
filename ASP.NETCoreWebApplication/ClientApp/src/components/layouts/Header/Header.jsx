@@ -30,13 +30,14 @@ const Header = () => {
                             <Nav className={'d-flex justify-content-around pl-0 pr-0 header-links'}
                                  style={{width: '100%', fontSize: '1.1rem', fontWeight: '500'}}>
                                 <Nav.Item>
-                                    <NavLink to='/games' activeClassName='activeRoute' activeStyle={{color: '#0070D1'}}>
-                                        Explore Games
+                                    <NavLink exact to='/' activeClassName='activeRoute' activeStyle={{color: '#0070D1'}}>
+                                        Home
                                     </NavLink>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <NavLink to='/psplus' activeClassName='activeRoute'
-                                             activeStyle={{color: '#0070D1'}}>PS Plus</NavLink>
+                                    <NavLink to='/games' activeClassName='activeRoute' activeStyle={{color: '#0070D1'}}>
+                                        Explore Games
+                                    </NavLink>
                                 </Nav.Item>
                                 <Nav.Item>
                                     <NavLink to='/accessories' activeClassName='activeRoute'

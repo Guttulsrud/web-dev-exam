@@ -19,28 +19,28 @@ const Sidebar = () => {
                 <SidebarWrapper>
                     <ul className={"nav sidebar-links flex-column"}>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin" className={"sidebar-link"} activeClassName="activeRouteSidebar">Dashboard</NavLink>
+                            <NavLink exact to="/admin" className={"sidebar-link"} activeClassName="activeRouteSidebar">Dashboard</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/games" className={"sidebar-link"} activeClassName="activeRouteSidebar">Games</NavLink>
+                            <NavLink exact to="/admin/games" className={"sidebar-link"} activeClassName="activeRouteSidebar">Games</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/gamecharacters" className={"sidebar-link"} activeClassName="activeRouteSidebar">Game Characters</NavLink>
+                            <NavLink exact to="/admin/gamecharacters" className={"sidebar-link"} activeClassName="activeRouteSidebar">Game Characters</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/accessories" className={"sidebar-link"} activeClassName="activeRouteSidebar">Accessories</NavLink>
+                            <NavLink exact to="/admin/accessories" className={"sidebar-link"} activeClassName="activeRouteSidebar">Accessories</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/users" className={"sidebar-link"} activeClassName="activeRouteSidebar">Users</NavLink>
+                            <NavLink exact to="/admin/users" className={"sidebar-link"} activeClassName="activeRouteSidebar">Users</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/admin/settings" className={"sidebar-link"} activeClassName="activeRouteSidebar">Settings</NavLink>
+                            <NavLink exact to="/admin/settings" className={"sidebar-link"} activeClassName="activeRouteSidebar">Settings</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to={"/"} onClick={handleLogout} className={"sidebar-link"} activeClassName="activeRouteSidebar">Log out</NavLink>
+                            <NavLink exact to={"/"} onClick={handleLogout} className={"sidebar-link"} activeClassName="activeRouteSidebar">Log out</NavLink>
                         </li>
                         <li className={"nav-item"}>
-                            <NavLink to="/" className={"sidebar-link"} activeClassName="activeRouteSidebar">Back</NavLink>
+                            <NavLink exact to="/" className={"sidebar-link"} activeClassName="activeRouteSidebar">Back</NavLink>
                         </li>
                     </ul>
                     {/*
