@@ -48,19 +48,18 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         for (let i = 0; i < e.target.files.length; i++) {
             fileList.push({
                 file: e.target.files[i],
-                name: e.target.name + "_" + i
+                propertyName: e.target.name
             });
         }
     }
     const uploadImages = () => {
-        fileList.forEach(image => uploadImage(image.name, image.file))
+        fileList.forEach(image => uploadImage(image.propertyName, image.file))
         fileList = []
     }
 
-    const uploadImage = (name, file) => {
-        file.filename = game.title + "_" + name + '_image.png'
-        game['gameBoxImage'] = file.filename
-        console.log(name)
+    const uploadImage = (propertyName, file) => {
+        file.filename = new Date().getTime()*Math.random()+'.png'
+        game[propertyName] = file.filename
         let data = new FormData();
         data.append('file', file, file.filename);
 
