@@ -115,7 +115,9 @@ export const MobileMenu = styled.nav`
   height: 100vh;
   width: 100vw;
   text-align: left;
-  padding: 30px;
+  padding-top: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
   position: absolute;
   overflow: hidden;
   top: 0;

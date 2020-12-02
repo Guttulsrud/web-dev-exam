@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {useHistory} from "react-router";
 import Input from "../Input";
-import Button from "react-bootstrap/Button";
-import {SearchWrapper} from "../Search/style";
+import {SearchBarWrapper} from "../SearchBar/style";
+import {Button} from "../../base/Button";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
     const [searchQuery, setQuery] = useState("")
     const history = useHistory()
 
@@ -16,10 +16,10 @@ const SearchBar = () => {
         }
     }
     return (
-        <>
-            <Input label={"Search games"} style={{position: "relative"}} value={searchQuery} onChange={(e) => setQuery(e.target.value)}/>
-            <Button onClick={handleRedirect}>Search</Button>
-            </>
+                <SearchBarWrapper>
+            <Input transparent={true} label={"Search games"} style={{position: "relative"}} value={searchQuery} onChange={(e) => setQuery(e.target.value)}/>
+            <Button isWhite outline marginLeft onClick={handleRedirect}>Search</Button>
+                </SearchBarWrapper>
     )
 }
 
