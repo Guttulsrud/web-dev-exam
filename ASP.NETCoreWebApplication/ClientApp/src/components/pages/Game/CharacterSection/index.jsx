@@ -3,7 +3,6 @@ import {Section} from "../../../base/Section";
 import {Container} from "react-bootstrap";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Paragraph} from "../../../base/Paragraph";
 import {Subtitle} from "../../../base/Subtitle";
 import {EntityContext} from '../../../../context/EntityContext';
 import {SingleGameContext} from '../../../../context/SingleGameContext';
@@ -11,8 +10,8 @@ import {CharacterTile} from './style';
 
 const CharacterSection = () => {
     const {entities} = useContext(EntityContext)
-    const {game, setGame} = useContext(SingleGameContext)
-    const [characters, setCharacters] = entities
+    const {game} = useContext(SingleGameContext)
+    const [characters] = entities
 
     const generateCharacters = () => {
         return characters.filter(character => character.game === game[0].title).map((character, index) => (
@@ -20,7 +19,6 @@ const CharacterSection = () => {
         ))
     }
 
-    console.log(characters)
 
     return (
         <Section>

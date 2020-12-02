@@ -17,11 +17,10 @@ export const SingleGameProvider = ({children, endpoint}) => {
         const url = `https://localhost:5001/game/${endpoint}`;
         await axios.get(url).then(res => {
             setGame(res.data);
-            console.log(res.data);
         }).then(() => setLoading(false));
     };
     return (
-        <SingleGameContext.Provider value={{game: [game, setGame]}}>
+        <SingleGameContext.Provider value={{game: [game, setGame], loading}}>
             {children}
         </SingleGameContext.Provider>
     )

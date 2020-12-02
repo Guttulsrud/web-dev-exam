@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import FeaturedItem from "./FeaturedItem";
+import {EntityContext} from '../../../../context/EntityContext';
 
 const FeaturedCarousel = (props) => {
+    const {entities, loading} = useContext(EntityContext)
+    const [games] = entities
 
     const getData = () => {
-        return props.data.map((item, i) => {
-            return <Carousel.Item key={i}><FeaturedItem {...item}/></Carousel.Item>
+        return games.filter(game => game.isFeatured).map((game, i) => {
+            return <Carousel.Item key={i}><FeaturedItem {...game}/></Carousel.Item>
         });
     }
 

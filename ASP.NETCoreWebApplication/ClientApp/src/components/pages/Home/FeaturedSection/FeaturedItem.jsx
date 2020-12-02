@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
     CardBack,
     CarouselImage,
@@ -9,8 +9,12 @@ import {
 import {Container} from "react-bootstrap";
 import {Button} from "../../../base/Button";
 import Ps5Logo from "../../../common/GameCard/Ps5Logo";
+import {useHistory} from 'react-router';
+import {EntityContext} from '../../../../context/EntityContext';
 
-const FeaturedItem = ({title, description, backgroundImage}) => {
+const FeaturedItem = ({id, title, description, featureImage}) => {
+
+ const history = useHistory()
 
     return (
         <React.Fragment>
@@ -18,13 +22,13 @@ const FeaturedItem = ({title, description, backgroundImage}) => {
             <Container>
                 <div style={{position: "relative", height: "600px"}}>
 
-                    <CardBack><SignLogo></SignLogo><LogoWrapper normal><Ps5Logo></Ps5Logo></LogoWrapper></CardBack>
-                    <CarouselImage backgroundImage={backgroundImage}>
+                    <CardBack><SignLogo/><LogoWrapper normal><Ps5Logo/></LogoWrapper></CardBack>
+                    <CarouselImage backgroundImage={featureImage}>
 
                         <CarouselCaption>
                             <CarouselTitle>{title}</CarouselTitle>
                             <CarouselDescription>{description}</CarouselDescription>
-                            <Button isWhite outline>More</Button>
+                            <Button isWhite outline onClick={() => history.push(`/games/detail/${id}`)}>More</Button>
                         </CarouselCaption>
                     </CarouselImage>
                 </div>
