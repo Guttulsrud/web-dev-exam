@@ -45,39 +45,6 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
 
     const handleDelete = async () => axios.delete(`https://localhost:5001/game/delete/${id}`).then(fetchData).then(() => handleClose());
 
-  /*  const handleImageChange = (e) => {
-        for (let i = 0; i < e.target.files.length; i++) {
-            fileList.push({
-                file: e.target.files[i],
-                propertyName: e.target.name
-            });
-        }
-    }
-    const uploadImages = () => {
-        fileList.forEach(image => uploadImage(image.propertyName, image.file))
-        fileList = []
-    }
-
-    const uploadImage = (propertyName, file) => {
-        file.filename = new Date().getTime()*Math.random()+ '.png'
-        
-        const imagePath = 'https://localhost:5001/images/' + file.filename
-        if(propertyName === 'screenshots')
-            game[propertyName].push(imagePath)
-        else 
-            game[propertyName] = imagePath
-        
-        let data = new FormData();
-        data.append('file', file, file.filename);
-
-        axios({
-            method: 'post',
-            url: 'https://localhost:5001/ImageUpload/UploadImage',
-            data: data,
-            config: {headers: {'Content-Type': 'multipart/form-data'}}
-        });
-    };*/
-
     return (
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>

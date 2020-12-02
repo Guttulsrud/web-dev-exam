@@ -210,6 +210,18 @@ code {
 
 /*** DASHBOARD ***/
 
+.dashboard-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-links li {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-family: "SST Light", Arial;
+}
+
 .sidebar-wrapper{
   min-height: 100vh !important;
   width: 100%;

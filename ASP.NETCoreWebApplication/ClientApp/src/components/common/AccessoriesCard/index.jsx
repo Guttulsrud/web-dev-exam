@@ -15,6 +15,7 @@ import {
 import Ps5Logo from "../GameCard/Ps5Logo";
 
 const AccessoriesCard = ({col, name, description, image}) => {
+    console.log(image)
     return (
         <Col lg={col}>
             <CardWrapper>
