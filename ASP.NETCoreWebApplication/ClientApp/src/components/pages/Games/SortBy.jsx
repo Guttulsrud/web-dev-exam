@@ -5,7 +5,7 @@ import {EntityContext} from '../../../context/EntityContext';
 const options = ['Release date', 'Category 1', 'Category 2', 'Category 3'];
 
 const SortBy = (props) => {
-    const {entities, setData} = useContext(EntityContext);
+    const {entities} = useContext(EntityContext);
 
 
     const [isOpen, setIsOpen] = useState(false);
@@ -17,14 +17,10 @@ const SortBy = (props) => {
 
     const sortByYear = (asc) => {
         if (asc) {
-            return games.sort((a, b) => parseInt(a.year) > parseInt(b.year) ? 1 : -1);
+            return [...games].sort((a, b) => parseInt(a.year) > parseInt(b.year) ? 1 : -1);
         } else {
-            return games.sort((a, b) => parseInt(a.year) < parseInt(b.year) ? 1 : -1);
+            return [...games].sort((a, b) => parseInt(a.year) < parseInt(b.year) ? 1 : -1);
         }
-    };
-
-    const sortByCategory = (cat) => {
-        return games.sort((a, b) => a.category > b.category ? 1 : -1);
     };
 
     const onOptionClicked = value => () => {
@@ -32,18 +28,9 @@ const SortBy = (props) => {
         setIsOpen(false);
 
         if (value === 'Release date') {
-
             setYearAsc(!yearAsc);
             setGames(sortByYear(yearAsc));
         }
-
-        if (value === 'Category 1') {
-            setGames([])
-
-            setGames(sortByCategory(1));
-        }
-        console.log(value.split(' '));
-
     };
 
     return (

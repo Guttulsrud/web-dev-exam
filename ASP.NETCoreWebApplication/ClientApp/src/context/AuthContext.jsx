@@ -11,7 +11,7 @@ export const AuthProvider = ({children}) => {
     useEffect(() => {
         window.localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn))
         window.localStorage.setItem("user", user)
-    }, [isLoggedIn])
+    }, [isLoggedIn, user])
 
     const handleLogin = (user, state) => {
         setUser(user)

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import {Main, DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
+import {DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
 
-const options = ["Category 1", "Category 2", "Category 3"];
 
-const FilterBy = (props) => {
+const options = ["All", "3D Platformer", "Action RPG", "Adventure", "Racing"];
 
+const FilterBy = ({handleFilter}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
@@ -13,7 +13,7 @@ const FilterBy = (props) => {
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
-        console.log(selectedOption);
+        handleFilter(value === "All" ? "" : value);
     };
 
     return (
