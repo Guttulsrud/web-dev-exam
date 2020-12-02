@@ -23,7 +23,7 @@ namespace ASP.NETCoreWebApplication.Controllers {
             return _gamesService.Get();
         }
         
-        [HttpGet("get/{id:length(24)}")]
+        [HttpGet("{id:length(24)}")]
         [Route("[action]")]
         public ActionResult<Game> Get(string id)
         {
@@ -37,7 +37,6 @@ namespace ASP.NETCoreWebApplication.Controllers {
             _gamesService.Create(game);
             return game;
         }
-        
 
         [HttpDelete("delete/{id:length(24)}")]
         [Route("[action]")]
