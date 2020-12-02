@@ -17,5 +17,18 @@ export const SignLogo = styled.div`
   ${props => (props.right ? "right" : "left")}: -200px;
   ${props => (props.bottom ? "bottom" : "top")}: 0px;
   z-index: 1;
+          @media (max-width: 576px) {
+            width: 100px;
+            height: 100px;
+        }
+        @media (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+        @media (max-width: 992px) {
+            width: 100px;
+            height: 100px;
+        }
+  
 `
 

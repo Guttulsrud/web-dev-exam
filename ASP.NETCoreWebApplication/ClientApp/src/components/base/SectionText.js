@@ -12,4 +12,7 @@ export const SectionText = styled.h1`
     z-index: 1000;
     padding-top: 50px;
     padding-bottom: 30px;
+       @media (max-width: 576px) {
+            font-size: 1.4rem;
+        }
 `

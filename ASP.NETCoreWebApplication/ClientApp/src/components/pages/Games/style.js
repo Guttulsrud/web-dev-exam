@@ -6,6 +6,11 @@ export const DropDownContainer = styled.div`
   margin-top: 30px;
   margin-left: 20px;
   cursor: pointer;
+          @media (max-width: 768px) {
+            display: block;
+            width: 100%;
+            margin-right: 30px;
+        }
 `;
 
 export const DropDownHeader = styled.div`
@@ -37,6 +42,11 @@ export const DropDownListContainer = styled.div`
   position: absolute;
   z-index: 100;
   width: 300px;
+  @media (max-width: 768px) {
+            display: inline-block       
+            width: 100%;
+           
+        }
   
 `;
 
@@ -53,6 +63,7 @@ export const DropDownList = styled.ul`
   font-weight: 500;
   border-radius: 15px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+  width: 300px;
   &:first-child {
     padding-top: 10px;
   }

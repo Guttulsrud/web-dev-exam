@@ -8,6 +8,18 @@ export const RadialGradient = styled.div`
     top: -1000px;
     left: -1000px;
     z-index: 0;
+              @media (max-width: 576px) {
+            width: 100px;
+            height: 100px;
+        }
+        @media (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+        }
+        @media (max-width: 992px) {
+            width: 100px;
+            height: 100px;
+        }
 
 `
 

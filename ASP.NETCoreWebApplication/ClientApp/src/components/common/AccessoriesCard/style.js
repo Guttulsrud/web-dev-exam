@@ -52,6 +52,9 @@ export const CardTitle = styled.h1`
    font-size: 3rem;
    font-weight: bold;
    color: #0070D1;
+   @media (max-width: 768px) {
+            font-size: 2rem;
+        }
 `
 
 export const CardDesc = styled.h2`

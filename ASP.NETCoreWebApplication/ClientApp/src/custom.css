@@ -109,7 +109,7 @@ body {
 }
 
 
-
+/* Carousel */
 
 .carousel-indicators .active{
   background-color: #0070D1;
@@ -120,7 +120,6 @@ body {
   overflow: visible;
 }
 
-
 .carousel-indicators li{
   background-color: #c4c4c4;
   opacity: 0.3;
@@ -128,15 +127,11 @@ body {
   height: 18px;
   width: 18px;
   border-radius: 50%;
-
-
-
 }
 
 .carousel-control-next, .carousel-control-prev {
   color: #ff00cc;
   opacity: 1;
-
 }
 
 .carousel-control-prev-icon {
@@ -150,17 +145,16 @@ body {
 }
 .carousel-item {
 
-
 }
+
+
+/** MISC **/
 
 .feature-overlay {
   position: relative;
   z-index: 999990000;
   top: 0;
-
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
-
-
 }
 
 .header-links a{
@@ -185,7 +179,6 @@ body {
   padding: 5px 20px;
   transition: .2s ease;
 }
-
 
 
 a {
