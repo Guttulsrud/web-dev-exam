@@ -10,21 +10,22 @@ import TrailerSection from "../components/pages/Game/TrailerSection";
 import DeveloperSection from "../components/pages/Game/DeveloperSection";
 
 import {SingleGameProvider} from "../context/SingleGameContext";
+import {EntityProvider} from '../context/EntityContext';
 
 export const Game = () => {
     const {id} = useParams()
 
     return (
-        <React.Fragment>
+        <EntityProvider endpoint={"character"}>
             <SingleGameProvider endpoint={id}>
             <FullGame></FullGame>
             <InfoSection></InfoSection>
             <TrailerSection></TrailerSection>
             <CharacterSection></CharacterSection>
-            {/*<ScreenshotSection></ScreenshotSection>*/}
+            <ScreenshotSection></ScreenshotSection>
             <DeveloperSection></DeveloperSection>
             <RelatedSection></RelatedSection>
             </SingleGameProvider>
-        </React.Fragment>
+        </EntityProvider>
     );
 };

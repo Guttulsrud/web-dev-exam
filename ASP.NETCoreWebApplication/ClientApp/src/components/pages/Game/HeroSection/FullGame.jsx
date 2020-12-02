@@ -22,10 +22,16 @@ import {
 import ScreenThumb from "./ScreenThumb";
 import {SingleGameContext} from "../../../../context/SingleGameContext";
 
-const FullGame = () => {
 
+const FullGame = () => {
     const {game} = useContext(SingleGameContext);
     const [singleGame] = game
+
+     const generateScreenshots = () => {
+        return singleGame.screenshots ?  singleGame.screenshots.slice(0, 3).map((image, index) => (
+             <ScreenThumb key={`screenshot${index}`} image={image}/>
+         )) : null
+     }
 
     return (
         <React.Fragment>
@@ -35,7 +41,7 @@ const FullGame = () => {
                 transition={{ duration: .7, delay: 0 }}
             >
 
-            <HeroWrapper backgroundImage={"forbidden-west.jpg"}>
+            <HeroWrapper backgroundImage={singleGame.featureImage}>
                 <Container>
 
                     <motion.div
@@ -71,10 +77,7 @@ const FullGame = () => {
                 <Caption>Screenshots</Caption>
                     </motion.div>
                 <ThumbWrapper>
-
-                    <ScreenThumb image={"screenshots/horizon/1.jpg"}/>
-                    <ScreenThumb image={"screenshots/horizon/2.jpg"}/>
-                    <ScreenThumb image={"screenshots/horizon/3.jpg"}/>
+                   {generateScreenshots()}
                 </ThumbWrapper>
                 </div>
                     </motion.div>
@@ -84,7 +87,7 @@ const FullGame = () => {
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1.5, delay: 1.5 }}
                     >
-                    <SignLogoSmall></SignLogoSmall>
+                    <SignLogoSmall/>
                     </motion.div>
                 </Container>
             </HeroWrapper>

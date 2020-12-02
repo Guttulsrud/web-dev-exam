@@ -10,8 +10,6 @@ const ActionModal = ({show, edit, id, name, username, password, privileges, hand
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(username)
-        console.log(password)
         edit ? axios.put(`https://localhost:5001/user/edit`, {
                 id,
                 name,
@@ -27,8 +25,6 @@ const ActionModal = ({show, edit, id, name, username, password, privileges, hand
             }).then(fetchData).then(() => handleClose());
     };
 
-    console.log(name)
-    console.log(username)
     const handleDelete = async () => axios.delete(`https://localhost:5001/user/delete/${id}`).then(fetchData).then(() => handleClose());
     return (
         <Modal show={show} onHide={handleClose}>

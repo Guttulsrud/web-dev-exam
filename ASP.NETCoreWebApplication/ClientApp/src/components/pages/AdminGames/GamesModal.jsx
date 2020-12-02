@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import {EntityContext} from '../../../context/EntityContext';
 import axios from 'axios';
 import Row from 'react-bootstrap/Row';
+import {handleImageChange, uploadImages} from '../../../helpers/imageUpload';
 
 const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
     const {fetchData} = useContext(EntityContext);
@@ -36,7 +37,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         e.preventDefault();
         const addUrl = 'https://localhost:5001/game/create';
         const editUrl = 'https://localhost:5001/game/edit';
-        uploadImages()
+        uploadImages(game)
         edit ?
             axios.put(editUrl, game).then(fetchData).then(() => handleClose()) :
             axios.post(addUrl, game).then(fetchData).then(() => handleClose());
@@ -44,7 +45,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
 
     const handleDelete = async () => axios.delete(`https://localhost:5001/game/delete/${id}`).then(fetchData).then(() => handleClose());
 
-    const handleImageChange = (e) => {
+  /*  const handleImageChange = (e) => {
         for (let i = 0; i < e.target.files.length; i++) {
             fileList.push({
                 file: e.target.files[i],
@@ -75,7 +76,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
             data: data,
             config: {headers: {'Content-Type': 'multipart/form-data'}}
         });
-    };
+    };*/
 
     return (
         <Modal show={show} onHide={handleClose}>
@@ -119,7 +120,8 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                                       onChange={(e) => handleChange(e)}/>
 
                         <Form.Label>Year</Form.Label>
-                        <Form.Control name='year' as='select' value={game.year} onChange={(e) => handleChange(e)}>
+                        <Form.Control name='year' as='select' defaultValue={edit ? game.year : ""} onChange={(e) => handleChange(e)}>
+                            <option value="" disabled hidden>Select year</option>
                             {range(2020, 2025).map(year => <option key={year} value={year}>{year}</option>)}
                         </Form.Control>
 

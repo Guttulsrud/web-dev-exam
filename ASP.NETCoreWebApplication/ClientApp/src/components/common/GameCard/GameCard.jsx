@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 60, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
-const GameCard = ({id,title, year, category,backgroundImage}) => {
+const GameCard = ({id,title, year, category,featureImage}) => {
     const [isHovered, setHovered] = useState(false);
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 1, tension: 700, friction: 20 } }))
 
@@ -28,7 +28,7 @@ const GameCard = ({id,title, year, category,backgroundImage}) => {
                 >
             <Card>
 
-                <CardImage backgroundImage={backgroundImage}/>
+                <CardImage backgroundImage={featureImage}/>
                 <Overlay>
                     <CardContainer>
 
