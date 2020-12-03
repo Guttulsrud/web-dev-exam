@@ -19,7 +19,6 @@ const CharacterSection = () => {
         ))
     }
 
-
     return (
         <Section>
             <Container>
@@ -27,13 +26,10 @@ const CharacterSection = () => {
                     <Col lg={"6"}>
                         <Subtitle>Characters</Subtitle>
                     </Col>
-
                     <Col lg={"6"}>
                         {generateCharacters()}
                     </Col>
-
                 </Row>
-
             </Container>
         </Section>
     )

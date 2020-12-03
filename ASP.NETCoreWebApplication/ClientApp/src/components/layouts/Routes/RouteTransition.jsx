@@ -15,7 +15,7 @@ const RouteTransition = ({exact, path, children, slide = 0, slideUp = 0, ...rest
 
 RouteTransition.propTypes = {
     children: PropTypes.node.isRequired,
-    path: PropTypes.string.isRequired,
+    path: PropTypes.string,
     exact: PropTypes.bool,
     slide: PropTypes.number,
     slideUp: PropTypes.number

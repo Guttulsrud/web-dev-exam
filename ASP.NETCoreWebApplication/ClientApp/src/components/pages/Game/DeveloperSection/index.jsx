@@ -19,9 +19,7 @@ const DeveloperSection = () => {
                         <Subtitle>Developer</Subtitle>
                         <Paragraph>{singleGame.developer}</Paragraph>
                     </Col>
-
                 </Row>
-
             </Container>
         </Section>
     )

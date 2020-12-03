@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
 import {
     HeroWrapper,
     ThumbWrapper,
@@ -39,23 +38,16 @@ const FullGame3 = () => {
     return (
 
         <React.Fragment>
-
             <HeroWrapper>
-
-                <RadialGradient></RadialGradient>
-                <SignLogo backgroundImage={"signlogo.png"} style={{transform: `translateY(${offset * 0.2}px)`}}></SignLogo>
-
-                <ParallaxImage backgroundImage={"aloy.png"} style={{transform: `translateY(${offset * 0.4}px)`}}></ParallaxImage>
+                <RadialGradient/>
+                <SignLogo backgroundImage={"signlogo.png"} style={{transform: `translateY(${offset * 0.2}px)`}}/>
+                <ParallaxImage backgroundImage={"aloy.png"} style={{transform: `translateY(${offset * 0.4}px)`}}/>
                 <Container>
-
                     <div style={{position: "relative", top: "100px"}}>
-
                         <TitleText zIndex={"9"} fontSize={"13"} color={"#000"} lineHeight={"12"}>Horizon</TitleText>
                         <TitleText zIndex={"1000000"} fontSize={"11"} lineHeight={"3"} color={"#0070D1"} style={{transform: `translateY(${offset * 0.2}px)`}}>Zero Dawn</TitleText>
-
                         <TitleCat style={{transform: `translateY(${offset * 0.3}px)`}}>Action Adventure</TitleCat>
                     </div>
-
                     <div style={{marginTop: "250px"}}>
 
                         <Caption style={{transform: `translateY(${offset * 0.05}px)`}}>Screenshots</Caption>
@@ -68,10 +60,7 @@ const FullGame3 = () => {
                     </div>
 
                 </Container>
-
-                <SignLogoSmall></SignLogoSmall>
-
-
+                <SignLogoSmall/>
             </HeroWrapper>
 
             <SectionWrapper>
