@@ -1,8 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Container} from 'react-bootstrap';
-import {SignLogo} from '../components/common/SignLogo';
 import {Section} from '../components/base/Section';
-import {RadialGradient} from '../components/common/RadialGradient';
 
 const NotFound = () => {
 

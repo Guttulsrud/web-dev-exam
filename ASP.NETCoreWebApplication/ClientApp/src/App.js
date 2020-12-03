@@ -14,7 +14,6 @@ import {Dashboard} from './pages/Dashboard';
 import {AdminGames} from './pages/AdminGames';
 import {AdminGameCharacters} from './pages/AdminGameCharacters';
 import {AdminUsers} from './pages/AdminUsers';
-import {AdminSettings} from './pages/AdminSettings';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './custom.css';

@@ -15,7 +15,6 @@ const Footer = () => {
                         <ul className={"footer-links"}>
                             <li><NavLink as={Link} to="/">Home</NavLink></li>
                             <li><NavLink as={Link} to="/games">Explore Games</NavLink></li>
-                            <li><NavLink as={Link} to="/psplus">PS Plus</NavLink></li>
                             <li><NavLink as={Link} to="/accessories">Accessories</NavLink></li>
                             <li><NavLink as={Link} to="/devices">Playstation 5</NavLink></li>
                         </ul>

@@ -22,8 +22,6 @@ export const Button = styled.button`
     transition: .2s ease;
     z-index: ${props => props.zIndex ? props.zIndex : undefined};
     &:hover {
-        background-color: #0070D1;
-        color: #FFFFFF;
         transform: scale(1.03);
         text-decoration: none;
     }

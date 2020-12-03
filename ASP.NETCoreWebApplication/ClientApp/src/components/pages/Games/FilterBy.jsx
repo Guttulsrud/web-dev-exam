@@ -3,21 +3,19 @@ import {DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, 
 
 const options = ["All", "3D Platformer", "Action RPG", "Adventure", "Racing"];
 
-const FilterBy = ({handleFilter}) => {
-    const [isOpen, setIsOpen] = useState(false);
+const FilterBy = ({isOpen, toggling, handleFilter}) => {
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const toggling = () => setIsOpen(!isOpen);
 
     const onOptionClicked = value => () => {
         setSelectedOption(value);
-        setIsOpen(false);
+        toggling("filterBy");
         handleFilter(value === "All" ? "" : value);
     };
 
     return (
         <DropDownContainer>
-            <DropDownHeader onClick={toggling} open={isOpen}>
+            <DropDownHeader onClick={() => toggling("filterBy")} open={isOpen}>
                 {selectedOption || "Categories"}
             </DropDownHeader>
             {isOpen && (
