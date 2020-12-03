@@ -7,7 +7,7 @@ import FilterBy from '../../pages/Games/FilterBy';
 import PsLoading from '../../Loading';
 import PropTypes from "prop-types"
 
-const GameList = ({explore, query, currentTitle, currentCategory, mostAwaited}) => {
+const GameList = ({explore, query, currentTitle, currentCategory, random}) => {
     const {entities, loading} = useContext(EntityContext);
     const [games, setGames] = entities;
     const [filterValue, setValue] = useState('');
@@ -66,10 +66,10 @@ const GameList = ({explore, query, currentTitle, currentCategory, mostAwaited}) 
             </Row>
             }
             <Row>
-                {(!query && !currentCategory && !currentTitle && !mostAwaited) && generateGames()}
+                {(!query && !currentCategory && !currentTitle && !random) && generateGames()}
                 {query && generateSearchedGames()}
                 {currentTitle && currentCategory && generateRelatedGames()}
-                {mostAwaited && generateAwaitedGames()}
+                {random && generateAwaitedGames()}
             </Row>
         </div>
     );

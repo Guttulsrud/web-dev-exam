@@ -6,7 +6,6 @@ import {Devices} from './pages/Devices';
 import {Accessories} from './pages/Accessories';
 import {Game} from './pages/Game';
 import {Search} from './pages/Search';
-import {Assets} from './pages/Assets';
 import {Dashboard} from './pages/Dashboard';
 import {AdminGames} from './pages/AdminGames';
 import {AdminGameCharacters} from './pages/AdminGameCharacters';
@@ -49,7 +48,6 @@ export default () => {
                                     <RouteTransition exact path={'/games'} children={<Games/>}/>
                                     <RouteTransition path={'/games/detail/:id'} children={<Game/>}/>
                                     <RouteTransition path={'/search/:query'} children={<Search/>}/>
-                                    <RouteTransition path={'/assets'} children={<Assets/>}/>
                                     <RouteTransition path={'/devices'} children={<Devices/>}/>
                                     <RouteTransition path={'/login'} children={<Login/>}/>
                                     <RouteTransition exact path={'/'} children={<Home/>}/>
