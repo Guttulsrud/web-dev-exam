@@ -19,7 +19,7 @@ const FeaturedItem = ({id, title, description, featureImage}) => {
         <React.Fragment>
 
             <Container>
-                <div style={{position: "relative", height: "600px"}}>
+                <div style={{position: "relative", height: "650px"}}>
 
                     <CardBack><SignLogo/><LogoWrapper normal><Ps5Logo/></LogoWrapper></CardBack>
                     <CarouselImage backgroundImage={featureImage}>

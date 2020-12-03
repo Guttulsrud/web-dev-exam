@@ -4,6 +4,7 @@ export const Section = styled.div`
     position: relative;
     min-height: 200px;
     width: 100%;
+    min-height: 500px;
     height: ${props => props.height}px;
     margin-top: 0px;
     margin-bottom: ${props => (props.noMarginBottom ? "0px" : "30px")};

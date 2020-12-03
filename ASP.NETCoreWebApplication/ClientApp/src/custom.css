@@ -117,7 +117,7 @@ body {
   width: 18px;
   border-radius: 50%;
   z-index: 10000000000000000;
-  top: 80px;
+  top: 40px;
 }
 
 .carousel-indicators .active{
