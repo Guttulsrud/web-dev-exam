@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
 import { useSpring, animated } from 'react-spring';
-import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper} from './style';
+import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper, CardYear} from './style';
 import Ps5Logo from "./Ps5Logo";
 import {Link} from 'react-router-dom';
 import PropTypes from "prop-types"
@@ -33,8 +33,9 @@ const GameCard = ({id,title, year, category,featureImage}) => {
                     <CardContainer>
 
                         <CardTitle>{title}</CardTitle>
-                        <CardTitle>{year}</CardTitle>
+                        <CardYear>Release: {year}</CardYear>
                         <Hover>
+
                             <CardCategory>{category}</CardCategory>
                         </Hover>
                     </CardContainer>
