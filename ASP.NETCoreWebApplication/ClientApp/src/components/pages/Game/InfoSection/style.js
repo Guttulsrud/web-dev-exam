@@ -37,5 +37,5 @@ export const BoxArt = styled.div`
 `;
 
 BoxArt.propTypes = {
-    backgroundImage: PropTypes.string.isRequired
+    backgroundImage: PropTypes.string
 };
