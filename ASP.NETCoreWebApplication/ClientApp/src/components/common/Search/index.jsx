@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {SearchWrapper} from "./style";
 import SearchBar from "../SearchBar";
@@ -13,7 +13,7 @@ const Search = (props) => {
             style={{position: "absolute", zIndex: "100000"}}
         >
             <SearchWrapper>
-                <SearchBar handleClose={props.handleClose}></SearchBar>
+                <SearchBar handleClose={props.handleClose}/>
             </SearchWrapper>
         </Modal>
     )

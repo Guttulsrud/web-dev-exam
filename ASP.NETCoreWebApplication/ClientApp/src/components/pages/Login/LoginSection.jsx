@@ -32,19 +32,21 @@ const LoginSection = () => {
     };
 
     return (
-        <Card className={'m-auto p-5'}>
+        <Card className={'m-auto p-md-5 p-3'}>
             <div className={"mx-auto mb-2"}>
                 <PsLogo color={username !== "" && password !== "" ? "#0072ce" : undefined}/>
             </div>
 
-            <Card.Body className={'px-5'}>
+            <Card.Body className={"px-md-5 px-2"} >
                 <Form onSubmit={(e) => handleOnSubmit(e)}>
+                    <div style={{width: "250px"}}>
                     <Input label={"Username"} type={'text'} value={username}
                            onChange={(e) => setUsername(e.target.value)}/>
                     <Input label={"Password"} type={'password'} value={password}
                            onChange={(e) => setPassword(e.target.value)} className={"mt-4"}/>
-                    {error && <ErrorText>Wrong username or password</ErrorText>}
-                    <Button type={'submit'} className={'mt-4 w-100'} disabled={username === "" || password === ""}>
+                    {error && <ErrorText >Wrong username or password</ErrorText>}
+                        </div>
+                    <Button type={'submit'} className={'mt-4 w-100 mx-auto'} disabled={username === "" || password === ""}>
                         Log in
                     </Button>
                 </Form>
