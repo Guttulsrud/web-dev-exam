@@ -4,15 +4,15 @@ import {EntityContext} from '../../../context/EntityContext';
 
 const options = ['Release ascending', 'Release descending', 'Price ascending', 'Price descending'];
 
-const SortBy = () => {
+const SortBy = (props) => {
     const {entities} = useContext(EntityContext);
 
-    const [isOpen, setIsOpen] = useState(false);
+
     const [selectedOption, setSelectedOption] = useState(null);
     const [yearAsc, setYearAsc] = useState(false);
     const [games, setGames] = entities;
 
-    const toggling = () => setIsOpen(!isOpen);
+
 
     const sortByYear = (value) => {
         if (value.includes('Release')) {
@@ -26,7 +26,7 @@ const SortBy = () => {
 
     const onOptionClicked = value => () => {
         setSelectedOption(value);
-        setIsOpen(false);
+        props.toggling("sortBy");
         setYearAsc(!yearAsc);
         setGames(sortByYear(value));
 
@@ -34,10 +34,10 @@ const SortBy = () => {
 
     return (
         <DropDownContainer>
-            <DropDownHeader onClick={toggling} open={isOpen}>
+            <DropDownHeader onClick={() => props.toggling("sortBy")} open={props.isOpen}>
                 {selectedOption || 'Sort by'}
             </DropDownHeader>
-            {isOpen && (
+            {props.isOpen && (
                 <DropDownListContainer>
                     <DropDownList>
                         {options.map((item, i) => (
