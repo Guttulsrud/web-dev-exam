@@ -8,7 +8,7 @@ const OpenThumb = (props) => {
         <OpenWrapper>
             <ImageContainer>
                 <FontAwesomeIcon style={{position: "absolute", top: "-20", right: "-20", cursor: "pointer"}} onClick={props.handleClose} icon={faTimesCircle} color={'#FFFFFF'} size={'2x'}/>
-                <img src={`${props.image}`} height={"600px"}/>
+                <img src={`${props.image}`} height={"600px"} alt={"Screenshot of the game"}/>
             </ImageContainer>
             </OpenWrapper>
     )

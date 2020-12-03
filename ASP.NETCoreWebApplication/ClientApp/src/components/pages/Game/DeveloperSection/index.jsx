@@ -17,7 +17,7 @@ const DeveloperSection = () => {
                 <Row className={"d-flex align-items-center"}>
                     <Col lg={"6"}>
                         <Subtitle>Developer</Subtitle>
-                        <Paragraph>{game.developer}</Paragraph>
+                        <Paragraph>{singleGame.developer}</Paragraph>
                     </Col>
 
                 </Row>

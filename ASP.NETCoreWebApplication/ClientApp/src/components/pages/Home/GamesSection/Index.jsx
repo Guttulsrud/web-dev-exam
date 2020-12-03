@@ -13,7 +13,7 @@ const GamesSection = (props) => {
                 <SectionTitle>{props.title}</SectionTitle>
                 <GameList/>
                 <div className={'d-flex justify-content-center'}>
-                    <Button as={Link} outline>View more</Button>
+                    <Button to={Link} outline>View more</Button>
                 </div>
             </Container>
         </Section>

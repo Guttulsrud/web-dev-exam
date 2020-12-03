@@ -1,9 +1,8 @@
 import React from 'react';
 
-import {MobileMenu, MobileNavWrapper} from './style';
+import {MobileMenu} from './style';
 import {Link, NavLink} from "react-router-dom";
 import {SignLogo} from "../../common/SignLogo";
-import Input from "../../common/Input";
 import SearchBar from "../../common/SearchBar";
 
 

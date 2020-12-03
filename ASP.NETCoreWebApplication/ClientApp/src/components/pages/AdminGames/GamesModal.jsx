@@ -18,8 +18,6 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
         'Adventure'
     ];
 
-    let fileList = [];
-
     const range = (start, end) => {
         const next = start < end ? 1 : -1;
         if (start === end)
@@ -71,8 +69,8 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                         <Form.Control name='description' placeholder={'Description'} value={game.description}
                                       onChange={(e) => handleChange(e)}/>
 
-                        <Form.Label>Description 2</Form.Label>
-                        <Form.Control name='description2' placeholder={'Description 2'} value={game.description2}
+                        <Form.Label>Tagline</Form.Label>
+                        <Form.Control name='description2' placeholder={'Tagline'} value={game.description2}
                                       onChange={(e) => handleChange(e)}/>
 
                         <Form.Label>Trailer link</Form.Label>

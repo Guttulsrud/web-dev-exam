@@ -1,17 +1,11 @@
-import React, {useEffect, useState} from 'react';
-
-import ScreenShotSection from "../components/pages/Home/ScreenshotSection";
+import React from 'react';
 import {Section} from "../components/base/Section";
 import Container from "react-bootstrap/Container";
 import {SectionTitle} from "../components/base/SectionTitle";
-import AccessoriesList from "../components/common/AccessoriesList";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import {SectionText} from "../components/base/SectionText";
-import {Subtitle} from "../components/base/Subtitle";
 import {Paragraph} from "../components/base/Paragraph";
-import {Button} from "../components/base/Button";
 
 
 export const Devices = () => {

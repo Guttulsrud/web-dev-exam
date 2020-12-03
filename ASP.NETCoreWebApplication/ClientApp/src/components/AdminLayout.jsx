@@ -1,13 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
-import Header from './layouts/Header/Header';
-import Footer from './layouts/Footer/Footer';
-import {RadialGradient} from './common/RadialGradient';
-import {SignLogo} from './common/SignLogo';
 import Sidebar from './pages/Dashboard/Sidebar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
 import {CogIcon, HeaderTop, Logo} from './layouts/Header/style';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../context/AuthContext';
