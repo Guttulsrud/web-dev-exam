@@ -47,9 +47,11 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
     return (
         <div>
             {explore &&
-            <Row className={'pb-5'}>
+            <Row className={'pb-5'} style={{position: "relative", zIndex: "100000000"}}>
+
                 <SortBy games={games} toggling={toggling} isOpen={sortByOpen}/>
                 <FilterBy games={games} toggling={toggling} isOpen={filterOpen} handleFilter={setValue}/>
+
             </Row>
             }
             <Row>
