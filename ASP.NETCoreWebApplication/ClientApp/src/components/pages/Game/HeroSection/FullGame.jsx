@@ -13,7 +13,7 @@ import {
     SignLogoSmall,
     ScreenshotsArea
 } from './style';
-import {SingleGameContext, SingleGameProvider} from '../../../../context/SingleGameContext';
+import {SingleGameContext} from '../../../../context/SingleGameContext';
 import GameThumb from "../../../common/GameThumb/GameThumb";
 import {LayoutContext} from '../../../../context/LayoutContext';
 
