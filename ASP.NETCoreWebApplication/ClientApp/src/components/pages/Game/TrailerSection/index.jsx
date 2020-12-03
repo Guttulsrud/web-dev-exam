@@ -18,7 +18,7 @@ const TrailerSection = () => {
                 <Subtitle right white>Game trailer</Subtitle>
                 <Row className={"d-flex align-items-center pb-5"}>
                     <Col lg={"12"}>
-                        <iframe width="100%" height="500" frameBorder="none"
+                        <iframe width="100%" height="600" frameBorder="none"
                                 src={`${singleGame.trailerLink}?autoplay=0&mute=0`}>
                         </iframe>
                     </Col>
