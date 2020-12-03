@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Section} from "../components/base/Section";
 import Container from "react-bootstrap/Container";
 import {SectionTitle} from "../components/base/SectionTitle";
@@ -6,18 +6,24 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {SectionText} from "../components/base/SectionText";
 import {Paragraph} from "../components/base/Paragraph";
+import {Button} from "../components/base/Button";
 
 
 export const Devices = () => {
+
+    const ps5disk = "ps5disk.png";
+    const ps5digital = "ps5digital.png";
+
+    const [image, setImage] = useState(ps5disk);
 
     return (
         <React.Fragment>
             <Section style={{paddingTop: "60px"}}>
                 <Container>
-                    <Row className="d-flex align-content-center">
+                    <Row className="d-flex justify-content-around mt-5 pt-2">
 
-                        <SectionText className="col-6" center>Playstation®5</SectionText>
-                        <SectionText className="col-6" center>Playstation®5 Digital</SectionText>
+                        <Button outline onClick={() => setImage(ps5disk)}>Playstation®5</Button>
+                        <Button outline onClick={() => setImage(ps5digital)}>Playstation®5 Digital</Button>
                     </Row>
                     <Row>
                         <Col md={7}>
@@ -33,7 +39,7 @@ export const Devices = () => {
                                 </Col>
                                 <Col className="d-flex" md={5} xs={12}>
                                     <div className="device-disk-desktop-view" style={{
-                                        backgroundImage: "url('ps5disk.png')",
+                                        backgroundImage: `url('${image}')`,
                                         width: "100%",
                                         height: "70vh",
                                         backgroundPosition: "top",
@@ -90,7 +96,7 @@ export const Devices = () => {
                         </Col>
                         <Col className="d-flex" md={5} xs={12}>
                             <div className="device-disk-phone-view" style={{
-                                backgroundImage: "url('ps5disk.png')",
+                                backgroundImage: `url('${image}')`,
                                 width: "100%",
                                 height: "126vh",
                                 backgroundPosition: "top",

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PropTypes, {string} from 'prop-types';
+import PropTypes from 'prop-types';
 
 export const CardWrapper = styled.div`
  position: relative;
@@ -130,8 +130,7 @@ export const Card = styled.div`
     &:hover ${CardContainer} {
     opacity: 1;
     transition: .2s ease;
-    transform: translate3d(0,0px,0);
-    transform: scale(1.05);  
+    transform: translate3d(0,0px,0) scale(1.05);
     }
     
     &:hover ${Hover} {
