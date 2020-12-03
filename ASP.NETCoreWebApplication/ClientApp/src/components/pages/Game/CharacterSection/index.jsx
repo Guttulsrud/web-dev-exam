@@ -7,6 +7,7 @@ import {Subtitle} from "../../../base/Subtitle";
 import {EntityContext} from '../../../../context/EntityContext';
 import {SingleGameContext} from '../../../../context/SingleGameContext';
 import {CharacterTile} from './style';
+import GameCharacterList from "../../../common/GameCharacterList";
 
 const CharacterSection = () => {
     const {entities} = useContext(EntityContext)
@@ -24,16 +25,11 @@ const CharacterSection = () => {
         <Section>
             <Container>
                 <Row className={"d-flex align-items-center"}>
-                    <Col lg={"6"}>
+                    <Col lg={"12"}>
                         <Subtitle>Characters</Subtitle>
                     </Col>
-
-                    <Col lg={"6"}>
-                        {generateCharacters()}
-                    </Col>
-
                 </Row>
-
+                 <GameCharacterList/>
             </Container>
         </Section>
     )
