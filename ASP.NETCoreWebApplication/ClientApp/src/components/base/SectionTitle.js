@@ -11,10 +11,9 @@ export const SectionTitle = styled.h1`
         "background: -webkit-linear-gradient(0deg, #164496, #0070D1);" +
         "-webkit-background-clip: text;" +
         "-webkit-text-fill-color: transparent;")};
- 
     font-size: 6rem;
     font-weight: bold;
-    z-index: 1000;
+    z-index: 100;
     padding-top: 50px;
     padding-bottom: 30px;
         @media (max-width: 576px) {

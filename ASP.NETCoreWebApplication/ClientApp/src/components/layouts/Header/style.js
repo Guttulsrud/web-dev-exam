@@ -73,7 +73,7 @@ export const Hamburger = styled.div`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 1000000000;
+  z-index: 12;
   visibility: hidden;
   
     @media (max-width: 768px) {
@@ -124,7 +124,7 @@ export const MobileMenu = styled.nav`
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
-  z-index: 90000000;
+  z-index: 11;
   transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
   @media (max-width: 576px) {
     width: 100%;

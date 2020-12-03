@@ -10,12 +10,11 @@ import GameThumbList from "../../../common/GameThumbList/GameThumbList";
 
 const ScreenshotSection = (props) => {
     return (
-        <Section blue paddingTop={30}>
+        <Section blue paddingTop={30} style={{position: "relative", zIndex: "10000"}}>
             <Container>
                 <Subtitle white right>Screenshots</Subtitle>
 
                 <GameThumbList data={props.data}></GameThumbList>
-               {/*<GameThumbList data={data}>*/}
 
             </Container>
         </Section>

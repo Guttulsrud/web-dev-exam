@@ -90,7 +90,7 @@ export const LogoWrapper = styled.div`
 `
 
 export const Card = styled.div`
-  z-index: 200000;
+  z-index: 1;
   position: relative;
   width: 100%;
   height: 400px;
@@ -115,7 +115,7 @@ export const Card = styled.div`
     }
     
     &:hover ${CardWrapper} {
-    z-index: 2000000000;
+    z-index: 1;
     }
     
     &:hover ${CardImage} {
