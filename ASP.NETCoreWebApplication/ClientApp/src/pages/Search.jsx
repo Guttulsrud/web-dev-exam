@@ -15,7 +15,7 @@ export const Search = () => {
                     <div className={'d-flex justify-content-between align-content-center align-items-center'}>
                         <SectionTitle>Searched for "{query}"</SectionTitle>
                     </div>
-                    <GameList explore/>
+                        <GameList query={query} explore/>
                 </Container>
             </Section>
 
