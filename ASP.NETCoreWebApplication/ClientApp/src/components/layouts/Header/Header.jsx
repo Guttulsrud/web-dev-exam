@@ -4,9 +4,7 @@ import Nav from 'react-bootstrap/cjs/Nav';
 import {NavLink, Link} from 'react-router-dom';
 import {HeaderBody, DesktopNav} from './style';
 import MobileNav from './MobileNav';
-
 import PsLogo from './PsLogo';
-
 import Container from 'react-bootstrap/Container';
 import SearchIcon from './SearchIcon';
 import Search from '../../common/Search';
@@ -14,7 +12,7 @@ import {LayoutContext} from '../../../context/LayoutContext';
 
 const Header = () => {
     const {isDark} = useContext(LayoutContext);
-    const [whiteBg, setWhite] = isDark
+    const [whiteBg] = isDark
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);

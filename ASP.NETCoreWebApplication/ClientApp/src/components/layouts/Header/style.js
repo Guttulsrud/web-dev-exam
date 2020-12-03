@@ -6,7 +6,7 @@ export const HeaderBody = styled.header`
     position: absolute;
     z-index: 10;
     width: 100%;
-    background-color: ${props => props.whiteBg ? "#ffffff88" : "transparent"};
+    background-color: ${props => props.whiteBg ? "#ffffffcc" : "transparent"};
     
 `
 export const HeaderTop = styled.header`

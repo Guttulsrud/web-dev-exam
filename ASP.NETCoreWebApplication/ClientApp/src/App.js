@@ -22,38 +22,42 @@ import NotFound from './pages/NotFound';
 import {LayoutProvider} from './context/LayoutContext';
 import {AuthProvider} from './context/AuthContext';
 import {AdminAccessories} from './pages/AdminAccessories';
+import ScrollTop from './components/layouts/ScrollTop';
 
 export default () => {
     return (
         <BrowserRouter>
             <AuthProvider>
                 <LayoutProvider>
-                    <Switch>
-                        <Route exact path='/admin/:users?'>
-                            <AdminLayout>
-                                <Switch>
-                                    <Route path='/admin' exact component={Dashboard}/>
-                                    <Route path='/admin/games' exact component={AdminGames}/>
-                                    <Route path='/admin/users' exact component={AdminUsers}/>
-                                    <Route path='/admin/accessories' exact component={AdminAccessories}/>
-                                    <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
-                                </Switch>
-                            </AdminLayout>
-                        </Route>
-                        <Layout>
-                            <AnimatedRoutes exitBeforeEnter initial={false}>
-                                <RouteTransition exact path={'/accessories'} children={<Accessories/>}/>
-                                <RouteTransition exact path={'/games'} children={<Games/>}/>
-                                <RouteTransition path={'/games/detail/:id'} children={<Game/>}/>
-                                <RouteTransition path={'/search/:query'} children={<Search/>}/>
-                                <RouteTransition path={'/assets'} children={<Assets/>}/>
-                                <RouteTransition path={'/devices'} children={<Devices/>}/>
-                                <RouteTransition path={'/login'} children={<Login/>}/>
-                                <RouteTransition exact path={'/'} children={<Home/>}/>
-                                <RouteTransition children={<NotFound/>}/>
-                            </AnimatedRoutes>
-                        </Layout>
-                    </Switch>
+                    <ScrollTop>
+                        <Switch>
+                            <Route exact path='/admin/:users?'>
+                                <AdminLayout>
+                                    <Switch>
+                                        <Route path='/admin' exact component={Dashboard}/>
+                                        <Route path='/admin/games' exact component={AdminGames}/>
+                                        <Route path='/admin/users' exact component={AdminUsers}/>
+                                        <Route path='/admin/accessories' exact component={AdminAccessories}/>
+                                        <Route path='/admin/gamecharacters' exact component={AdminGameCharacters}/>
+                                    </Switch>
+                                </AdminLayout>
+                            </Route>
+
+                            <Layout>
+                                <AnimatedRoutes exitBeforeEnter initial={false}>
+                                    <RouteTransition exact path={'/accessories'} children={<Accessories/>}/>
+                                    <RouteTransition exact path={'/games'} children={<Games/>}/>
+                                    <RouteTransition path={'/games/detail/:id'} children={<Game/>}/>
+                                    <RouteTransition path={'/search/:query'} children={<Search/>}/>
+                                    <RouteTransition path={'/assets'} children={<Assets/>}/>
+                                    <RouteTransition path={'/devices'} children={<Devices/>}/>
+                                    <RouteTransition path={'/login'} children={<Login/>}/>
+                                    <RouteTransition exact path={'/'} children={<Home/>}/>
+                                    <RouteTransition children={<NotFound/>}/>
+                                </AnimatedRoutes>
+                            </Layout>
+                        </Switch>
+                    </ScrollTop>
                 </LayoutProvider>
             </AuthProvider>
         </BrowserRouter>
