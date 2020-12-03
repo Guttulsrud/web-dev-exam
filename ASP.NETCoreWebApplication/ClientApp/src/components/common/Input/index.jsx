@@ -9,7 +9,7 @@ const Input = ({onChange, value, label, placeholder, type, className, transparen
     const handleChange = (e) => {
         e.target.value !== '' ? setFilled(true) : setFilled(false);
     };
-
+    
     return (
         <InputWrapper className={className}>
             <StyledInput filled={isFilled}
@@ -25,7 +25,7 @@ const Input = ({onChange, value, label, placeholder, type, className, transparen
                              handleChange(e);
                          }}
             />
-            <Label transparent={transparent} filled={isFilled}>{label}</Label>
+            <Label transparent={transparent} filled={isFilled} isFocused={hasFocus}>{label}</Label>
             <FocusLine transparent={transparent} isFocused={hasFocus} hadFocus={hadFocus}/>
         </InputWrapper>
     );

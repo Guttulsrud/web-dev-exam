@@ -17,7 +17,7 @@ const SearchBar = (props) => {
     }
     return (
         <SearchBarWrapper>
-            <Input transparent={true} label={"Search games"} style={{position: "relative"}} value={searchQuery}
+            <Input transparent label={"Search games"} style={{position: "relative"}} value={searchQuery}
                    onChange={(e) => setQuery(e.target.value)}/>
             <Button isWhite outline marginLeft onClick={handleRedirect}>Search</Button>
         </SearchBarWrapper>
