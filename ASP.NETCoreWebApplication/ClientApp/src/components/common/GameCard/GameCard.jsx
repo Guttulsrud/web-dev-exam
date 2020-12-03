@@ -18,7 +18,7 @@ const GameCard = ({id,title, year, category,featureImage}) => {
 
         <Col xs={12} lg={3} style={{ marginBottom: "30px"}}>
 
-            <Link to={`games/detail/${id}`}>
+            <Link to={`/games/detail/${id}`}>
 
             <CardWrapper onMouseOver={() => setHovered(true) } onMouseLeave={() => setHovered(false)} style={{zIndex: isHovered ? "9999999999" : "100000"}}>
                 <animated.div
