@@ -13,7 +13,7 @@ export const SectionTitle = styled.h1`
         "-webkit-text-fill-color: transparent;")};
     font-size: 6rem;
     font-weight: bold;
-    z-index: 10;
+    z-index: 100;
     padding-top: 50px;
     padding-bottom: 30px;
         @media (max-width: 576px) {
