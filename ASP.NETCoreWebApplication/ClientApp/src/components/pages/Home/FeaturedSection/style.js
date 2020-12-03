@@ -61,8 +61,6 @@ export const CarouselDescription = styled.div`
             line-height: 1.8rem;
             width: 600px;
         }
-  
-
 `
 
 export const CarouselCaption = styled.div`

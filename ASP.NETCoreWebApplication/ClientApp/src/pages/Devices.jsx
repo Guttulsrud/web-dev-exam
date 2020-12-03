@@ -4,10 +4,8 @@ import Container from "react-bootstrap/Container";
 import {SectionTitle} from "../components/base/SectionTitle";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {SectionText} from "../components/base/SectionText";
 import {Paragraph} from "../components/base/Paragraph";
 import {Button} from "../components/base/Button";
-
 
 export const Devices = () => {
 
@@ -103,7 +101,9 @@ export const Devices = () => {
                                 backgroundSize: "contain",
                                 backgroundRepeat: "no-repeat",
                             }}/>
+
                         </Col>
+
                     </Row>
 
                 </Container>
