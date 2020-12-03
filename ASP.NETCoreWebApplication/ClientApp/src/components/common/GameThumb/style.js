@@ -6,7 +6,7 @@ export const ThumbButton = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 9900000;
+  z-index: 100;
   position: relative;
   text-align: center;
   height: 50px;
@@ -31,6 +31,7 @@ export const Thumb = styled.div`
   background-color: #0070D1;
   background-size: cover;
   background-position: center;
+  position: relative;
   transform: scale(1.3);
   width: 100%;
   height: 210px;
@@ -45,7 +46,7 @@ export const Thumb = styled.div`
 `
 
 export const Overlay = styled.div`
-  position: absolute;
+  position: relative;
   transition: ease .3s;
   height: 210px;
   width: 100%;
@@ -67,6 +68,7 @@ export const Hover = styled.div`
   align-content: center;
   opacity: 0;
   transition: ease 350ms;  
+  position: relative;
 `
 
 
@@ -115,7 +117,7 @@ export const OpenWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999999999990000000000000;
+  z-index: 1010;
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
@@ -126,9 +128,23 @@ export const OpenWrapper = styled.div`
 `
 
 export const ImageContainer = styled.div`
-position: relative;
-height: 600px;
+    position: relative;
+    height: 600px;
+    z-index: 1001;
+`
 
+export const ScreenImg = styled.img`
+    width: 800px;
+    height: auto;
+       @media (max-width: 576px) {
+            width: 330px;   
+        }
+        @media (max-width: 992px) {
+            width: 400px;
+        }
+        @media (max-width: 1024px) {
+            width: 600px;          
+        }  
 `
 
 Thumb.propTypes = {
