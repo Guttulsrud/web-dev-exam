@@ -11,11 +11,6 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
     const {entities, loading} = useContext(EntityContext);
     const [games] = entities;
     const [filterValue, setValue] = useState('');
-    const [show, setShow] = useState(false);
-    const handleShow = () => setShow(!show);
-    const handleClose = () => setShow(false);
-
-    const [isOpen, setIsOpen] = useState(false);
     const [sortByOpen, setSortByOpen] = useState(false);
     const [filterOpen, setFilterOpen] = useState(false);
 
@@ -28,10 +23,6 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
             setSortByOpen(false)
         }
     }
-
-
-
-/*    const toggling = () => setIsOpen(!isOpen);*/
 
     const generateGames = () => {
         return games.filter(game => game.category.includes(filterValue)).map((game, i) => {
@@ -56,9 +47,11 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
     return (
         <div>
             {explore &&
-            <Row className={'pb-5'}>
+            <Row className={'pb-5'} style={{position: "relative", zIndex: "100000000"}}>
+
                 <SortBy games={games} toggling={toggling} isOpen={sortByOpen}/>
                 <FilterBy games={games} toggling={toggling} isOpen={filterOpen} handleFilter={setValue}/>
+
             </Row>
             }
             <Row>

@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import PropTypes from 'prop-types';
 
 export const LayoutContext = createContext()
 
@@ -10,4 +11,8 @@ export const LayoutProvider = ({children}) => {
             {children}
         </LayoutContext.Provider>
     )
+}
+
+LayoutContext.propTypes = {
+    children: PropTypes.node
 }

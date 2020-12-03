@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const HeroWrapper = styled.section`
     background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
@@ -46,7 +47,6 @@ export const Thumb = styled.div`
         &:hover {
          transform: scale(1.03);
          box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-        /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
         }
 `
 
@@ -56,7 +56,7 @@ export const TitleText = styled.h1`
     line-height: 7rem;
     font-weight: bold;
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     padding-top: 60px;
             @media (max-width: 576px) {
             font-size: 3rem;
@@ -77,7 +77,7 @@ export const TitleSection = styled.h1`
     font-size: 6rem;
     font-weight: bold;
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     padding-top: 30px;
     padding-bottom: 30px;
 `
@@ -175,7 +175,7 @@ export const CardTitle = styled.h3`
     line-height: 2.5rem;
     font-weight: 600;
     position: absolute;
-    z-index: 1000;
+    z-index: 10;
     bottom: 50px;
     width: 210px;
     margin-left: 20px;
@@ -202,4 +202,16 @@ export const ScreenshotsArea = styled.div`
         }
 `
 
+HeroWrapper.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+Thumb.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+SignLogo.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+Card.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
 

@@ -10,6 +10,7 @@ import {
     CharacterWave
 } from "./style";
 import Col from 'react-bootstrap/Col';
+import PropTypes from "prop-types"
 
 
 const GameCharacterCard = ({name, description, image}) => {
@@ -19,7 +20,7 @@ const GameCharacterCard = ({name, description, image}) => {
                 <CharacterCard>
                     <CharacterImage backgroundImage={image}>
                         <Overlay>
-                            <CharacterWave></CharacterWave>
+                            <CharacterWave/>
                         </Overlay>
                     </CharacterImage>
 
@@ -28,12 +29,15 @@ const GameCharacterCard = ({name, description, image}) => {
                         <CharacterDesc>{description}</CharacterDesc>
                     </CharacterCaption>
                 </CharacterCard>
-
-
             </CharacterCardWrapper>
         </Col>
     )
+}
 
+GameCharacterCard.propTypes = {
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
 }
 
 export default GameCharacterCard;

@@ -2,8 +2,9 @@ import React, {useContext} from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import FeaturedItem from "./FeaturedItem";
 import {EntityContext} from '../../../../context/EntityContext';
+import PsLoading from '../../../Loading';
 
-const FeaturedCarousel = (props) => {
+const FeaturedCarousel = () => {
     const {entities, loading} = useContext(EntityContext)
     const [games] = entities
 
@@ -15,7 +16,7 @@ const FeaturedCarousel = (props) => {
 
     return (
         <Carousel>
-            {getData()}
+            {loading ? <PsLoading/> : getData()}
         </Carousel>
     )
 }

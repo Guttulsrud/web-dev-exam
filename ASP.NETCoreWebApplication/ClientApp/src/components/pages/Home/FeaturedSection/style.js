@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const CarouselImage = styled.div`
   position: absolute;
@@ -9,25 +10,13 @@ export const CarouselImage = styled.div`
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
   border-radius: 15px;
   height: 600px;
-  z-index: 900;
+  z-index: 10;
   top: 0;
   width: 100%;
   display: flex;
   align-items: center;
   align-content: center;
 
-`
-
-export const CarouselOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  background-image: linear-gradient(to bottom, #000000b9 5%, #00000000 85%);
-  background-size: cover;
-  background-position: center;
-  height: 600px;
-  border-radius: 15px;
-  z-index: 1000;
-  }
 `
 
 export const CarouselTitle = styled.div`
@@ -73,8 +62,6 @@ export const CarouselDescription = styled.div`
             line-height: 1.8rem;
             width: 600px;
         }
-  
-
 `
 
 export const CarouselCaption = styled.div`
@@ -111,3 +98,7 @@ export const LogoWrapper = styled.div`
     right: 20px;
     transform: rotate(0deg);
 `
+
+CarouselImage.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}

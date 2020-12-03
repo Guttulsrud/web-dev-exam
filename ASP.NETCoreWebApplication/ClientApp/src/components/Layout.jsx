@@ -6,6 +6,7 @@ import {SignLogo} from "./common/SignLogo";
 import {CogIcon, HeaderTop, Logo} from "./layouts/Header/style";
 import {Link} from "react-router-dom";
 import {AuthContext} from '../context/AuthContext';
+import PropTypes from 'prop-types';
 
 const Layout = ({children}) => {
     const {isLoggedIn, user} = useContext(AuthContext)
@@ -36,5 +37,9 @@ const Layout = ({children}) => {
         </React.Fragment>
     );
 };
+
+Layout.propTypes = {
+    children: PropTypes.node
+}
 
 export default Layout;

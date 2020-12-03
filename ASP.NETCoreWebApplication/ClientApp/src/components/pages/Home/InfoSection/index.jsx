@@ -1,32 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {Section} from '../../../base/Section';
 import {SectionTitle} from '../../../base/SectionTitle';
 import {SectionText} from '../../../base/SectionText';
-import {SignLogo} from '../../../common/SignLogo';
 import Container from 'react-bootstrap/Container';
 import {Video, VideoOverlay} from './style';
 import {Button} from '../../../base/Button';
-import {Link, useHistory, useLocation} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-const InfoSection = (props) => {
-    const [offset, setOffset] = useState(0);
+const InfoSection = () => {
 
     const history = useHistory()
     const handleRedirect = () => {
         history.push("/devices")
     }
-
-
-    useEffect(() => {
-        function handleScroll() {
-            setOffset(window.pageYOffset);
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     return (
         <Section noMarginBottom blue height={'700'}>

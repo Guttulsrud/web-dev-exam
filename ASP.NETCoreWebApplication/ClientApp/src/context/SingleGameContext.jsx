@@ -1,6 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import axios from 'axios';
-
+import PropTypes from 'prop-types';
 
 export const SingleGameContext = createContext();
 
@@ -24,4 +24,9 @@ export const SingleGameProvider = ({children, endpoint}) => {
             {children}
         </SingleGameContext.Provider>
     )
+}
+
+SingleGameContext.propTypes = {
+    children: PropTypes.node,
+    endpoint: PropTypes.string.isRequired
 }

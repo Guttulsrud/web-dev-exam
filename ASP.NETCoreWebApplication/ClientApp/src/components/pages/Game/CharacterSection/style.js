@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const CharacterTile = styled.div`
     height: 100px;
@@ -9,3 +10,7 @@ export const CharacterTile = styled.div`
     font-size: 32px;
     margin-bottom: 10px;
 `
+
+CharacterTile.PropTypes = {
+    image: PropTypes.string.isRequired
+}
