@@ -10,7 +10,7 @@ export const SectionText = styled.h1`
     color: ${props => (props.white ? "#FFFFFF" : " #0070D1")};
     font-size: 1.8rem;
     font-family: "SST Light", Arial;
-    z-index: 1000;
+    z-index: 10;
     padding-top: 50px;
     padding-bottom: 30px;
        @media (max-width: 576px) {
