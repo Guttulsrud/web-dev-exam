@@ -10,6 +10,9 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
     const {entities, loading} = useContext(EntityContext);
     const [games] = entities;
     const [filterValue, setValue] = useState('');
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
 
     const generateGames = () => {
         return games.filter(game => game.category.includes(filterValue)).map((game, i) => {
@@ -35,8 +38,8 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
         <div>
             {explore &&
             <Row className={'pb-5'}>
-                <SortBy games={games}/>
-                <FilterBy games={games} handleFilter={setValue}/>
+                <SortBy games={games} handleClose={handleClose}/>
+                <FilterBy games={games} handleClose={handleClose} handleFilter={setValue}/>
             </Row>
             }
             <Row>
