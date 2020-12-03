@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes, {string} from 'prop-types';
 
 export const CardWrapper = styled.div`
  position: relative;
@@ -147,3 +148,6 @@ export const CardTitle = styled.h2`
   margin-bottom: 20px;
 `
 
+CardImage.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}

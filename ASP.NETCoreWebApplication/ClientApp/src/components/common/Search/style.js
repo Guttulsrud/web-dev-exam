@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SearchWrapper = styled.div`
- display: flex-wrap;
+ display: flex;
  align-items: center;
  border: none;
  background: rgb(0,112,209);

@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import Col from 'react-bootstrap/Col';
-
 import { useSpring, animated } from 'react-spring';
 import {CardWrapper, Card, CardContainer, CardTitle, CardCategory, Hover, CardImage, CardBack, Overlay, SignLogo, LogoWrapper} from './style';
 import Ps5Logo from "./Ps5Logo";
 import {Link} from 'react-router-dom';
+import PropTypes from "prop-types"
 
 const calc = (x, y) => [-(y - window.innerHeight / 2) / 60, (x - window.innerWidth / 2) / 60, 1.1]
 const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
@@ -56,5 +56,13 @@ const GameCard = ({id,title, year, category,featureImage}) => {
 
     )
 }
+
+GameCard.propTypes = {
+    id: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    featureImage: PropTypes.string.isRequired
+}
+
 
 export default GameCard;

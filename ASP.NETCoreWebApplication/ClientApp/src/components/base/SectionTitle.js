@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types"
 
 export const SectionTitle = styled.h1`
     position: relative;
@@ -25,6 +26,11 @@ export const SectionTitle = styled.h1`
         @media (max-width: 992px) {
             font-size: 3rem;
         }
-
-  
 `
+
+SectionTitle.propTypes = {
+    center: PropTypes.bool,
+    right: PropTypes.bool,
+    white: PropTypes.bool
+}
+

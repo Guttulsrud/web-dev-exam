@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import Table from 'react-bootstrap/Table';
 import {EntityContext} from '../../../context/EntityContext';
 import PsLoading from '../../Loading';
+import PropTypes from 'prop-types';
 
 const UsersList = ({handleEdit}) => {
     const {entities, loading} = useContext(EntityContext);
@@ -33,5 +34,9 @@ const UsersList = ({handleEdit}) => {
         </React.Fragment>
     );
 };
+
+UsersList.propTypes = {
+    handleEdit: PropTypes.func.isRequired
+}
 
 export default UsersList;

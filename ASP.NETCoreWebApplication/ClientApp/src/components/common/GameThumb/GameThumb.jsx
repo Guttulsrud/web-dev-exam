@@ -3,6 +3,7 @@ import Col from 'react-bootstrap/Col';
 import {ThumbWrapper, Thumb, ThumbButton, Overlay, Hover} from './style';
 import ZoomIcon from "./ZoomIcon";
 import OpenThumb from "./OpenThumb";
+import PropTypes from "prop-types"
 
 const GameThumb = ({small, image}) => {
 
@@ -28,6 +29,11 @@ const GameThumb = ({small, image}) => {
         </Col>
 
     )
+}
+
+GameThumb.propTypes = {
+    small: PropTypes.bool,
+    image: PropTypes.string.isRequired
 }
 
 export default GameThumb;

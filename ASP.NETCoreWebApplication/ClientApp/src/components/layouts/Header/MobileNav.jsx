@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 import PsLogo from "./PsLogo";
 import Navbar from "react-bootstrap/cjs/Navbar";
 
-const MobileNav = (props) => {
+const MobileNav = () => {
     const [open, setOpen] = useState(false);
 
     return (

@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import PropTypes from "prop-types"
 
 export const ThumbButton = styled.div`
   display: flex;
@@ -65,11 +66,7 @@ export const Hover = styled.div`
   justify-content: center;
   align-content: center;
   opacity: 0;
-  transition: ease 350ms;
-  
-  
-  
-   
+  transition: ease 350ms;  
 `
 
 
@@ -87,9 +84,9 @@ export const ThumbWrapper = styled.div`
 
   &:hover {
     transform: scale(1.05);
-    transition: ease .3s;
-    
+    transition: ease .3s; 
   }
+  
   &:hover ${Thumb} {
     transform: scale(1.1);
     transition: ease .3s;
@@ -110,11 +107,8 @@ export const ThumbWrapper = styled.div`
     color: #fff;
     transition: .3s ease;
     transform: scale(1.05);
-
     border: none;
   }
-   
-  
 `
 
 export const OpenWrapper = styled.div`
@@ -136,4 +130,17 @@ position: relative;
 height: 600px;
 
 `
+
+Thumb.propTypes = {
+    backgroundImage: PropTypes.string.isRequired,
+    small: PropTypes.bool,
+}
+
+Overlay.propTypes = {
+    small: PropTypes.bool
+}
+
+ThumbWrapper.propTypes = {
+    small: PropTypes.bool
+}
 

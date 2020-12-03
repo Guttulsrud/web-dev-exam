@@ -1,5 +1,6 @@
 import React from 'react';
 import {motion} from 'framer-motion';
+import PropTypes from "prop-types"
 
 const MountTransition = ({children, slide = 0, slideUp = 0}) => {
     return (
@@ -11,5 +12,11 @@ const MountTransition = ({children, slide = 0, slideUp = 0}) => {
         </motion.div>
     );
 };
+
+MountTransition.propTypes = {
+    children: PropTypes.node.isRequired,
+    slide: PropTypes.number,
+    slideUp: PropTypes.number
+}
 
 export default MountTransition;

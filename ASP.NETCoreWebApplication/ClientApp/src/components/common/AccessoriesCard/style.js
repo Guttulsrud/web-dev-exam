@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const Card = styled.div`
     position: relative;
@@ -94,3 +95,7 @@ export const LogoWrapper = styled.div`
     right: 20px;
     transform: rotate(0deg);    
 `
+
+CardImage.propTypes = {
+    backgroundImage: PropTypes.string
+}

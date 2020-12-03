@@ -4,8 +4,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import {EntityContext} from '../../../context/EntityContext';
+import PropTypes from 'prop-types';
 
-const ActionModal = ({show, edit, id, name, username, password, privileges, handleClose, handleName, handlePrivileges, handleUsername, handlePassword}) => {
+const ActionModal = ({
+                         show,
+                         edit,
+                         id,
+                         name,
+                         username,
+                         password,
+                         privileges,
+                         handleClose,
+                         handleName,
+                         handlePrivileges,
+                         handleUsername,
+                         handlePassword
+                     }) => {
     const {fetchData} = useContext(EntityContext);
 
     const handleSubmit = async (e) => {
@@ -78,5 +92,20 @@ const ActionModal = ({show, edit, id, name, username, password, privileges, hand
         </Modal>
     );
 };
+
+ActionModal.propTypes = {
+    id: PropTypes.string.isRequired,
+    show: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    privileges: PropTypes.string.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    handleName: PropTypes.func.isRequired,
+    handlePrivileges: PropTypes.func.isRequired,
+    handleUsername: PropTypes.func.isRequired,
+    handlePassword: PropTypes.func.isRequired,
+    edit: PropTypes.bool,
+}
 
 export default ActionModal;

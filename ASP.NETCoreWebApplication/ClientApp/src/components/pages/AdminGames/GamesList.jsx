@@ -6,6 +6,7 @@ import {TableImage} from './style';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckCircle} from '@fortawesome/free-solid-svg-icons/faCheckCircle';
 import {faTimesCircle} from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import PropTypes from 'prop-types';
 
 const GamesList = ({handleEdit}) => {
     const {entities, loading} = useContext(EntityContext);
@@ -45,5 +46,9 @@ const GamesList = ({handleEdit}) => {
         </React.Fragment>
     );
 };
+
+GamesList.propTypes = {
+    handleEdit: PropTypes.func.isRequired
+}
 
 export default GamesList;

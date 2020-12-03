@@ -1,5 +1,6 @@
 import React from 'react';
-import {Col} from "react-bootstrap";
+import PropTypes from 'prop-types';
+import {Col} from 'react-bootstrap';
 import {
     CardWrapper,
     Card,
@@ -12,10 +13,10 @@ import {
     SignLogo,
     LogoWrapper
 } from './style';
-import Ps5Logo from "../GameCard/Ps5Logo";
+import Ps5Logo from '../GameCard/Ps5Logo';
 
 const AccessoriesCard = ({col, name, description, image}) => {
-    console.log(image)
+    console.log(image);
     return (
         <Col lg={col}>
             <CardWrapper>
@@ -35,7 +36,14 @@ const AccessoriesCard = ({col, name, description, image}) => {
                 </CardBack>
             </CardWrapper>
         </Col>
-    )
-}
+    );
+};
+
+AccessoriesCard.propTypes = {
+    col: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+};
 
 export default AccessoriesCard;

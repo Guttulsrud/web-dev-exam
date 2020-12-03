@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import PropTypes from "prop-types"
 
 export const PsFigures = styled.div`
     background-image: url(${props => (props.black ? "psfiguresb.svg" : "psfigures.svg")});
@@ -14,3 +14,7 @@ export const PsFigures = styled.div`
     height: 64px;
     margin: 0 8px;
 `
+
+PsFigures.propTypes = {
+    black: PropTypes.bool
+}

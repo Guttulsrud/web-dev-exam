@@ -1,5 +1,4 @@
 import styled, {css, keyframes} from 'styled-components';
-import Form from 'react-bootstrap/Form';
 import PropTypes from 'prop-types';
 
 const Stretch = keyframes`

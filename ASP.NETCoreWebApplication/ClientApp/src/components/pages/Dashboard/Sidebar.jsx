@@ -1,11 +1,10 @@
 import React, {useContext} from 'react';
 import {SidebarWrapper} from './style';
-import {NavLink, useHistory} from 'react-router-dom';
+import { NavLink, useHistory} from 'react-router-dom';
 import {AuthContext} from '../../../context/AuthContext';
 
 const Sidebar = () => {
     const {handleLogin} = useContext(AuthContext)
-    const history = useHistory()
 
     const handleLogout = () => {
         handleLogin("", false)

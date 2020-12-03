@@ -1,5 +1,6 @@
 import React from 'react';
 import {Rotation} from './style';
+import PropTypes from "prop-types"
 
 const ArrowIcon = (props) => {
     return (
@@ -14,7 +15,11 @@ const ArrowIcon = (props) => {
             </svg>
         </Rotation>
     )
+}
 
+ArrowIcon.propTypes = {
+    rotate: PropTypes.string.isRequired,
+    outline: PropTypes.bool
 }
 
 export default ArrowIcon;

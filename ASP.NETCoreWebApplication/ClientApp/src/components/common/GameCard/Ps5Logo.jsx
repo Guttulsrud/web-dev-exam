@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ps5Logo = (props) => {
+const Ps5Logo = () => {
     return (
         <svg width="65" height="14" viewBox="0 0 991 216" xmlns="http://www.w3.org/2000/svg">
             <path

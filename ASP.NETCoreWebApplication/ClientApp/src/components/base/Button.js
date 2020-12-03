@@ -1,4 +1,5 @@
 import styled, {css} from 'styled-components';
+import PropTypes from "prop-types"
 
 export const Button = styled.button`
     position: relative;
@@ -35,6 +36,13 @@ export const Button = styled.button`
        text-decoration: none;
       }
     `
-}
-    
+}   
 `
+
+Button.propTypes = {
+    zIndex: PropTypes.number,
+    isWhite: PropTypes.bool,
+    outline: PropTypes.bool,
+    marginLeft: PropTypes.bool,
+    disabled: PropTypes.bool
+}
