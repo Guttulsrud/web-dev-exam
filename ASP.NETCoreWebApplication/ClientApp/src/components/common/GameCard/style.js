@@ -147,6 +147,14 @@ export const CardTitle = styled.h2`
   margin-bottom: 20px;
 `
 
+export const CardYear = styled.p`
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-family: "SST Light", Arial;
+  margin-bottom: 30px;
+`
+
 CardImage.propTypes = {
     backgroundImage: PropTypes.string.isRequired
 }
