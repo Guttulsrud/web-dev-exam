@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import Row from 'react-bootstrap/Row';
 import {EntityContext} from "../../../context/EntityContext";
 import {SingleGameContext} from "../../../context/SingleGameContext";
-import {CharacterTile} from "../../pages/Game/CharacterSection/style";
 import GameCharacterCard from "../GameCharacterCard";
 
 
@@ -13,7 +12,8 @@ const GameCharacterList = (props) => {
 
     const generateCharacters = () => {
         return characters.filter(character => character.game === game[0].title).map((character, index) => (
-            <GameCharacterCard key={`character${index}`} image={character.image} name={character.name} description={character.description}/>
+            <GameCharacterCard key={`character${index}`} image={character.image} name={character.name}
+                               description={character.description}/>
         ))
     }
 

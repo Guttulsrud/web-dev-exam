@@ -1,12 +1,20 @@
 import React from 'react';
-import {Overlay, CharacterCard, CharacterCardWrapper, CharacterImage, CharacterName, CharacterCaption, CharacterDesc, WaveWrapper, CharacterWave} from "./style";
+import {
+    Overlay,
+    CharacterCard,
+    CharacterCardWrapper,
+    CharacterImage,
+    CharacterName,
+    CharacterCaption,
+    CharacterDesc,
+    CharacterWave
+} from "./style";
 import Col from 'react-bootstrap/Col';
-
 
 
 const GameCharacterCard = ({name, description, image}) => {
     return (
-            <Col lg={4} style={{marginBottom: "30px"}}>
+        <Col lg={4} style={{marginBottom: "30px"}}>
             <CharacterCardWrapper>
                 <CharacterCard>
                     <CharacterImage backgroundImage={image}>
@@ -22,9 +30,8 @@ const GameCharacterCard = ({name, description, image}) => {
                 </CharacterCard>
 
 
-
             </CharacterCardWrapper>
-            </Col>
+        </Col>
     )
 
 }
