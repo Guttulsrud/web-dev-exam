@@ -1,14 +1,10 @@
 import React, {useContext} from 'react';
 import {SidebarWrapper} from './style';
-import Button from "react-bootstrap/Button";
-import {Link, NavLink, useHistory} from 'react-router-dom';
-import Nav from "react-bootstrap/cjs/Nav";
-import Navbar from "react-bootstrap/cjs/Navbar";
+import { NavLink, useHistory} from 'react-router-dom';
 import {AuthContext} from '../../../context/AuthContext';
 
 const Sidebar = () => {
     const {handleLogin} = useContext(AuthContext)
-    const history = useHistory()
 
     const handleLogout = () => {
         handleLogin("", false)

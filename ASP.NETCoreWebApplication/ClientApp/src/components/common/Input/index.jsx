@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {FocusLine, InputWrapper, Label, StyledInput} from './style';
+import PropTypes from "prop-types"
 
 const Input = ({onChange, value, label, placeholder, type, className, transparent}) => {
     const [isFilled, setFilled] = useState(false);
@@ -30,5 +31,15 @@ const Input = ({onChange, value, label, placeholder, type, className, transparen
         </InputWrapper>
     );
 };
+
+Input.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    placeholder: PropTypes.string,
+    type: PropTypes.string.isRequired,
+    className: PropTypes.string,
+    transparent: PropTypes.bool
+}
 
 export default Input;

@@ -1,7 +1,6 @@
 import styled from "styled-components"
 
 export const SidebarWrapper = styled.div`
-     
         position: relative;
         top: 0;
         bottom: 0;

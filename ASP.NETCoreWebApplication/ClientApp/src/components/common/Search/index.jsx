@@ -2,11 +2,11 @@ import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import {SearchWrapper} from "./style";
 import SearchBar from "../SearchBar";
+import PropTypes from "prop-types"
 
 
 const Search = (props) => {
     return (
-
         <Modal
             show={props.show}
             onHide={props.handleClose}
@@ -18,5 +18,11 @@ const Search = (props) => {
         </Modal>
     )
 }
+
+Search.propTypes = {
+    show: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+}
+
 
 export default Search;

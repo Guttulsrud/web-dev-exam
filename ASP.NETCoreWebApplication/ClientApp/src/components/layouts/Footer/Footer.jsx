@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, Link, useLocation} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import {FooterBody, SieLogo, Author} from './style';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

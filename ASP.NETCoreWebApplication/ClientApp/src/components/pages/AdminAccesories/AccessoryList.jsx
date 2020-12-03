@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {EntityContext} from '../../../context/EntityContext';
 import PsLoading from '../../Loading';
 import Table from 'react-bootstrap/Table';
+import PropTypes from "prop-types"
 
 const AccessoryList = ({handleEdit}) => {
     const {entities, loading} = useContext(EntityContext);
@@ -31,5 +32,9 @@ const AccessoryList = ({handleEdit}) => {
         </React.Fragment>
     );
 };
+
+AccessoryList.propTypes = {
+    handleEdit: PropTypes.func.isRequired
+}
 
 export default AccessoryList;

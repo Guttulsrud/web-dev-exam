@@ -5,6 +5,7 @@ import {EntityContext} from '../../../context/EntityContext';
 import SortBy from '../../pages/Games/SortBy';
 import FilterBy from '../../pages/Games/FilterBy';
 import PsLoading from '../../Loading';
+import PropTypes from "prop-types"
 
 const GameList = ({explore, query, currentTitle, currentCategory}) => {
     const {entities, loading} = useContext(EntityContext);
@@ -47,5 +48,12 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
         </div>
     );
 };
+
+GameList.propTypes = {
+    explore: PropTypes.bool,
+    query: PropTypes.string,
+    currentTitle: PropTypes.string,
+    currentCategory: PropTypes.string
+}
 
 export default GameList;

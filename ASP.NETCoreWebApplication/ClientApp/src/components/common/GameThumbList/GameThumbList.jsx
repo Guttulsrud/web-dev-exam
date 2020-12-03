@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import GameThumb from "../GameThumb/GameThumb";
 import {SingleGameContext} from '../../../context/SingleGameContext';
 
-const GameThumbList = (props) => {
+const GameThumbList = () => {
     const {game} = useContext(SingleGameContext)
     const [gameState] = game
 

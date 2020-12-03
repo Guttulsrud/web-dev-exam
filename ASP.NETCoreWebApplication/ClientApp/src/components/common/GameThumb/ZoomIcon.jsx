@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-const ZoomIcon = (props) => {
+const ZoomIcon = () => {
 
     const [isHovered, setHovered] = useState(false)
 

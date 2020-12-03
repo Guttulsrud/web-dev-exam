@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types"
 
 export const SectionText = styled.h1`
     position: relative;
@@ -16,3 +17,9 @@ export const SectionText = styled.h1`
             font-size: 1.4rem;
         }
 `
+
+SectionText.propTypes = {
+    right: PropTypes.bool,
+    center: PropTypes.bool,
+    white: PropTypes.bool
+}

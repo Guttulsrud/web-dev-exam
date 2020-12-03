@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import {EntityContext} from '../../../context/EntityContext';
 import {handleImageChange, uploadImages} from '../../../helpers/imageUpload';
+import PropTypes from "prop-types"
 
 const ActionModal = ({show, edit, id, accessory, handleClose, handleChange}) => {
     const {fetchData} = useContext(EntityContext);
@@ -64,4 +65,13 @@ const ActionModal = ({show, edit, id, accessory, handleClose, handleChange}) => 
         </Modal>
     );
 };
+
+ActionModal.propTypes = {
+    id: PropTypes.string.isRequired,
+    show: PropTypes.bool.isRequired,
+    accessory: PropTypes.object.isRequired,
+    handleClose: PropTypes.func.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    edit: PropTypes.bool,
+}
 export default ActionModal;

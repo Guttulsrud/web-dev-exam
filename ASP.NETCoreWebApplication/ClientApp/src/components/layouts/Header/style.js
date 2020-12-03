@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const HeaderBody = styled.header`
     padding: 10px 30px ;    
@@ -129,3 +130,7 @@ export const MobileMenu = styled.nav`
     width: 100%;
   }
     `
+
+HeaderBody.propTypes = {
+    whiteBg: PropTypes.bool
+}

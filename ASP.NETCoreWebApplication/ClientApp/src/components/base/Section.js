@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const Section = styled.div`
     position: relative;
@@ -11,3 +12,10 @@ export const Section = styled.div`
     z-index: 10;
     background: ${props => (props.blue ? "linear-gradient(20deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%)" : "none")};
 `
+Section.propTypes = {
+    marginTop: PropTypes.bool,
+    marginBottom: PropTypes.bool,
+    blue: PropTypes.bool
+}
+
+

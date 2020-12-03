@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components"
+import  PropTypes from "prop-types"
 
 export const RoundBtn = styled.div`
     display: flex;
@@ -18,3 +19,12 @@ export const Rotation = styled.div`
     ${props => props.rotation === 'left' && css`transform:rotate(90deg);`}
     ${props => props.rotation === 'right' && css`transform:rotate(270deg);`}
 `
+
+RoundBtn.propTypes = {
+    outline: PropTypes.bool,
+    disabled: PropTypes.bool,
+}
+
+Rotation.propTypes = {
+    rotation: PropTypes.string.isRequired
+}
