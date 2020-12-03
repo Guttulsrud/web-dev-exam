@@ -9,7 +9,7 @@ export const Section = styled.div`
     margin-top: 0px;
     margin-bottom: ${props => (props.noMarginBottom ? "0px" : "30px")};
     margin-top: ${props => props.marginTop}px;
-    z-index: 10;
+    z-index: 1;
     background: ${props => (props.blue ? "linear-gradient(20deg, rgba(0,112,209,1) 0%, rgba(22,68,150,1) 100%)" : "none")};
 `
 Section.propTypes = {

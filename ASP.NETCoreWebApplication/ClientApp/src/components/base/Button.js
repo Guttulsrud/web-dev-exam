@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 export const Button = styled.button`
     position: relative;
     background-color: #ffffff;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     padding: ${props => (props.outline ? "12px 40px 12px 40px" : "12px 40px 14px 40px")};
@@ -15,7 +15,6 @@ export const Button = styled.button`
     color: ${props => (props.outline ? "#0070D1" : props.disabled ? "#c4c4c4" : "#FFFFFF")};
     font-weight: 500;
     font-size: 1rem;
-    max-width: 180px;
     height: 48px;
     cursor: ${props => (props.disabled ? "arrow" : "pointer")};
     line-height: 0;

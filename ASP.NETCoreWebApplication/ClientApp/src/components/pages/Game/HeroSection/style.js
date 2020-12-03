@@ -56,7 +56,7 @@ export const TitleText = styled.h1`
     line-height: 7rem;
     font-weight: bold;
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     padding-top: 60px;
             @media (max-width: 576px) {
             font-size: 3rem;
@@ -77,7 +77,7 @@ export const TitleSection = styled.h1`
     font-size: 6rem;
     font-weight: bold;
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     padding-top: 30px;
     padding-bottom: 30px;
 `
@@ -175,7 +175,7 @@ export const CardTitle = styled.h3`
     line-height: 2.5rem;
     font-weight: 600;
     position: absolute;
-    z-index: 1000;
+    z-index: 10;
     bottom: 50px;
     width: 210px;
     margin-left: 20px;

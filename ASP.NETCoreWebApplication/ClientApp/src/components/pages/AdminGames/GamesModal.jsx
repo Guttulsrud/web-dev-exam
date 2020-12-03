@@ -106,6 +106,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
                             {isDark && 'Kek'}
                         </Row>
                         <br/>
+                        <div className={"form-input-buttons flex-col"}>
                         <Form.Label><h4>File uploads</h4></Form.Label>
                         <br/>
                         <Form.Label>Game logo</Form.Label>
@@ -119,7 +120,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
 
                         <Form.Label>Game box image</Form.Label>
                         <input onChange={handleImageChange} name='gameBoxImage' type='file'/>
-
+                        </div>
 
                     </Form.Group>
                 </Modal.Body>

@@ -9,7 +9,7 @@ export const Card = styled.div`
     min-height: 400px;
     margin-bottom: 30px;
     overflow: hidden;
-    z-index: 1000000000000000000;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +58,7 @@ export const CardDesc = styled.h2`
 
 export const CardImage = styled.div`
    position: relative;
-   z-index: 1000009999999;
+   z-index: 10;
    width: 300px;
    height: 300px;
    background-image: url(${props => props.backgroundImage});
@@ -70,7 +70,7 @@ export const CardImage = styled.div`
 export const CardBody = styled.div`
     padding-left: 20px;
     position: relative;
-    z-index: 1000009999999;
+    z-index: 1;
     width: 600px; 
 `
 
