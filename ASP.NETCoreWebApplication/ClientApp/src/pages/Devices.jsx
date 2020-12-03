@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Section} from "../components/base/Section";
-import Container from "react-bootstrap/Container";
-import {SectionTitle} from "../components/base/SectionTitle";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import {Paragraph} from "../components/base/Paragraph";
-import {Button} from "../components/base/Button";
+import {Section} from '../components/base/Section';
+import Container from 'react-bootstrap/Container';
+import {SectionTitle} from '../components/base/SectionTitle';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import {Paragraph} from '../components/base/Paragraph';
+import {Button} from '../components/base/Button';
 
 export const Devices = () => {
 
@@ -101,9 +101,7 @@ export const Devices = () => {
                                 backgroundSize: "contain",
                                 backgroundRepeat: "no-repeat",
                             }}/>
-
                         </Col>
-
                     </Row>
 
                 </Container>

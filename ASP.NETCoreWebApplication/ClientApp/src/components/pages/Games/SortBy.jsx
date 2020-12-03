@@ -1,18 +1,15 @@
 import React, {useContext, useState} from 'react';
 import {DropDownContainer, DropDownHeader, DropDownListContainer, DropDownList, ListItem} from './style';
 import {EntityContext} from '../../../context/EntityContext';
+import PropTypes from "prop-types"
 
 const options = ['Release ascending', 'Release descending', 'Price ascending', 'Price descending'];
 
 const SortBy = (props) => {
     const {entities} = useContext(EntityContext);
-
-
     const [selectedOption, setSelectedOption] = useState(null);
     const [yearAsc, setYearAsc] = useState(false);
     const [games, setGames] = entities;
-
-
 
     const sortByYear = (value) => {
         if (value.includes('Release')) {
@@ -51,5 +48,10 @@ const SortBy = (props) => {
         </DropDownContainer>
     );
 };
+
+SortBy.propTypes = {
+    toggling: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired
+}
 
 export default SortBy;

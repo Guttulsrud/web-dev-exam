@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useContext} from 'react';
 import Sidebar from './pages/Dashboard/Sidebar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,21 +6,10 @@ import Container from 'react-bootstrap/Container';
 import {CogIcon, HeaderTop, Logo} from './layouts/Header/style';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../context/AuthContext';
+import PropTypes from 'prop-types';
 
 const Layout = ({children}) => {
     const {user} = useContext(AuthContext);
-    const [offset, setOffset] = useState(0);
-
-    useEffect(() => {
-        function handleScroll() {
-            setOffset(window.pageYOffset);
-        }
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     return (
         <React.Fragment>
@@ -40,12 +29,13 @@ const Layout = ({children}) => {
                         {children}
                     </Col>
                 </Row>
-
             </Container>
-
-
         </React.Fragment>
     );
 };
+
+Layout.propTypes = {
+    children: PropTypes.node
+}
 
 export default Layout;

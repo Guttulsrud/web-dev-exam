@@ -5,7 +5,7 @@ import {SingleGameContext} from "../../../context/SingleGameContext";
 import GameCharacterCard from "../GameCharacterCard";
 
 
-const GameCharacterList = (props) => {
+const GameCharacterList = () => {
     const {entities} = useContext(EntityContext)
     const {game} = useContext(SingleGameContext)
     const [characters] = entities

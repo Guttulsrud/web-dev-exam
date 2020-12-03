@@ -8,7 +8,6 @@ import {EntityProvider} from "../context/EntityContext";
 export const Accessories = () => {
 
     return (
-        <React.Fragment>
             <Section style={{paddingTop: "60px"}}>
                 <EntityProvider endpoint={"accessory"}>
                     <Container>
@@ -16,9 +15,6 @@ export const Accessories = () => {
                         <AccessoriesList/>
                     </Container>
                 </EntityProvider>
-
-
             </Section>
-        </React.Fragment>
     );
 };

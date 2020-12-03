@@ -1,13 +1,13 @@
 import React from 'react';
 import {Section} from '../../../base/Section';
-import FeaturedCarousel from "./FeaturedCarousel";
+import FeaturedCarousel from './FeaturedCarousel';
 
-const HeaderSection = (props) => {
+const HeaderSection = () => {
     return (
         <Section>
-            <FeaturedCarousel data={props.data}/>
+            <FeaturedCarousel/>
         </Section>
-    )
-}
+    );
+};
 
 export default HeaderSection;

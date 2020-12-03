@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {motion} from "framer-motion"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,12 +13,25 @@ import {
     SignLogoSmall,
     ScreenshotsArea
 } from './style';
-import {SingleGameContext} from "../../../../context/SingleGameContext";
+import {SingleGameContext, SingleGameProvider} from '../../../../context/SingleGameContext';
 import GameThumb from "../../../common/GameThumb/GameThumb";
+import {LayoutContext} from '../../../../context/LayoutContext';
 
 const FullGame = () => {
     const {game} = useContext(SingleGameContext);
     const [singleGame] = game
+    const {isDark} = useContext(LayoutContext)
+    const [darkState, setDark] = isDark
+    const [gameState, setGame] = game
+
+    useEffect(() => {
+        if (gameState.isDark) {
+            setDark(true)
+        }
+        return () => {
+            setDark(false);
+        }
+    }, [gameState])
 
     const generateScreenshots = () => {
         return singleGame.screenshots ? singleGame.screenshots.slice(0, 3).map((image, index) => (

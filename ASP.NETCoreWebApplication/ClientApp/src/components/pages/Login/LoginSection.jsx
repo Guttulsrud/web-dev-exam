@@ -36,7 +36,6 @@ const LoginSection = () => {
             <div className={"mx-auto mb-2"}>
                 <PsLogo color={username !== "" && password !== "" ? "#0072ce" : undefined}/>
             </div>
-
             <Card.Body className={"px-md-5 px-2"} >
                 <Form onSubmit={(e) => handleOnSubmit(e)}>
                     <div style={{width: "250px"}}>

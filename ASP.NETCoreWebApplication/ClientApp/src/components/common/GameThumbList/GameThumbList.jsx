@@ -7,7 +7,6 @@ const GameThumbList = () => {
     const {game} = useContext(SingleGameContext)
     const [gameState] = game
 
-
     const getData = () => {
         return gameState.screenshots ? gameState.screenshots.map((thumb, i) => {
             return <GameThumb key={i} image={thumb}/>

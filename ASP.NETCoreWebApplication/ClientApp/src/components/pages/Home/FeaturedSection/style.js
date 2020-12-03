@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const CarouselImage = styled.div`
   position: absolute;
@@ -97,3 +98,7 @@ export const LogoWrapper = styled.div`
     right: 20px;
     transform: rotate(0deg);
 `
+
+CarouselImage.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}

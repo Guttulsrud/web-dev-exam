@@ -1,5 +1,7 @@
 import React, {useState, useEffect, createContext} from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
+
 
 export const EntityContext = createContext();
 
@@ -24,3 +26,8 @@ export const EntityProvider = ({children, endpoint}) => {
         </EntityContext.Provider>
     );
 };
+
+EntityContext.propTypes = {
+    children: PropTypes.node,
+    endpoint: PropTypes.string.isRequired
+}

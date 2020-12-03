@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from "prop-types"
 
 export const HeroWrapper = styled.section`
     background-image: linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0) 100%), url(${props => props.backgroundImage});
@@ -46,7 +47,6 @@ export const Thumb = styled.div`
         &:hover {
          transform: scale(1.03);
          box-shadow: 0 5px 12px 2px rgba(0,0,0,0.54);
-        /*    background-image: linear-gradient(to top, #ffffffb9 5%, #ffffff00 95%), url(${props => props.backgroundImage});*/
         }
 `
 
@@ -202,4 +202,16 @@ export const ScreenshotsArea = styled.div`
         }
 `
 
+HeroWrapper.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+Thumb.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+SignLogo.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
+Card.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+}
 

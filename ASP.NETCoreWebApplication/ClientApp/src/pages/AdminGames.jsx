@@ -5,7 +5,7 @@ import GamesModal from '../components/pages/AdminGames/GamesModal';
 import GamesList from '../components/pages/AdminGames/GamesList';
 import {gameModel} from '../models/gameModel';
 
-export const AdminGames = (props) => {
+export const AdminGames = () => {
     const [id, setId] = useState();
     const [show, setShow] = useState(false);
     const [edit, setEdit] = useState(false);
@@ -40,7 +40,6 @@ export const AdminGames = (props) => {
 
     return (
         <EntityProvider endpoint={'game'}>
-
             <GamesModal show={show} edit={edit} id={id} game={game} handleClose={handleClose}
                         handleChange={handleChange}/>
             <div className={'d-flex justify-content-between align-content-center align-items-center mt-5 mb-3'}>

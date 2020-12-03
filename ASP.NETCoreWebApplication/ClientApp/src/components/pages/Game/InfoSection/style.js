@@ -1,11 +1,12 @@
-import styled from "styled-components"
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 export const BoxArtWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-`
+`;
 
 export const Price = styled.div`
     display: inline-block;
@@ -23,7 +24,7 @@ export const Price = styled.div`
     text-align: center;
 
 
-`
+`;
 
 export const BoxArt = styled.div`
     background-image: url(${props => props.backgroundImage});
@@ -33,4 +34,8 @@ export const BoxArt = styled.div`
     width: 400px;
     height: 400px;
     position: relative;
-`
+`;
+
+BoxArt.propTypes = {
+    backgroundImage: PropTypes.string.isRequired
+};

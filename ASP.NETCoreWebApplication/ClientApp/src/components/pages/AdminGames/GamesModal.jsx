@@ -7,7 +7,6 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import {handleImageChange, uploadImages} from '../../../helpers/imageUpload';
 import PropTypes from 'prop-types';
-import ActionModal from '../AdminAccesories/ActionModal';
 
 const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
     const {fetchData} = useContext(EntityContext);
@@ -145,7 +144,7 @@ const GamesModal = ({show, edit, game, id, handleClose, handleChange}) => {
 GamesModal.propTypes = {
     id: PropTypes.string.isRequired,
     show: PropTypes.bool.isRequired,
-    accessory: PropTypes.object.isRequired,
+    game: PropTypes.object.isRequired,
     handleClose: PropTypes.func.isRequired,
     handleChange: PropTypes.func.isRequired,
     edit: PropTypes.bool,
