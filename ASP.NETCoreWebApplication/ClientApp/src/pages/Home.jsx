@@ -1,10 +1,8 @@
 import React from 'react';
-
 import FeaturedSection from '../components/pages/Home/FeaturedSection/Index';
 import GamesSection from "../components/pages/Home/GamesSection/Index";
 import InfoSection from "../components/pages/Home/InfoSection";
 import {EntityProvider} from '../context/EntityContext';
-
 
 export const Home = () => {
 
@@ -13,8 +11,7 @@ export const Home = () => {
             <div style={{marginTop: "130px"}}>
                 <FeaturedSection/>
             </div>
-
-            <GamesSection title={"Most awaited games"}/>
+            <GamesSection title={"Greatness awaits"}/>
             <InfoSection/>
         </EntityProvider>
     );

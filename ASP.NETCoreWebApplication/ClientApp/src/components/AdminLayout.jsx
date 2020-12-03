@@ -7,6 +7,7 @@ import {CogIcon, HeaderTop, Logo} from './layouts/Header/style';
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../context/AuthContext';
 import PropTypes from 'prop-types';
+import {CardYear} from './common/GameCard/style';
 
 const Layout = ({children}) => {
     const {user} = useContext(AuthContext);
@@ -14,7 +15,7 @@ const Layout = ({children}) => {
     return (
         <React.Fragment>
             <HeaderTop>
-                <p className={'text-white my-auto'}>Logged in as: {user}</p>
+                <CardYear className={'text-white my-auto'}>Logged in as: {user}</CardYear>
                 <CogIcon as={Link} to={'/admin'}/>
                 <a href={'http://www.sony.com/'}>
                     <Logo/>

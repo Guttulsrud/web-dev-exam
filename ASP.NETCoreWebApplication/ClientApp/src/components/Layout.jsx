@@ -7,6 +7,7 @@ import {CogIcon, HeaderTop, Logo} from "./layouts/Header/style";
 import {Link} from "react-router-dom";
 import {AuthContext} from '../context/AuthContext';
 import PropTypes from 'prop-types';
+import {CardYear} from './common/GameCard/style';
 
 const Layout = ({children}) => {
     const {isLoggedIn, user} = useContext(AuthContext)
@@ -27,7 +28,7 @@ const Layout = ({children}) => {
             <RadialGradient style={{zIndex: "-100"}}/>
             <SignLogo style={{zIndex: "-99", transform: `rotate(20deg) translateY(${offset * 0.4}px)`}}/>
             <HeaderTop>
-                {isLoggedIn && <p className={"text-white my-auto"}>Logged in as: {user}</p>}
+                {isLoggedIn && <CardYear className={"text-white my-auto"}>Logged in as: {user}</CardYear>}
                 <CogIcon as={Link} to={isLoggedIn ? "/admin" : "/login"}/>
                 <a href={"http://www.sony.com/"}><Logo/></a>
             </HeaderTop>

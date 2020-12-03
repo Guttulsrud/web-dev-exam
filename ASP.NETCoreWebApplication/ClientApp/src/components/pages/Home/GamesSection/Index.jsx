@@ -17,7 +17,7 @@ const GamesSection = (props) => {
         <Section>
             <Container>
                 <SectionTitle>{props.title}</SectionTitle>
-                <GameList/>
+                <GameList mostAwaited/>
                 <div className={'d-flex justify-content-center'}>
                     <Button outline onClick={handleRedirect}>View more</Button>
                 </div>

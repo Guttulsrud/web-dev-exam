@@ -7,9 +7,9 @@ import FilterBy from '../../pages/Games/FilterBy';
 import PsLoading from '../../Loading';
 import PropTypes from "prop-types"
 
-const GameList = ({explore, query, currentTitle, currentCategory}) => {
+const GameList = ({explore, query, currentTitle, currentCategory, mostAwaited}) => {
     const {entities, loading} = useContext(EntityContext);
-    const [games] = entities;
+    const [games, setGames] = entities;
     const [filterValue, setValue] = useState('');
     const [sortByOpen, setSortByOpen] = useState(false);
     const [filterOpen, setFilterOpen] = useState(false);
@@ -42,6 +42,17 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
         ))
     }
 
+    const generateAwaitedGames = () => {
+        let randArr = []
+        for(let i = 0; i < games.length; i++) {
+            randArr.push(games[i])
+        }
+        randArr.sort(() => Math.random() - 0.5)
+        return randArr.slice(0,4).map((game, i) => (
+            <GameCard key={`gamecard${i}`} {...game}/>
+        ))
+    }
+
     if(loading) return <PsLoading/>
 
     return (
@@ -55,9 +66,10 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
             </Row>
             }
             <Row>
-                {(!query && !currentCategory && !currentTitle) && generateGames()}
+                {(!query && !currentCategory && !currentTitle && !mostAwaited) && generateGames()}
                 {query && generateSearchedGames()}
                 {currentTitle && currentCategory && generateRelatedGames()}
+                {mostAwaited && generateAwaitedGames()}
             </Row>
         </div>
     );
@@ -65,6 +77,7 @@ const GameList = ({explore, query, currentTitle, currentCategory}) => {
 
 GameList.propTypes = {
     explore: PropTypes.bool,
+    mostAwaited: PropTypes.bool,
     query: PropTypes.string,
     currentTitle: PropTypes.string,
     currentCategory: PropTypes.string
